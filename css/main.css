@@ -1,6 +1,6 @@
 body {
   background: url('../gfx/paper_fibers.png');
-  font-family: Tahoma;
+  font-family: Avenir;
 }
 #allContainer {
   position: relative;
@@ -37,16 +37,6 @@ body {
   width: 75px;
   height: 25px;
   cursor: pointer;
-}
-#mainBody {
-  text-align: center;
-  margin-top: 200px;
-}
-#footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0,0,0,0.2);
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
                                 ICONS

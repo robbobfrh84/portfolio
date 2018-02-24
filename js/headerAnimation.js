@@ -1,24 +1,3 @@
-var window_width = window.innerWidth
-// var window_height = window.innerHeight
-
-window.onload = ()=>{
-  document.body.style.display = ''
-  if (window.innerHeight >= document.body.scrollHeight) document.getElementById('footer').style.position = 'absolute'
-  else document.getElementById('footer').style.position = 'relative'
-  linkIconsAnnimation()
-  lineAnnimation()
-  lettersAnnimation()
-}
-
-window.onresize = ()=>{
-  if (window_width != window.innerWidth) {
-    linkIconsAnnimation()
-    lineAnnimation()
-    lettersAnnimation()
-  }
-  window_width = window.innerWidth
-}
-
 /* -------------------- LETTERS ------------------------------------------- */
 
 lettersAnnimation = ()=>{
@@ -29,7 +8,7 @@ lettersAnnimation = ()=>{
     const delay = random(1500,3500)
     let r = random(0,200)
     let b = random(175,255)
-    setTimeout(()=>{ l.style.color = 'rgba(0,0,0,0.75)' }, delay)
+    setTimeout(()=>{ l.style.color = '#444' }, delay)
     setTimeout(()=>{ l.style.backgroundColor = 'rgba('+r+',170,237,0.2)' },delay+1000)
     setTimeout(()=>{ l.style.backgroundColor = 'rgba(0,0,0,0)' },delay+1500)
     r = random(0,200)
