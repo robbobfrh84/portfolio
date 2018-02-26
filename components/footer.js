@@ -24,7 +24,7 @@ footer = (id, sheet)=>{
 
   #footer {
     position: relative;
-    left: 0;
+    left: 0px;
     bottom: 0px;
     width: 100%;
     text-align: center;
@@ -61,9 +61,14 @@ footer = (id, sheet)=>{
 
 footer_resize = ()=>{
   let footer = document.getElementById('footer')
-  if (window.innerHeight >= document.body.scrollHeight+30) {
+  if (navigator.userAgent.indexOf("Safari") != -1 ) {
     footer.style.position = 'absolute'
   } else {
-    footer.style.position = 'relative'
+    if (window.innerHeight >= document.body.scrollHeight+30) {
+      footer.style.position = 'absolute'
+    } else {
+      footer.style.position = 'relative'
+    }
   }
+
 }

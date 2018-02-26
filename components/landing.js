@@ -91,14 +91,14 @@ landing = (id, sheet)=>{
   }
 
   #landing {
-    width: 100%;
+    width: ${window.innerWidth+lineW}px;
     text-align: center;
+    margin-right: 300px;
   }
 
-  @media (min-height: 500px) {
+  @media (min-height: 500px), and (-webkit-min-device-pixel-ratio: 1) {
 
     #landing {
-      width: 100%;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -136,3 +136,8 @@ landing = (id, sheet)=>{
   /* --------------------------------------------------------- */
   document.body.appendChild(sheet);
 }
+
+// landing_resize = ()=>{
+//   let landing = document.getElementById('landing')
+//   landing.style.width = window.innerWidth+lineW;
+// }
