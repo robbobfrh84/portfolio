@@ -1,12 +1,12 @@
 var window_width = window.innerWidth
 
 window.onload = ()=>{
-  document.body.style.display = ''
-  if (window.innerHeight >= document.body.scrollHeight) document.getElementById('footer').style.position = 'absolute'
-  else document.getElementById('footer').style.position = 'relative'
   linkIconsAnnimation()
   lineAnnimation()
   lettersAnnimation()
+  landing( document.getElementById('landing'), document.createElement('style') )
+  footer( document.getElementById('footer'), document.createElement('style') )
+  document.body.style.opacity = 1
 }
 
 window.onresize = ()=>{
@@ -15,6 +15,6 @@ window.onresize = ()=>{
     lineAnnimation()
     lettersAnnimation()
   }
-  landing_resize()
+  footer_resize()
   window_width = window.innerWidth
 }

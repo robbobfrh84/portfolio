@@ -2,7 +2,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="gfx/8x8bob.png" />
 <link rel="stylesheet" href="css/main.css">
 </head>
-  <body style='display: none;'>
+  <body style='opacity: 0;'>
 
     <div id='header'>
       <canvas id="headerCanvas" height='100'></canvas>
@@ -17,17 +17,23 @@
       <a href="Page_Contact/index.html"><img class='linkIcon' id='contactIcon' src="gfx/contact.svg"></a>
     </div>
 
-    <div id='landing'></div>
+    <div id='landing' style='opacity: 0'></div>
+    <div id='projects' style='opacity: 0'></div>
 
-    <div id='footer'></div>
+    <div id='footer' style='opacity: 0'></div>
 
   </body>
 
 </html>
-<script src='js/main.js'></script>
-<script src='js/headerAnimation.js'></script>
-<script src='js/landing.js'></script>
-<script src='js/footer.js'></script>
+<script src='components/main.js'></script>
+<script src='javaScript_Operations/headerAnimation.js'></script>
+<script src='javaScript_Operations/pageHandler.js'></script>
+
+
+<script src='components/landing.js'></script>
+<script src='components/*page_projects.js'></script>
+
+<script src='components/footer.js'></script>
 
 <!-- *** NOTES ***
 

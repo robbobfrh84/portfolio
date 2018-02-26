@@ -1,4 +1,5 @@
 footer = (id, sheet)=>{
+  setTimeout(()=>{ id.style.opacity = 1 },250)
 
   var year = new Date().getFullYear()
 
@@ -23,10 +24,12 @@ footer = (id, sheet)=>{
 
   #footer {
     position: relative;
-    bottom: 3px; left: 0;
+    left: 0;
+    bottom: 0px;
     width: 100%;
     text-align: center;
     color: #444;
+    transition: opacity 2s;
   }
   #footerGrid {
     display: grid;
@@ -52,6 +55,15 @@ footer = (id, sheet)=>{
 
   `
   /* --------------------------------------------------------- */
-  document.body.appendChild(sheet);
+  document.body.appendChild(sheet)
+  footer_resize()
 }
-footer( document.getElementById('footer'), document.createElement('style') )
+
+footer_resize = ()=>{
+  let footer = document.getElementById('footer')
+  if (window.innerHeight >= document.body.scrollHeight+30) {
+    footer.style.position = 'absolute'
+  } else {
+    footer.style.position = 'relative'
+  }
+}
