@@ -91,30 +91,21 @@ landing = (id, sheet)=>{
   }
 
   #landing {
-    width: ${window.innerWidth+lineW}px;
+    width: 100%;
     text-align: center;
-    margin-right: 300px;
-  }
-
-  @media (min-height: 500px), and (-webkit-min-device-pixel-ratio: 1) {
-
-    #landing {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-      transition: opacity 2s;
-    }
-
+    padding-right: ${lineW+50}px;
   }
 
   #landingBox {
-    margin-top: 50px;
-    margin-bottom: 200px;
+    padding-top: 20vh;
+    padding-bottom: 50px;
   }
 
+  @media (max-height: 500px) {
+    #landingBox {
+      padding-top: 8vh;
+    }
+  }
 
   .line {
     position: absolute;
@@ -136,8 +127,3 @@ landing = (id, sheet)=>{
   /* --------------------------------------------------------- */
   document.body.appendChild(sheet);
 }
-
-// landing_resize = ()=>{
-//   let landing = document.getElementById('landing')
-//   landing.style.width = window.innerWidth+lineW;
-// }

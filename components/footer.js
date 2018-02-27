@@ -61,14 +61,9 @@ footer = (id, sheet)=>{
 
 footer_resize = ()=>{
   let footer = document.getElementById('footer')
-  if (navigator.userAgent.indexOf("Safari") != -1 ) {
+  if (window.innerHeight >= document.body.clientHeight+30) {
     footer.style.position = 'absolute'
   } else {
-    if (window.innerHeight >= document.body.scrollHeight+30) {
-      footer.style.position = 'absolute'
-    } else {
-      footer.style.position = 'relative'
-    }
+    footer.style.position = 'relative'
   }
-
 }
