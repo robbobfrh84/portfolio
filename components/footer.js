@@ -1,9 +1,9 @@
-footer = (id, sheet)=>{
+_footer = (id, sheet)=>{
   setTimeout(()=>{ id.style.opacity = 1 },250)
 
   var year = new Date().getFullYear()
 
-  /* ----------------------- < HTML > ------------------------ */
+/* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
 
   <div id="footerGrid">
@@ -19,7 +19,7 @@ footer = (id, sheet)=>{
   </div>
 
   `
-  /* ---------------------- { style } ------------------------ */
+/* ---------------------- { style } ------------------------ */
   sheet.innerHTML = `
 
   #footer {
@@ -54,12 +54,12 @@ footer = (id, sheet)=>{
   }
 
   `
-  /* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
   document.body.appendChild(sheet)
-  footer_resize()
+  _footerResize()
 }
 
-footer_resize = ()=>{
+_footerResize = ()=>{
   let footer = document.getElementById('footer')
   if (window.innerHeight >= document.body.clientHeight+30) {
     footer.style.position = 'absolute'

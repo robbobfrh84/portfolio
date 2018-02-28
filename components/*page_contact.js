@@ -1,16 +1,16 @@
-_projects = (id, sheet)=>{
+_contact = (id, sheet)=>{
   id.style.opacity = 1
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
 
-    Component: projects
+    Component: contact
 
   `
   /* ---------------------- { style } ------------------------ */
   sheet.innerHTML = `
 
-    #projects {
+    #contact {
       display: none;
       transition: opacity 1s;
     }
@@ -19,4 +19,4 @@ _projects = (id, sheet)=>{
   /* --------------------------------------------------------- */
   document.body.appendChild(sheet);
 }
-_projects( document.getElementById('projects'), _style() )
+_contact( document.getElementById('contact'), _style() )

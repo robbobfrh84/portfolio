@@ -1,46 +1,43 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title> tobob.earth </title>
-<link rel="shortcut icon" type="image/x-icon" href="gfx/8x8bob.png" />
-<link rel="stylesheet" href="css/main.css">
-</head>
-  <body style='opacity: 0;'>
-
-    <div id='header'>
-      <canvas id="headerCanvas" height='100'></canvas>
-      <div id='earthToBob' class='bg'>
-        <div>E</div><div>A</div><div>R</div><div>T</div><div>H</div><div>&bull;</div><div>T</div><div>O</div><div>&bull;</div><div>B</div><div>O</div><div>B</div>
-      </div>
-      <a href="http://www.tobob.earth"><div id='bobBtn'></div></a>
-      <a href="https://github.com/robbobfrh84"><img class='linkIcon' id='gitIcon' src="gfx/git2.svg"></a>
-      <a href="https://codepen.io/robbobfrh84"><img class='linkIcon' id='codepenIcon' src="gfx/codepenicon.svg"></a>
-      <a href="https://www.linkedin.com/in/bobmain49"><img class='linkIcon' id='linkedInIcon' src="gfx/linkedinIcon.svg"></a>
-      <a href="https://twitter.com/BobMain49"><img class='linkIcon' id='twitterIcon' src="gfx/twitericon.svg" ></a>
-      <a href="Page_Contact/index.html"><img class='linkIcon' id='contactIcon' src="gfx/contact.svg"></a>
-    </div>
-
+  <link rel="shortcut icon" type="image/x-icon" href="gfx/8x8bob.png" />
+<!-- * * * * * CSS * * * * * -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  </head>
+    <body style='opacity: 0;'>
+<!-- * * * * * Landing * * * * * -->
+    <div id='header'></div>
+      <div id='dropdown' style='opacity: 0'></div>
+    <div id='background' style='opacity: 0'></div>
     <div id='landing' style='opacity: 0'></div>
-    <div id='projects' style='opacity: 0'></div>
-
     <div id='footer' style='opacity: 0'></div>
+<!-- * * * * * Other Pages * * * * * -->
+    <div id='projects' style='opacity: 0'></div>
+    <div id='contact' style='opacity: 0'></div>
 
   </body>
 
 </html>
-<script src='components/main.js'></script>
-<script src='javaScript_Operations/headerAnimation.js'></script>
-<script src='javaScript_Operations/pageHandler.js'></script>
+<!-- * * * * * JavaScript * * * * * -->
+<script src='main.js'></script>
+<script src='pageHandler.js'></script>
+<script src='js/funcs.js'></script>
 
-
-<script src='components/landing.js'></script>
-<script src='components/*page_projects.js'></script>
-
+<script src='components/header.js'></script>
+  <script src='components/dropdown.js'></script>
+<script src='components/background.js'></script>
 <script src='components/footer.js'></script>
+
+<script src='components/*page_landing.js'></script>
+<script src='components/*page_projects.js'></script>
+<script src='components/*page_contact.js'></script>
 
 <!-- *** NOTES ***
 
 3-STEP
-- fix line overflow when resize wiidth
-- > Safari isn't pushing copy down.
 - clean oragnize
+-
+-
 
 - - - -
 tab: set my image! or something phun
@@ -64,6 +61,5 @@ Body - Page Sign In
 
 Footer
 - CopyRight dynamic year
-- Spelled Out: github | Codepen | LinkedIn | AngleList | Contact
 
 -->
