@@ -132,7 +132,8 @@ _header = (id)=>{
   <a href="https://codepen.io/robbobfrh84"><img class='linkIcon h1' id='codepenIcon' src="gfx/codepenicon.svg"></a>
   <a href="https://www.linkedin.com/in/bobmain49"><img class='linkIcon h1' id='linkedInIcon' src="gfx/linkedinIcon.svg"></a>
   <a href="https://twitter.com/BobMain49"><img class='linkIcon h1' id='twitterIcon' src="gfx/twitericon.svg" ></a>
-  <img class='linkIcon' id='dropdownIcon' src="gfx/dropdownIcon2.png">
+  <img id='dropdownIcon' class='linkIcon' src="gfx/dropdownIcon2.png"
+    onClick="_toggleComponent('dropdown','dropdownIcon')">
 
   `
 /* --------------------------------------------------------- */

@@ -12,7 +12,7 @@ _contact = (id, sheet)=>{
 
     #contact {
       display: none;
-      transition: opacity 1s;
+      transition: opacity .25s;
     }
 
   `

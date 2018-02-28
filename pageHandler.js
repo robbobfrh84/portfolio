@@ -1,16 +1,18 @@
 _setPage = (newPage)=>{
   if (!newPage) newPage = 'landing'
-  let oldPage = document.getElementById(_activePage)
-  oldPage.style.opacity = 0
-  oldPage.style.display = 'none'
+  if (newPage !== _activePage) {
+    let oldPage = document.getElementById(_activePage)
+    oldPage.style.display = 'none'
+    setTimeout(()=>{ oldPage.style.opacity = 0 },10)
 
-  let page = document.getElementById(newPage)
-  page.style.opacity = 1
-  page.style.display = 'block'
+    let page = document.getElementById(newPage)
+    page.style.opacity = 1
+    setTimeout(()=>{ page.style.display = 'block' }, 250)
 
-  console.log('oldPage: ', _activePage, ',  activePage: ', newPage)
-  _activePage = newPage
-  _setHash(_activePage)
+    _activePage = newPage
+    _setHash(_activePage)
+  }
+
 }
 
 _setHash = (hash) => {

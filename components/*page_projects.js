@@ -1,5 +1,5 @@
 _projects = (id, sheet)=>{
-  id.style.opacity = 1
+  // id.style.opacity = 1
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
@@ -12,7 +12,7 @@ _projects = (id, sheet)=>{
 
     #projects {
       display: none;
-      transition: opacity 1s;
+      transition: opacity .25s;
     }
 
   `

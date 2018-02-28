@@ -1,10 +1,9 @@
 _dropdown = (id, sheet)=>{
-  id.style.opacity = 1
 
 /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
 
-  <div id='container'>
+  <div id='container' onMouseleave="_toggleComponent('dropdown','dropdownIcon')">
     <div class="page" onClick="_setPage('projects')">
       Projects <div class='icon'> &#x2606; </div>
     </div>
@@ -21,19 +20,20 @@ _dropdown = (id, sheet)=>{
   sheet.innerHTML = `
 
     #dropdown {
-      // display: none;
-      transition: opacity 1s;
+      display: none;
+      opacity: 0;
       position: absolute;
-      top: 50px; right: 25px;
+      top: 36px; right: 0px;
       width: 125px;
       height: 25px;
       cursor: pointer;
+      transition: opacity .25s; // make sure toggled display matches.
     }
 
     #container {
       background-color: rgba(0,0,0,0.1);
       padding: 5px;
-      padding-top: 2px;
+      padding-top: 14px;
     }
 
     .page {
