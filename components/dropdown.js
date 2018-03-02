@@ -23,7 +23,8 @@ _dropdown = (id, sheet)=>{
       display: none;
       opacity: 0;
       position: absolute;
-      top: 36px; right: 0px;
+      top: 34px;
+      right: 0px;
       width: 125px;
       height: 25px;
       cursor: pointer;

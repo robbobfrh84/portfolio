@@ -11,17 +11,18 @@
     <div id='background' style='opacity: 0'></div>
     <div id='landing' style='opacity: 0'></div>
     <div id='footer' style='opacity: 0'></div>
-<!-- * * * * * Other Pages * * * * * -->
+<!-- * * * * * Other Pages (With Header & Footer)* * * * * -->
     <div id='projects' style='opacity: 0'></div>
     <div id='contact' style='opacity: 0'></div>
+<!-- * * * * * Other Full Pages * * * * * -->
 
   </body>
-
 </html>
 <!-- * * * * * JavaScript * * * * * -->
 <script src='main.js'></script>
 <script src='pageHandler.js'></script>
 <script src='js/funcs.js'></script>
+<script src='js/canvas.js'></script>
 
 <script src='components/header.js'></script>
   <script src='components/dropdown.js'></script>
@@ -35,33 +36,15 @@
 <!-- *** NOTES ***
 
 3-STEP
-- add canvas.js to /js folder
-- create moveAt function (sx, sy, ex, ey, speed)
-- create jsHelper repo and add canvasAnime.js(with moveAt), canvas.js myFuncs built-in js, map.js, reduce.js, filter.js, promise,js, error.js...
+- fix hover out on dropdown bug.
+- build lines for dropdown with canvas.js in way we want to use it with header/background.
+  - create moveAt function (sx, sy, ex, ey, speed)
+- Add canvas_moveAt.js func to jsHelper
+
+NEXT
 - convert background to use canvas class (IT'S SLOW With DIVS!!!)
 - convert header to use canvas class
-
-- - - -
-tab: set my image! or something phun
-
-Header:
-- have Earth to Bob popup flash
-
-Body - Page Landing
-- "Welcome to Earth To Bob"
-  - [Projects Chart]
-
-Body - Page Project chart
-  - make sortable
-
-Body - Page Admin
-  - Admin (only when you click "Bob" in )
-
-Body - Page Contact
-
-Body - Page Sign In
-
-Footer
-- CopyRight dynamic year
+- create login *full page effect. Make it a redundent eventual two-step when you've got to load google's popup.
+- url isn't set up for initial landing on page. like pasting a new tab with > index.html#projects dosn't take you to the projects page
 
 -->

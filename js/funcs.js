@@ -6,10 +6,10 @@ _rand = (min, max)=>{
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-_toggleComponent = (id, btnId, display)=>{
+_toggleComponent = (id, btnId, icon)=>{
   var component = document.getElementById(id)
   if (!component.style.display || component.style.display === 'none') {
-    component.style.display = display || 'block'
+    component.style.display = 'block'
     setTimeout(()=>{ component.style.opacity = 1 },10)
   } else {
     component.style.opacity = 0
@@ -29,5 +29,14 @@ _toggleComponent = (id, btnId, display)=>{
   if (btnId === 'dropdownIcon') {
     btn1(document.getElementById(btnId));
   }
-  
+
+}
+
+_checkDropDownState = (event,id)=>{
+  if (event.toElement.id !== 'container') {
+    let component = document.getElementById(id)
+    component.style.opacity = 0
+    setTimeout(()=>{ component.style.display = 'none' }, 250)
+  }
+
 }
