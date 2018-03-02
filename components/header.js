@@ -133,8 +133,8 @@ _header = (id)=>{
   <a href="https://www.linkedin.com/in/bobmain49"><img class='linkIcon h1' id='linkedInIcon' src="gfx/linkedinIcon.svg"></a>
   <a href="https://twitter.com/BobMain49"><img class='linkIcon h1' id='twitterIcon' src="gfx/twitericon.svg" ></a>
   <img id='dropdownIcon' class='linkIcon' src="gfx/dropdownIcon2.png"
-    onClick="_toggleComponent('dropdown','dropdownIcon')"
-    onMouseleave="_checkDropDownState(event, 'dropdown')">
+    onClick="_toggleDropdown('dropdown','dropdownIcon')"
+    onMouseleave="_checkDropdownState(event,'dropdown','dropdownIcon')">
 
   `
 /* --------------------------------------------------------- */

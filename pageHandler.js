@@ -1,4 +1,5 @@
 _setPage = (newPage)=>{
+  console.log(newPage)
   if (!newPage) newPage = 'landing'
   if (newPage !== _activePage) {
     let oldPage = document.getElementById(_activePage)
