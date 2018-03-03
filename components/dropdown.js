@@ -23,7 +23,7 @@ _dropdown = (id, sheet)=>{
     }
   }
 
-  animateLines = (go = false)=>{
+  animateLines = (go)=>{
     c.clear()
     vert.p <= vert.e ? go = true : vert.p = vert.e
     vert.p = vert.p * vert.r
@@ -33,7 +33,7 @@ _dropdown = (id, sheet)=>{
       l.p = l.p*l.r
       c.line(l.s, l.y, l.p, l.y,'blue',0.4)
     }
-    if (go) setTimeout(()=>{ animateLines() },10)
+    if (go) window.requestAnimationFrame(()=>{animateLines(false)})
   }
 
   buildCanvas = ()=>{

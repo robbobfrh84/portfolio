@@ -6,6 +6,11 @@ class canvas {
     this.ctx.canvas.height = height
   }
 
+  resize (width, height) {
+    this.ctx.canvas.width = width
+    this.ctx.canvas.height = height
+  }
+
   line (startX, startY, endX, endY, strokeColor, lineWidth) {
     this.ctx.beginPath()
     this.ctx.moveTo(startX, startY)
@@ -42,7 +47,6 @@ class canvas {
       if (p[0] === 'l') this.ctx.lineTo(p[1],p[2])
       if (p[0] === 'q') this.ctx.quadraticCurveTo(p[1],p[2],p[3],p[4])
       if (p[0] === 'b') this.ctx.bezierCurveTo(p[1],p[2],p[3],p[4],p[5],p[6])
-
     }
 
     this.paint( lineWidth || 1, strokeColor || 'black', fillColor || 'black'  )
@@ -56,10 +60,6 @@ class canvas {
     this.ctx.fillText(content, x, y)
   }
 
-  clear () {
-    this.ctx.clearRect(0,0,this.ctx.canvas.width,this.ctx.canvas.height)
-  }
-
   scale (s1, s2) {
     this.ctx.scale(s1, s2)
   }
@@ -68,6 +68,18 @@ class canvas {
     this.ctx.fillStyle = fill
     this.ctx.lineWidth = width
     this.ctx.strokeStyle = stroke
+  }
+
+  lGrad (obj, g = obj.gradient, cols = obj.colors ) {
+    var gradient = this.ctx.createLinearGradient(g[0],g[1],g[2],g[3])
+    for (const c of cols) {
+      gradient.addColorStop( c[0], c[1] )
+    }
+    return gradient
+  }
+
+  clear () {
+    this.ctx.clearRect(0,0,this.ctx.canvas.width,this.ctx.canvas.height)
   }
 
 }
