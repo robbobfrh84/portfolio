@@ -3,9 +3,8 @@ _dropdown = (id, sheet)=>{
   let btns = [
     { name: 'Projects', icon: '&#x2606;', id: 'projects' },
     { name: 'Contact', icon: '&#x260e;', id: 'contact' },
+    { name: 'Log In', icon: '&#10167;', id: 'login' },
     { name: 'Home', icon: '&#x021D0;', id: 'landing' },
-    { name: 'Log In', icon: '&#x031D0;', id: 'landing' },
-    { name: 'Search', icon: '&#x041D0;', id: 'landing' }
   ]
   const w = 200
   const h = btns.length*25+25+7

@@ -1,5 +1,5 @@
 _landing = (id, sheet)=>{
-  setTimeout(()=>{ id.style.opacity = 1 },250)
+  //setTimeout(()=>{ id.style.opacity = 1 },250)
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
@@ -18,6 +18,10 @@ _landing = (id, sheet)=>{
     <div class='landing-button' onClick='_setPage("contact")'>
       Contact Info
     </div>
+
+    <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr>
+    <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr>
+
 
   </div>
 
@@ -43,7 +47,8 @@ _landing = (id, sheet)=>{
     font-family: Avenir;
     font-weight: 100;
     color: #444;
-    background: url('gfx/paper_fibers.png');
+    //background: url('gfx/paper_fibers2.png');
+    background-color: #e8e8ec;
     border: 2px dashed #bbb;
     box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0),
       2px 2px 2px 0px rgba(0,0,0,0.5);
@@ -77,3 +82,4 @@ _landing = (id, sheet)=>{
   /* --------------------------------------------------------- */
   document.body.appendChild(sheet);
 }
+_landing( document.getElementById('landing'), _style() )

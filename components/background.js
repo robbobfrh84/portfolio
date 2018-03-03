@@ -4,7 +4,7 @@ _background = (id, sheet)=>{
   let lines = new Array(20).fill(0);
   let lineW = 300;
   let color;
-  let colors = [["0.1","rgba(0,0,0,0)"],[ "0.8","blue"],["0.9","rgba(0,0,0,0)"]]
+  let colors = [["0.1","rgba(0,0,0,0)"],[ "0.8","rgba(0,0,255,0.7)"],["0.9","rgba(0,0,0,0)"]]
 
   move = ()=>{
     c.clear()

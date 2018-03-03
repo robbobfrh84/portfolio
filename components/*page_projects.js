@@ -1,5 +1,4 @@
 _projects = (id, sheet)=>{
-  // id.style.opacity = 1
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
@@ -11,12 +10,15 @@ _projects = (id, sheet)=>{
   sheet.innerHTML = `
 
     #projects {
+      position: absolute;
+      top: 80;
       display: none;
-      transition: opacity .25s;
+      transition: opacity 2s;
     }
 
   `
   /* --------------------------------------------------------- */
+  //id.style.opacity = 0
   document.body.appendChild(sheet);
 }
 _projects( document.getElementById('projects'), _style() )

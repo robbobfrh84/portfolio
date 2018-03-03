@@ -3,11 +3,14 @@ var _windowWidth = window.innerWidth
 var _activePage = 'landing'
 
 window.onload = ()=>{
-  _setPage(_activePage)
+  _setPage(window.location.hash.split('#')[1], true)
   _header(document.getElementById('header'))
   _background( document.getElementById('background'), _style() )
-  _footer( document.getElementById('footer'), _style() )
-  _landing( document.getElementById('landing'), _style() )
+  // _footer( document.getElementById('footer'), _style() )
+  // setTimeout(()=>{
+  //   _landing( document.getElementById('landing'), _style() )
+  // },250)
+
   document.body.style.opacity = 1
 }
 

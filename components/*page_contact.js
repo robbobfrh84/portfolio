@@ -1,5 +1,4 @@
 _contact = (id, sheet)=>{
-  id.style.opacity = 1
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
@@ -11,12 +10,15 @@ _contact = (id, sheet)=>{
   sheet.innerHTML = `
 
     #contact {
+      position: absolute;
+      top: 80;
       display: none;
-      transition: opacity .25s;
+      transition: opacity 2s;
     }
 
   `
   /* --------------------------------------------------------- */
+  // id.style.opacity = 0
   document.body.appendChild(sheet);
 }
 _contact( document.getElementById('contact'), _style() )

@@ -61,6 +61,7 @@ _footer = (id, sheet)=>{
 
 _footerResize = ()=>{
   let footer = document.getElementById('footer')
+  console.log(document.body.clientHeight+30)
   if (window.innerHeight >= document.body.clientHeight+30) {
     footer.style.position = 'absolute'
   } else {
