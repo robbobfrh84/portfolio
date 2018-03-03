@@ -23,8 +23,6 @@ _landing = (id, sheet)=>{
 
   `
   /* ---------------------- { style } ------------------------ */
-  // padding-right: ${_lineW+50}px;
-
   sheet.innerHTML = `
 
   #landing {

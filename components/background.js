@@ -2,7 +2,8 @@ _background = (id, sheet)=>{
 
   let c = new canvas
   let lines = new Array(20).fill(0);
-  let lineW = 300; let color;
+  let lineW = 300;
+  let color;
   let colors = [["0.1","rgba(0,0,0,0)"],[ "0.8","blue"],["0.9","rgba(0,0,0,0)"]]
 
   move = ()=>{
@@ -44,7 +45,6 @@ _background = (id, sheet)=>{
       position: absolute;
       top: 0;
       left: 0;
-      background-color: rgba(255,0,0,0.2);
       z-index: -1000000;
       transition: opacity 1s; // make sure toggled display matches.
     }
@@ -55,4 +55,3 @@ _background = (id, sheet)=>{
   id.style.opacity = 1
   document.body.appendChild(sheet);
 }
-// _background( document.getElementById('background'), _style() )
