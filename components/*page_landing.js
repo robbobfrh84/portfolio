@@ -1,5 +1,4 @@
 _landing = (id, sheet)=>{
-  //setTimeout(()=>{ id.style.opacity = 1 },250)
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
@@ -19,22 +18,17 @@ _landing = (id, sheet)=>{
       Contact Info
     </div>
 
-    <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr>
-    <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr>
-
-
   </div>
 
-  `
+  <!--
+  <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr> 
+  -->
 
-  setInterval(()=>{ id.innerHTML += ` ${ new Date() }<br><hr>` },2000)
+  `
   /* ---------------------- { style } ------------------------ */
   sheet.innerHTML = `
 
   #landing {
-
-    // position: absolute;
-    // top: 80px;
     display: none;
     width: 100%;
     text-align: center;

@@ -12,20 +12,6 @@ _toggleDropdown = (id, btnId)=>{
     setTimeout(()=>{ component.style.display = 'none' }, 250)
   }
 
-  // btn1 = (btnId)=>{
-  //   if (btnId.style.opacity !== '1') {
-  //     btnId.style.backgroundColor = 'rgba(0,0,0,0.1)'
-  //     btnId.style.opacity = 1
-  //   } else {
-  //     btnId.style.backgroundColor = 'rgba(0,0,0,0)'
-  //     btnId.style.opacity = 0.5
-  //   }
-  // }
-
-  // if (btnId === 'dropdownIcon') {
-  //   btn1(document.getElementById(btnId));
-  // }
-
 }
 
 _checkDropdownState = (event, id, btnId, toElm)=>{
@@ -43,10 +29,7 @@ _checkDropdownState = (event, id, btnId, toElm)=>{
       if (hover !== 'pageContainer' && hover) {
         component.style.opacity = 0
         setTimeout(()=>{ component.style.display = 'none' }, 250)
-        // btn.style.backgroundColor = 'rgba(0,0,0,0)'
-        // btn.style.opacity = 0.5
       }
     }, 250)
-
   }
 }

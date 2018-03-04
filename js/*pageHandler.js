@@ -4,37 +4,21 @@ _setPage = (newPage, initial)=>{
   if (newPage !== _activePage) {
     if (_activePage) {
       let oldPage = document.getElementById(_activePage)
-      // setTimeout(()=>{ oldPage.style.opacity = 0  },200)
+      oldPage.style.opacity = 0
       window.requestAnimationFrame(()=>{
-        oldPage.style.opacity = 0
-        window.requestAnimationFrame(()=>{
-          oldPage.style.display = 'none'
-          _footerResize()
-        })
-        // setTimeout(()=>{
-        //   oldPage.style.display = 'none';
-        //   //_footerResize()
-        // },2000)
+        oldPage.style.display = 'none'
+        _footerResize()
+        window.scrollTo(0, 0);
       })
-
     }
-
     let page = document.getElementById(newPage)
-    //page.style.opacity = 0
-    //setTimeout(()=>{ page.style.opacity = 1 },260)
-    // setTimeout(()=>{ page.style.opacity = 1 },200)
-    // setTimeout(()=>{ page.style.display = 'block' }, 100)
+    page.style.display = 'block'
     window.requestAnimationFrame(()=>{
-      page.style.display = 'block'
-      window.requestAnimationFrame(()=>{
-        page.style.opacity = 1
-      })
+      page.style.opacity = 1
     })
-
     _activePage = newPage
     _setHash(_activePage)
   }
-
 }
 
 _setHash = (hash) => {

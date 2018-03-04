@@ -10,8 +10,6 @@ _projects = (id, sheet)=>{
   sheet.innerHTML = `
 
     #projects {
-      // position: absolute;
-      // top: 80;
       display: none;
       transition: opacity 1s;
       padding: 50px;
@@ -20,7 +18,6 @@ _projects = (id, sheet)=>{
 
   `
   /* --------------------------------------------------------- */
-  setInterval(()=>{ id.innerHTML += ` ${ new Date() }<br><hr>` },500)
   document.body.appendChild(sheet);
 }
 _projects( document.getElementById('projects'), _style() )

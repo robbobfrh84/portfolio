@@ -10,8 +10,6 @@ _contact = (id, sheet)=>{
   sheet.innerHTML = `
 
     #contact {
-      // position: absolute;
-      // top: 80;
       display: none;
       transition: opacity 1s;
       padding: 50px;

@@ -61,32 +61,14 @@ _footer = (id, sheet)=>{
 
 _footerResize = ()=>{
   let footer = document.getElementById('footer')
-
-  let footerGrid = document.getElementById('footerGrid')
-
-  // console.log(window.innerHeight, document.documentElement.scrollHeight+30, footer)
-
   if (window.innerHeight >= document.body.clientHeight+30) {
     footer.style.position = 'absolute'
   } else {
     footer.style.position = 'relative'
   }
-
-  // if (footerGrid) {
-  //   footer.style.top = (document.documentElement.scrollHeight-footerGrid.offsetHeight)+'px'
-  //   window.requestAnimationFrame(()=>{
-  //     setTimeout(()=>{
-  //       footer.style.top = 0
-  //       _footerResize()
-  //     },250)
-  //   })
-  //}
-
-  window.requestAnimationFrame(()=>{
+  window.requestAnimationFrame(()=>{ // this checks if the content has been edited dynamically to make sure footer sits on the bottom.
     setTimeout(()=>{
       _footerResize()
     },500)
   })
-
 }
-//window.requestAnimationFrame(_footerResize)
