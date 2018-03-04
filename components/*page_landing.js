@@ -26,10 +26,16 @@ _landing = (id, sheet)=>{
   </div>
 
   `
+
+  setInterval(()=>{ id.innerHTML += ` ${ new Date() }<br><hr>` },2000)
   /* ---------------------- { style } ------------------------ */
   sheet.innerHTML = `
 
   #landing {
+
+    // position: absolute;
+    // top: 80px;
+    display: none;
     width: 100%;
     text-align: center;
     transition: opacity 2s;

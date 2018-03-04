@@ -1,16 +1,20 @@
 _setPage = (newPage, initial)=>{
   if (!newPage) newPage = 'landing'
   if (initial) _activePage = ''
-
-  console.log('Current Page: ', newPage)
   if (newPage !== _activePage) {
     if (_activePage) {
       let oldPage = document.getElementById(_activePage)
       // setTimeout(()=>{ oldPage.style.opacity = 0  },200)
       window.requestAnimationFrame(()=>{
         oldPage.style.opacity = 0
-        oldPage.style.display = 'none'
-        //setTimeout(()=>{ oldPage.style.display = 'none' },2000)
+        window.requestAnimationFrame(()=>{
+          oldPage.style.display = 'none'
+          _footerResize()
+        })
+        // setTimeout(()=>{
+        //   oldPage.style.display = 'none';
+        //   //_footerResize()
+        // },2000)
       })
 
     }

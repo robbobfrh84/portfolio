@@ -4,25 +4,27 @@ _toggleDropdown = (id, btnId)=>{
   if (!component.style.display || component.style.display === 'none') {
     _dropdown( document.getElementById('dropdown'), _style() )
     component.style.display = 'block'
+    component.style.pointerEvents = 'all'
     setTimeout(()=>{ component.style.opacity = 1 },10)
   } else {
     component.style.opacity = 0
+    component.style.pointerEvents = 'none'
     setTimeout(()=>{ component.style.display = 'none' }, 250)
   }
 
-  btn1 = (id)=>{
-    if (id.style.opacity !== '1') {
-      id.style.backgroundColor = 'rgba(0,0,0,0.1)'
-      id.style.opacity = 1
-    } else {
-      id.style.backgroundColor = 'rgba(0,0,0,0)'
-      id.style.opacity = 0.5
-    }
-  }
+  // btn1 = (btnId)=>{
+  //   if (btnId.style.opacity !== '1') {
+  //     btnId.style.backgroundColor = 'rgba(0,0,0,0.1)'
+  //     btnId.style.opacity = 1
+  //   } else {
+  //     btnId.style.backgroundColor = 'rgba(0,0,0,0)'
+  //     btnId.style.opacity = 0.5
+  //   }
+  // }
 
-  if (btnId === 'dropdownIcon') {
-    btn1(document.getElementById(btnId));
-  }
+  // if (btnId === 'dropdownIcon') {
+  //   btn1(document.getElementById(btnId));
+  // }
 
 }
 
@@ -37,12 +39,12 @@ _checkDropdownState = (event, id, btnId, toElm)=>{
     const btn = document.getElementById(btnId)
     setTimeout(()=>{
       let hover = document.querySelectorAll( ":hover" )
-      hover = hover[hover.length-1].id
+      if (hover[hover.length-1]) hover = hover[hover.length-1].id
       if (hover !== 'pageContainer' && hover) {
         component.style.opacity = 0
         setTimeout(()=>{ component.style.display = 'none' }, 250)
-        btn.style.backgroundColor = 'rgba(0,0,0,0)'
-        btn.style.opacity = 0.5
+        // btn.style.backgroundColor = 'rgba(0,0,0,0)'
+        // btn.style.opacity = 0.5
       }
     }, 250)
 

@@ -23,7 +23,7 @@ _footer = (id, sheet)=>{
   sheet.innerHTML = `
 
   #footer {
-    position: relative;
+    position: absolute;
     left: 0px;
     bottom: 0px;
     width: 100%;
@@ -56,15 +56,37 @@ _footer = (id, sheet)=>{
   `
 /* --------------------------------------------------------- */
   document.body.appendChild(sheet)
-  _footerResize()
+  window.requestAnimationFrame(_footerResize)
 }
 
 _footerResize = ()=>{
   let footer = document.getElementById('footer')
-  console.log(document.body.clientHeight+30)
+
+  let footerGrid = document.getElementById('footerGrid')
+
+  // console.log(window.innerHeight, document.documentElement.scrollHeight+30, footer)
+
   if (window.innerHeight >= document.body.clientHeight+30) {
     footer.style.position = 'absolute'
   } else {
     footer.style.position = 'relative'
   }
+
+  // if (footerGrid) {
+  //   footer.style.top = (document.documentElement.scrollHeight-footerGrid.offsetHeight)+'px'
+  //   window.requestAnimationFrame(()=>{
+  //     setTimeout(()=>{
+  //       footer.style.top = 0
+  //       _footerResize()
+  //     },250)
+  //   })
+  //}
+
+  window.requestAnimationFrame(()=>{
+    setTimeout(()=>{
+      _footerResize()
+    },500)
+  })
+
 }
+//window.requestAnimationFrame(_footerResize)

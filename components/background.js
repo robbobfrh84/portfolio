@@ -8,7 +8,7 @@ _background = (id, sheet)=>{
 
   move = ()=>{
     c.clear()
-    c.resize(window.innerWidth, window.innerHeight)
+    c.resize(window.innerWidth, window.innerHeight-30)
     for (const l of lines) {
       l.p += l.r
       let color = c.lGrad({ gradient: [ l.p, 0, l.p+lineW, 0], colors: colors })
@@ -27,7 +27,7 @@ _background = (id, sheet)=>{
   }
 
   buildCanvas = ()=>{
-    c.new('backgroundCanvas', window.innerWidth, window.innerHeight)
+    c.new('backgroundCanvas', window.innerWidth, window.innerHeight-30)
     lines = lines.map( (v,i) => newValues(i) )
     setTimeout(()=>{ move() },1000)
   }

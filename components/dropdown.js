@@ -77,6 +77,7 @@ _dropdown = (id, sheet)=>{
       width: ${w}px;
       height: 25px;
       cursor: pointer;
+      z-index: 1;
       transition: opacity .25s; // make sure toggled display matches.
     }
 
@@ -114,4 +115,3 @@ _dropdown = (id, sheet)=>{
   buildCanvas()
   document.body.appendChild(sheet);
 }
-// _dropdown( document.getElementById('dropdown'), _style() )
