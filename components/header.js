@@ -126,7 +126,7 @@ _header = (id)=>{
   <div id='earthToBob' class='bg'>
     <div>E</div><div>A</div><div>R</div><div>T</div><div>H</div><div>&bull;</div><div>T</div><div>O</div><div>&bull;</div><div>B</div><div>O</div><div>B</div>
   </div>
-  <a href="http://www.tobob.earth"><div id='bobBtn'></div></a>
+  <div id='bobBtn' onClick="_setPage('login')"></div>
   <div id='homeBtn' onClick='_setPage("landing")'></div>
   <a href="https://github.com/robbobfrh84"><img class='linkIcon h1' id='gitIcon' src="gfx/git2.svg"></a>
   <a href="https://codepen.io/robbobfrh84"><img class='linkIcon h1' id='codepenIcon' src="gfx/codepenicon.svg"></a>
