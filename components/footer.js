@@ -28,6 +28,7 @@ _footer = (id, sheet)=>{
     bottom: 0px;
     width: 100%;
     text-align: center;
+    margin-top: 50px;
     color: #444;
     transition: opacity 2s;
   }
