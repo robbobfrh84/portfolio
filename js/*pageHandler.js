@@ -19,6 +19,12 @@ _setPage = (newPage, initial)=>{
     _activePage = newPage
     _setHash(_activePage)
   }
+  const headerPages = document.getElementById('header-pages')
+  if (_activePage === 'login') {
+    headerPages.classList.add('blurr')
+  } else {
+    headerPages.classList.remove('blurr')
+  }
 }
 
 _setHash = (hash) => {
