@@ -2,7 +2,6 @@ _login = (id, sheet)=>{
 
 id.addEventListener('click', ()=>{
   if (event.srcElement.id === 'login') {
-    console.log('go back')
     window.history.back()
   }
 })

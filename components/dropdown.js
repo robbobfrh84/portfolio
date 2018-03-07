@@ -41,10 +41,6 @@ _dropdown = (id, sheet)=>{
     animateLines(1)
   }
 
-  id.addEventListener('mouseleave', ()=>{
-    _toggleDropdown('dropdown','dropdownIcon')
-  })
-
   buildBtns = ()=>{
     const pages = document.getElementById('pageContainer')
     for (const btn of btns) {
@@ -57,6 +53,12 @@ _dropdown = (id, sheet)=>{
       `
     }
   }
+
+  id.addEventListener('mouseleave', (event)=>{
+    if (event.toElement.id !== 'dropdownIcon') {
+      _toggleDropdown('dropdown','dropdownIcon')
+    }
+  })
 
 /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
@@ -96,12 +98,11 @@ _dropdown = (id, sheet)=>{
       padding-top: 3px;
       height: 22px;
       letter-spacing: 2px;
-      transition: background .25s;
+      background: url('gfx/paper_fibers.png');
     }
 
     .page:hover {
-      background: rgba(0,0,0,0.1);
-      transition: background .25s;
+      background: #ddd;
     }
 
     .icon {

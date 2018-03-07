@@ -1,4 +1,4 @@
-_contact = (id, sheet)=>{
+_contact = (id, sheet, initial)=>{
 
   animateMorse = ()=>{
     window.requestAnimationFrame(()=>{
@@ -21,10 +21,27 @@ _contact = (id, sheet)=>{
     })
   }
 
+  animateLines = ()=> {
+    const w = id.clientWidth+20
+    const h = id.clientHeight+20
+    const c = new canvas
+    const col = 'rgba(0,0,255,0.4)'
+
+    c.new('contact-canvas', w, h)
+    c.lineGrow(0,10,w,10,col,1,5,1.05)
+    c.lineGrow(10,0,10,h,col,1,5,1.05)
+
+    c.lineGrow(w-10,0,w-10,h,col,1,5,1.05)
+    c.lineGrow(w,h-10,0,h-10,col,1,5,1.05)
+
+    c.animate()
+  }
+
 
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
 
+    <canvas id='contact-canvas'></canvas>
 
     <div id='morse-animation'>
       <div id='title'> Contact Info </div>
@@ -56,7 +73,9 @@ _contact = (id, sheet)=>{
 
     <br><br><br>
 
-    <img id='profile-pic' src='gfx/bob.png'>
+    <div id='contact-profile-pic'>
+      <img id='profile-pic' src='gfx/bob.png'>
+    </div>
 
 
     </p>
@@ -67,40 +86,51 @@ _contact = (id, sheet)=>{
 
     #contact {
       display: none;
+      position: relative;
       margin: auto;
-      margin-top: 30px;
-      width: 440px;
+      margin-top: 35px;
+      width: 65%;
+      max-width: 800px;
       padding-top: 60px;
       font-size: 28px;
       font-family: Avenir;
       color: rgba(0,0,0,0.5);
       transition: opacity 1s;
-      background-color: rgba(0,0,0,0.1);
-      border-radius: 10px;
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    #contact-canvas {
+      position: absolute;
+      top: -10px; left: -10px;
+    }
+
+    @media only screen and (max-width: 600px)  {
+        #contact {
+          width: 100%;
+        }
     }
 
     #morse-animation {
       position: relative;
-      top: -45px; left: 20px;
-      width: 440px;
+      top: -45px; right: 1px;
       height: 150px;
       margin: auto;
     }
 
     .morse {
       position: absolute;
-      top: 0; left: 118px;
-      width: 300px;
+      top: 0; right: 0px;
+      width: 250px;
       pointer-events: none;
     }
 
     #title {
       position: absolute;
-      top: 0; left: 0;
+      top: 5px; left: 35px;
     }
 
     #underline {
-      margin: -56px 20px 0 20px;
+      margin: -80px 20px 0 20px;
       width: 200px:
       height: 4px;
       min-height: 4px;
@@ -111,24 +141,26 @@ _contact = (id, sheet)=>{
 
     #write-up {
       font-size: 18px;
-      max-width: 400px;
       font-weight: 500;
       margin: auto;
-      padding-top: 20px;
+      padding: 30px;
+    }
+
+    #contact-profile-pic {
+      text-align: center;
     }
 
     #profile-pic {
-      margin-top: -20px;
-      margin-left: 80px;
+      margin-top: -50px;
       margin-bottom: 20px;
-
       width: 250px;
       border-radius: 100%;
     }
 
   `
   /* --------------------------------------------------------- */
-  animateMorse()
+  if (initial) animateMorse(initial)
+  setTimeout(()=>{ animateLines() },250)
   document.body.appendChild(sheet);
 }
-_contact( document.getElementById('contact'), _style() )
+_contact( document.getElementById('contact'), _style(), true )

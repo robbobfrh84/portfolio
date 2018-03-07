@@ -13,6 +13,14 @@ window.onload = ()=>{
 window.onresize = ()=>{
   if (_windowWidth != window.innerWidth) {
     _header(document.getElementById('header'))
+    switch(_activePage) {
+      case 'projects':
+        _projects( document.getElementById('projects'), _style() )
+        break;
+      case 'contact':
+        _contact( document.getElementById('contact'), _style() )
+        break;
+    }
   }
   _footerResize()
   _windowWidth = window.innerWidth

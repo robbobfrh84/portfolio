@@ -1,6 +1,9 @@
 _setPage = (newPage, initial)=>{
   if (!newPage) newPage = 'landing'
   if (initial) _activePage = ''
+  if (newPage === 'projects') {
+    _projects( document.getElementById('projects'), _style() )
+  }
   if (newPage !== _activePage) {
     if (_activePage) {
       let oldPage = document.getElementById(_activePage)
