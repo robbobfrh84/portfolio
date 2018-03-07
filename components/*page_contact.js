@@ -1,4 +1,4 @@
-_contact = (id, sheet, initial)=>{
+_contact = (id, sheet, resize)=>{
 
   animateMorse = ()=>{
     window.requestAnimationFrame(()=>{
@@ -15,7 +15,7 @@ _contact = (id, sheet, initial)=>{
       const delay = _rand(1,4) === 1 ? 400 : 80
       setTimeout(()=>{
         window.requestAnimationFrame(()=>{
-          animateMorse()
+          if (_activePage === 'contact') animateMorse()
         })
       },delay)
     })
@@ -28,11 +28,10 @@ _contact = (id, sheet, initial)=>{
     const col = 'rgba(0,0,255,0.4)'
 
     c.new('contact-canvas', w, h)
-    c.lineGrow(0,10,w,10,col,1,5,1.05)
-    c.lineGrow(10,0,10,h,col,1,5,1.05)
-
-    c.lineGrow(w-10,0,w-10,h,col,1,5,1.05)
-    c.lineGrow(w,h-10,0,h-10,col,1,5,1.05)
+    c.lineGrow(0,10,w,10,col,1,5,1.03)
+    c.lineGrow(10,0,10,h,col,1,5,1.03)
+    c.lineGrow(w-10,0,w-10,h,col,1,5,1.03)
+    c.lineGrow(w,h-10,0,h-10,col,1,5,1.03)
 
     c.animate()
   }
@@ -159,8 +158,8 @@ _contact = (id, sheet, initial)=>{
 
   `
   /* --------------------------------------------------------- */
-  if (initial) animateMorse(initial)
+  if (!resize) animateMorse()
   setTimeout(()=>{ animateLines() },250)
   document.body.appendChild(sheet);
 }
-_contact( document.getElementById('contact'), _style(), true )
+// _contact( document.getElementById('contact'), _style())

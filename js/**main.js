@@ -1,6 +1,7 @@
 /* * * * * * GLOBAL VARS * * * * * */
 var _windowWidth = window.innerWidth
 var _activePage = 'landing'
+var _browsers = {}
 
 window.onload = ()=>{
   _setPage(window.location.hash.split('#')[1], true)
@@ -18,10 +19,22 @@ window.onresize = ()=>{
         _projects( document.getElementById('projects'), _style() )
         break;
       case 'contact':
-        _contact( document.getElementById('contact'), _style() )
+        _contact( document.getElementById('contact'), _style(), true )
         break;
     }
   }
   _footerResize()
   _windowWidth = window.innerWidth
 }
+
+(()=>{
+  _browsers = {
+    isOpera: (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0,
+    isFirefox: typeof InstallTrigger !== 'undefined',
+    isSafari: /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)),
+    isIE: /*@cc_on!@*/false || !!document.documentMode,
+    isEdge: !_browsers.isIE && !!window.StyleMedia,
+    isChrome: !!window.chrome && !!window.chrome.webstore,
+    isBlink: (_browsers.isChrome || _browsers.isOpera) && !!window.CSS,
+  }
+})();

@@ -1,9 +1,6 @@
 _setPage = (newPage, initial)=>{
   if (!newPage) newPage = 'landing'
   if (initial) _activePage = ''
-  if (newPage === 'projects') {
-    _projects( document.getElementById('projects'), _style() )
-  }
   if (newPage !== _activePage) {
     if (_activePage) {
       let oldPage = document.getElementById(_activePage)
@@ -23,7 +20,17 @@ _setPage = (newPage, initial)=>{
     _setHash(_activePage)
   }
   const headerPages = document.getElementById('header-pages')
-  if (_activePage === 'login') {
+  switch(_activePage) {
+    case 'projects':
+      _projects( document.getElementById('projects'), _style() )
+      break;
+    case 'contact':
+      _contact( document.getElementById('contact'), _style() )
+      break;
+    case 'login':
+
+  }
+  if (_activePage === 'login' && !_browsers.isFirefox) {
     headerPages.classList.add('blurr')
   } else {
     headerPages.classList.remove('blurr')

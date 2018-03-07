@@ -1,10 +1,10 @@
 _login = (id, sheet)=>{
 
-id.addEventListener('click', ()=>{
-  if (event.srcElement.id === 'login') {
-    window.history.back()
-  }
-})
+  id.addEventListener('click', (event)=>{
+    if (event.target.id === 'login') {
+      window.history.back()
+    }
+  })
 
 /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
