@@ -2,16 +2,21 @@ _projects = (id, sheet, data = _data.projects)=>{
 
   buildLines = ()=>{
     const canvases = document.getElementsByClassName('projects-canvas')
+    let c = []
     for (var i = 0; i < canvases.length; i++) {
       const w = canvases[i].parentElement.clientWidth
       const h = canvases[i].parentElement.clientHeight
       canvases[i].id = 'canvas'+i
-      let c = new canvas
-      c.new(canvases[i].id, w, h)
-      c.line(0,5,w,5,'rgba(0,0,255,0.3)',2)
-      c.line(0,h-5,w,h-5,'rgba(0,0,255,0.3)',2)
-      c.line(5,0,5,h,'rgba(0,0,255,0.3)',2)
-      c.line(w-5,0,w-5,h,'rgba(0,0,255,0.3)',2)
+      c[i] = new canvas
+      c[i].new(canvases[i].id, w, h)
+      c[i].lineGrow(0,5,w,5,'rgba(0,0,255,0.3)',2,5,1.03)
+      c[i].lineGrow(w,h-5,0,h-5,'rgba(0,0,255,0.3)',2,5,1.03)
+      c[i].lineGrow(5,0,5,h,'rgba(0,0,255,0.3)',2,0.25,1.03)
+      c[i].lineGrow(w-5,h,w-5,0,'rgba(0,0,255,0.3)',2,0.25,1.03)
+      const index = i
+      setTimeout(()=>{
+        c[index].animate()
+      },250*i)
     }
   }
 
@@ -19,7 +24,7 @@ _projects = (id, sheet, data = _data.projects)=>{
 
   id.innerHTML = `
 
-  Component: projects
+  <div id='projects-title'> Projects </div>
   <div id='projects-container'></div>
 
   `
@@ -49,13 +54,13 @@ _projects = (id, sheet, data = _data.projects)=>{
       display: none;
       transition: opacity 1s;
       margin-top: 30px;
-      padding: 10px;
-      border: 2px solid rgba(125,0,0,0.3);
     }
 
-    #projects-container {
-      margin: 10px 10px 10px 10px;
-      border: 1.5px solid rgba(0,100,0,0.4);
+    #projects-title {
+      text-align: center;
+      font-size: 28px;
+      font-family: Avenir;
+      color: rgba(0,0,0,0.5);
     }
 
     .projects-box {
