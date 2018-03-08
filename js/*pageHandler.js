@@ -27,13 +27,6 @@ _setPage = (newPage, initial)=>{
     case 'contact':
       _contact( document.getElementById('contact'), _style() )
       break;
-    case 'login':
-
-  }
-  if (_activePage === 'login' && !_browsers.isFirefox) {
-    headerPages.classList.add('blurr')
-  } else {
-    headerPages.classList.remove('blurr')
   }
 }
 

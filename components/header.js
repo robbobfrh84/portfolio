@@ -26,7 +26,7 @@ _header = (id)=>{
     icn[1].style.left = (adj-201)+'px'; icn[1].p = [0,22,(adj-188),23,1900]
     icn[2].style.left = (adj-151)+'px'; icn[2].p = [0,22,(adj-138),23,1800]
     icn[3].style.left = (adj-112)+'px'; icn[3].p = [0,22,(adj-88),35,2100]
-    icn[4].style.left = (adj-62) +'px'; icn[4].p = [0,22,(adj-38),23,1600]
+    icn[4].style.left = (adj-62) +'px'; icn[4].p = [0,22,(adj-38),23,250]
     for (const c of icn) {
       c.style.display = 'none'
       setTimeout(()=>{ iconGrow(c, c.p[0], c.p[1], c.p[2], c.p[3], wW) },c.p[4])

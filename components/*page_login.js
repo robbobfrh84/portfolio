@@ -28,7 +28,7 @@ _login = (id, sheet)=>{
       position: absolute;
       top: 0; right: 0; bottom: 0; left: 0;
       display: none;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.7);
       transition: opacity 1s;
       z-index: 1;
     }
@@ -42,7 +42,7 @@ _login = (id, sheet)=>{
       top: -30px; left: 0; bottom: 0; right: 0;
       border-radius: 10px;
       font-size: 25px;
-      background-color: rgba(0,0,0,0.2);
+      background-color: rgba(255,255,255,0.15);
       box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.6);
       color: #bbb;
     }
