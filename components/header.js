@@ -1,4 +1,4 @@
-_header = (id)=>{
+_header = (id, sheet)=>{
 
   lettersAnnimation = ()=>{
     let title = document.getElementById('earthToBob')
@@ -20,31 +20,36 @@ _header = (id)=>{
 
   linkIconsAnnimation = ()=>{
     const wW = window.innerWidth
-    const adj = parseInt(window.innerWidth/25)*25
+    const adj = parseInt(window.innerWidth/25)*25-25
     let icn = document.getElementsByClassName('linkIcon')
     icn[0].style.left = (adj-241)+'px'; icn[0].p = [0,22,(adj-238),25,1500]
     icn[1].style.left = (adj-201)+'px'; icn[1].p = [0,22,(adj-188),23,1900]
     icn[2].style.left = (adj-151)+'px'; icn[2].p = [0,22,(adj-138),23,1800]
     icn[3].style.left = (adj-112)+'px'; icn[3].p = [0,22,(adj-88),35,2100]
-    icn[4].style.left = (adj-62) +'px'; icn[4].p = [0,22,(adj-38),23,250]
     for (const c of icn) {
       c.style.display = 'none'
       setTimeout(()=>{ iconGrow(c, c.p[0], c.p[1], c.p[2], c.p[3], wW) },c.p[4])
     }
+    setTimeout(()=>{
+      let balls = document.getElementById('dropdownIcon')
+      balls.style.opacity = 1
+      balls.style.left = (window.innerWidth-78)+'px'
+      balls.style.top = '11px'
+    },500)
   }
 
   iconGrow = (elm, width, top, left, max, windowWidth)=>{
     if (window.innerWidth == windowWidth) {
-      let gitAnime = setInterval(()=>{
-        elm.style.display = 'block'
-        width++
-        top = top - 0.5
-        left = left - 0.5
-        elm.style.width = width+'px'
-        elm.style.top = top+'px'
-        elm.style.left = left+'px'
-        if (width >= max) clearInterval(gitAnime)
-      },10)
+        let gitAnime = setInterval(()=>{
+          elm.style.display = 'block'
+          width++
+          top = top - 0.5
+          left = left - 0.5
+          elm.style.width = width+'px'
+          elm.style.top = top+'px'
+          elm.style.left = left+'px'
+          if (width >= max) clearInterval(gitAnime)
+        },10)
     }
   }
 
@@ -132,11 +137,14 @@ _header = (id)=>{
   <a href="https://codepen.io/robbobfrh84"><img class='linkIcon h1' id='codepenIcon' src="gfx/codepenicon.svg"></a>
   <a href="https://www.linkedin.com/in/bobmain49"><img class='linkIcon h1' id='linkedInIcon' src="gfx/linkedinIcon.svg"></a>
   <a href="https://twitter.com/BobMain49"><img class='linkIcon h1' id='twitterIcon' src="gfx/twitericon.svg" ></a>
-  <img id='dropdownIcon' class='linkIcon' src="gfx/dropdownIcon2.png"
+  <div id='dropdownIcon' style='opacity: 0;'
     onClick="_toggleDropdown('dropdown','dropdownIcon')"
     onMouseleave="_checkDropdownState(event,'dropdown','dropdownIcon')">
+    &bull;&bull;&bull;
+  </div>
 
   `
+
 /* --------------------------------------------------------- */
   let ctx = document.getElementById("headerCanvas").getContext("2d")
   linkIconsAnnimation()

@@ -27,6 +27,9 @@ _setPage = (newPage, initial)=>{
     case 'contact':
       _contact( document.getElementById('contact'), _style() )
       break;
+    case 'landing':
+      _landing( document.getElementById('landing'), _style() )
+      break;
   }
 }
 

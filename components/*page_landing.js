@@ -1,21 +1,46 @@
 _landing = (id, sheet)=>{
 
+  buildLines = ()=>{
+
+    const canvases = document.getElementsByClassName('landing-canvas')
+    let c2 = []
+    for (var i = 0; i < canvases.length; i++) {
+      const w = canvases[i].parentElement.clientWidth
+      const h = canvases[i].parentElement.clientHeight+10
+      canvases[i].id = 'landing-canvas'+i
+      c2[i] = new canvas
+      c2[i].new(canvases[i].id, w, h)
+      c2[i].lineGrow(0,5,w,5,'rgba(0,0,255,1)',0.4,2,1.03)
+      c2[i].lineGrow(w,h-5,0,h-5,'rgba(0,0,255,1)',0.4,2,1.03)
+      c2[i].lineGrow(5,0,5,h,'rgba(0,0,255,1)',0.4,0.25,1.03)
+      c2[i].lineGrow(w-5,h,w-5,0,'rgba(0,0,255,1)',0.4,0.25,1.03)
+      const index = i
+      setTimeout(()=>{
+        c2[index].animate()
+      },(250*i)+1000)
+    }
+
+  }
+
   /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
 
   <div id='landingBox'>
 
-    <div id='welcome'>
+    <div id='landing-welcome'>
       Greetings, and Welcome to <br>
       Bob's Projects, Works and Builds!
     </div>
 
     <div class='landing-button' onClick='_setPage("projects")'>
-      View Bob's Projects
+      <div class='landing-button-title'> View Bob's Projects </div>
+      <canvas class='landing-canvas'></canvas>
+
     </div>
 
-    <div class='landing-button' onClick='_setPage("contact")'>
-      Contact Info
+    <div class='landing-button' >
+      <div class='landing-button-title' onClick='_setPage("contact")'> Contact Info </div>
+      <canvas class='landing-canvas'></canvas>
     </div>
 
   </div>
@@ -30,12 +55,13 @@ _landing = (id, sheet)=>{
 
   #landing {
     display: none;
-    width: 100%;
-    text-align: center;
+    //width: 100%;
+    //text-align: center;
     transition: opacity 2s;
   }
 
-  #welcome {
+  #landing-welcome {
+    text-align: center;
     font-size: 28px;
     font-family: Avenir;
     font-weight: 100;
@@ -43,28 +69,40 @@ _landing = (id, sheet)=>{
   }
 
   .landing-button {
-    font-size: 28px;
-    font-family: Avenir;
-    font-weight: 100;
-    color: #444;
-    //background: url('gfx/paper_fibers2.png');
-    background-color: #e8e8ec;
-    border: 2px dashed #bbb;
-    box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0),
-      2px 2px 2px 0px rgba(0,0,0,0.5);
-    border-radius: 50px;
-    cursor: pointer;
-    width: 300px;
-    height: 36px;
+    position: relative;
+    width: 290px;
     margin: auto;
-    padding: 8px;
     transition: box-shadow 0.20s;
-    margin-top: 35px;
   }
 
-  .landing-button:hover {
-    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
-    transition: box-shadow 0.20s;
+  .landing-button-title {
+    position: relative;
+    left: 5px;
+    top: 5px;
+    width: 260px;
+    font-size: 24px;
+    font-family: Avenir;
+    font-weight: 100;
+    color: #666;
+    background: #eee;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background .3s, box-shadow .3s;
+  }
+
+  .landing-button-title:hover {
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+    background: #dfdfdf;
+    transition: background .3s, box-shadow .3s;
+  }
+
+  .landing-canvas {
+    position: absolute;
+    top: 0px; left 0px;
+    pointer-events: none;
   }
 
   #landingBox {
@@ -80,6 +118,7 @@ _landing = (id, sheet)=>{
 
   `
   /* --------------------------------------------------------- */
+  window.requestAnimationFrame(buildLines)
   document.body.appendChild(sheet);
 }
-_landing( document.getElementById('landing'), _style() )
+// _landing( document.getElementById('landing'), _style() )

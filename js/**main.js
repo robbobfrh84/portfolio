@@ -5,7 +5,7 @@ var _browsers = {}
 
 window.onload = ()=>{
   _setPage(window.location.hash.split('#')[1], true)
-  _header(document.getElementById('header'))
+  _header(document.getElementById('header'), _style() )
   _background( document.getElementById('background'), _style() )
   _footer( document.getElementById('footer'), _style() )
   document.body.style.opacity = 1

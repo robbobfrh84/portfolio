@@ -63,15 +63,20 @@
 #dropdownIcon {
   position: absolute;
   cursor: pointer;
-  opacity: 0.5;
-  background-color: rgba(0,0,0,0);
+  width: 42px;
+  font-size: 22px;
+  letter-spacing: 3px;
+  line-height: 0.95;
+  padding-top: 3px;
+  padding-left: 4px;
+  color: #555;
+  background-color: #eee;
   z-index: 1;
-  transition: background-color .3s;
+  transition: color .2s, opacity 0.75s;
 }
 #dropdownIcon:hover {
-  opacity: 1;
-  background-color: rgba(0,0,0,0.1);
-  transition: background-color .3s;
+  color: #aaa;
+  transition: color .2s;
 }
 .h1 {
   cursor: pointer;
