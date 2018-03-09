@@ -67,7 +67,12 @@ _dropdown = (id, sheet)=>{
   }
 
   id.addEventListener('mouseleave', (event)=>{
-    if (event.toElement.id !== 'dropdownIcon') {
+    if (typeof event.toElement === 'undefined') {
+      toElm = event.relatedTarget.id
+    } else {
+      toElm = event.toElement.id
+    }
+    if (toElm !== 'dropdownIcon') {
       _toggleDropdown('dropdown','dropdownIcon')
     }
   })

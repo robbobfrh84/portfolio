@@ -21,20 +21,28 @@ _header = (id, sheet)=>{
   linkIconsAnnimation = ()=>{
     const wW = window.innerWidth
     const adj = parseInt(window.innerWidth/25)*25-25
+    const drop = wW < 625 ? 40 : 0
+    const headerDrop = document.getElementById('header-drop')
+    if (drop) {
+      headerDrop.style.display = 'block'
+    } else {
+      headerDrop.style.display = 'none'
+    }
     let icn = document.getElementsByClassName('linkIcon')
-    icn[0].style.left = (adj-241)+'px'; icn[0].p = [0,22,(adj-238),25,1500]
-    icn[1].style.left = (adj-201)+'px'; icn[1].p = [0,22,(adj-188),23,1900]
-    icn[2].style.left = (adj-151)+'px'; icn[2].p = [0,22,(adj-138),23,1800]
-    icn[3].style.left = (adj-112)+'px'; icn[3].p = [0,22,(adj-88),35,2100]
+    icn[0].style.left = (adj-241)+'px'; icn[0].p = [0,22+drop,(adj-238),25,1500]
+    icn[1].style.left = (adj-201)+'px'; icn[1].p = [0,22+drop,(adj-188),23,1900]
+    icn[2].style.left = (adj-151)+'px'; icn[2].p = [0,22+drop,(adj-138),23,1800]
+    icn[3].style.left = (adj-112)+'px'; icn[3].p = [0,22+drop,(adj-88),35,2100]
     for (const c of icn) {
       c.style.display = 'none'
       setTimeout(()=>{ iconGrow(c, c.p[0], c.p[1], c.p[2], c.p[3], wW) },c.p[4])
     }
     setTimeout(()=>{
-      let balls = document.getElementById('dropdownIcon')
+      const balls = document.getElementById('dropdownIcon')
+      const w = window.innerWidth
       balls.style.opacity = 1
-      balls.style.left = (window.innerWidth-78)+'px'
-      balls.style.top = '11px'
+      balls.style.left = ((w-(w%25))-74)+'px'
+      balls.style.top = (11+drop)+'px'
     },500)
   }
 
@@ -142,6 +150,7 @@ _header = (id, sheet)=>{
     onMouseleave="_checkDropdownState(event,'dropdown','dropdownIcon')">
     &bull;&bull;&bull;
   </div>
+  <div id='header-drop'></div>
 
   `
 
