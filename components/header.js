@@ -134,9 +134,9 @@ _header = (id, sheet)=>{
   <div id='bobBtn' onClick="_setPage('login')"></div>
   <div id='homeBtn' onClick='_setPage("landing")'></div>
   <a href="https://github.com/robbobfrh84"><img class='linkIcon h1' id='gitIcon' src="gfx/git2.svg"></a>
-  <a href="https://codepen.io/robbobfrh84"><img class='linkIcon h1' id='codepenIcon' src="gfx/codepenicon.svg"></a>
+  <a href="https://codepen.io/robbobfrh84"><img class='linkIcon h1' id='codepenIcon' src="gfx/codepenicon.png"></a>
   <a href="https://www.linkedin.com/in/bobmain49"><img class='linkIcon h1' id='linkedInIcon' src="gfx/linkedinIcon.svg"></a>
-  <a href="https://twitter.com/BobMain49"><img class='linkIcon h1' id='twitterIcon' src="gfx/twitericon.svg" ></a>
+  <a href="https://twitter.com/BobMain49"><img class='linkIcon h1' id='twitterIcon' src="gfx/twitterIcon.png" ></a>
   <div id='dropdownIcon' style='opacity: 0;'
     onClick="_toggleDropdown('dropdown','dropdownIcon')"
     onMouseleave="_checkDropdownState(event,'dropdown','dropdownIcon')">
