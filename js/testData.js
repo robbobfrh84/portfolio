@@ -28,5 +28,12 @@ var _data = {
       icon: '',
       info: '...something',
     },
+    {
+      name: 'Twitter Bots',
+      link: 'www...',
+      role: 'Creator',
+      icon: '',
+      info: '...something',
+    },
   ]
 }
