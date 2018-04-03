@@ -21,6 +21,9 @@ _setPage = (newPage, initial)=>{
   }
   const headerPages = document.getElementById('header-pages')
   switch(_activePage) {
+    case 'login':
+      _login( document.getElementById('login'), _style() )
+      break;
     case 'projects':
       _projects( document.getElementById('projects'), _style() )
       break;

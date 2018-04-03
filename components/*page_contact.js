@@ -49,7 +49,7 @@ _contact = (id, sheet, resize)=>{
       <img id='morseUp' class='morse' src='gfx/morUp.svg'>
     </div>
 
-    <div id='underline'></div>
+    <div id='underline' style="background: url('gfx/paper_fibers.png');"></div>
 
     <p id='write-up'>
 
@@ -135,7 +135,6 @@ _contact = (id, sheet, resize)=>{
       min-height: 4px;
       box-shadow: 2px 2px 2px inset rgba(0,0,0,0.5);
       border-radius: 4px;
-      background: url('gfx/paper_fibers.png');
     }
 
     #write-up {
@@ -153,13 +152,15 @@ _contact = (id, sheet, resize)=>{
       margin-top: -50px;
       margin-bottom: 20px;
       width: 250px;
+      height: 250px;
+      min-height: 250px;
       border-radius: 100%;
     }
 
   `
   /* --------------------------------------------------------- */
   if (!resize) animateMorse()
-  setTimeout(()=>{ animateLines() },250)
   document.body.appendChild(sheet);
+  setTimeout(()=>{ animateLines() },350)
 }
 // _contact( document.getElementById('contact'), _style())

@@ -39,7 +39,7 @@ _login = (id, sheet)=>{
       height: 410px;
       margin: auto;
       position: absolute;
-      top: -30px; left: 0; bottom: 0; right: 0;
+      top: 0; left: 0; bottom: 0; right: 0;
       border-radius: 10px;
       font-size: 25px;
       background-color: rgba(255,255,255,0.15);
@@ -111,4 +111,4 @@ _login = (id, sheet)=>{
 /* --------------------------------------------------------- */
   document.body.appendChild(sheet);
 }
-_login( document.getElementById('login'), _style() )
+// _login( document.getElementById('login'), _style() )
