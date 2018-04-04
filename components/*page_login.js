@@ -13,9 +13,9 @@ _login = (id, sheet)=>{
     <div id='back' onClick='window.history.back()'> &#x2715; </div>
     <div id='loginTitle'> <img id='google-icon' src='gfx/google.png'> Log In </div>
     Username: <br>
-    <input class='loginInput'/><br>
+    <input class='loginInput' style="background: url('gfx/paper_fibers3.png')"/><br>
     Password: <br>
-    <input class='loginInput' type="password"/>
+    <input class='loginInput' type="password" style="background: url('gfx/paper_fibers3.png')"/>
     <button id='submit'> Submit </button>
   </div>
 
@@ -83,7 +83,6 @@ _login = (id, sheet)=>{
       outline: none;
       box-shadow: 2px 2px 2px inset black;
       padding-left: 20px;
-      background: url('gfx/paper_fibers3.png');
     }
 
     #submit {
