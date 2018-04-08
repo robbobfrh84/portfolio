@@ -1,4 +1,4 @@
-loader = (id, sheet)=>{
+_loader = (id, sheet)=>{
 
 /* ---------------------- { style } ------------------------ */
   sheet.innerHTML = `
@@ -13,13 +13,15 @@ loader = (id, sheet)=>{
       pointer-events: none;
       opacity: 0;
       transition: opacity .5s;
+      padding-top: 16px;
+      z-index: 2;
     }
 
     .bits {
       display: inline-block;
       width: 50px;
       height: 50px;
-      margin-right: 5px;
+      margin: 10px;
       background-color: green;
       opacity: 0;
       transition: opacity .5s;
@@ -46,10 +48,10 @@ loader = (id, sheet)=>{
 
   randomLight = (cnt)=>{
     const fadeTo = 0.5
-    const delay = random(200,800)
-    const bit = document.getElementById('bit'+random(0,7)+random(0,7))
+    const delay = _rand(200,800)
+    const bit = document.getElementById('bit'+_rand(0,7)+_rand(0,7))
     if (bit) {
-      bit.style.backgroundColor = rgbR()
+      bit.style.backgroundColor = _rgbR()
       bit.style.transition = 'transition: opacity '+(delay/1000)+'s;'
       if (!bit.style.opacity || bit.style.opacity === '0') {
         window.requestAnimationFrame(()=>{
@@ -78,14 +80,14 @@ loader = (id, sheet)=>{
 
 }
 
-loaderOn = (callback)=>{
-  loader( document.getElementById('loader'),  document.createElement('style'))
+_loaderOn = (callback)=>{
+  _loader( document.getElementById('loader'),  document.createElement('style'))
   setTimeout(()=>{
     if (callback) callback()
   },500)
 }
 
-loaderOff = (callback)=>{
+_loaderOff = (callback)=>{
   var loader = document.getElementById('loader')
   loader.style.opacity = 0
   setTimeout(()=>{
@@ -94,17 +96,4 @@ loaderOff = (callback)=>{
     }
     if (callback) callback()
   },500)
-
-}
-
-random = (min, max)=>{
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-rgbR = ()=>{
-  return 'rgb('+random(0,255)+', '+random(0,255)+', '+random(0,255)+')';
-}
-
-rgbAR = (a)=>{
-  return 'rgb('+random(0,255)+', '+random(0,255)+', '+random(0,255)+','+a+')';
 }

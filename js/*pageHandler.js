@@ -1,3 +1,13 @@
+_setHash = (hash) => {
+  window.location.hash = hash
+}
+
+window.onhashchange = function() {
+  if (window.location.hash !== '#'+_activePage) {
+    _setPage(window.location.hash.split('#')[1])
+  }
+}
+
 _setPage = (newPage, initial)=>{
   if (!newPage) newPage = 'landing'
   if (initial) _activePage = ''
@@ -20,28 +30,30 @@ _setPage = (newPage, initial)=>{
     _setHash(_activePage)
   }
   const headerPages = document.getElementById('header-pages')
+
   switch(_activePage) {
+
     case 'login':
       _login( document.getElementById('login'), _style() )
       break;
-    case 'projects':
-      _projects( document.getElementById('projects'), _style() )
-      break;
+
     case 'contact':
       _contact( document.getElementById('contact'), _style() )
       break;
+
     case 'landing':
       _landing( document.getElementById('landing'), _style() )
       break;
-  }
-}
 
-_setHash = (hash) => {
-  window.location.hash = hash
-}
+    case 'projects':
+      if (!_projects_Data.fulfilled) {
+        _get('tobob-space-read-projects','tobob-earth','projects')
+          .then(payload => _projects(payload, document.getElementById('projects'),_style()))
+          .catch(err => alert('! Problem retrieving data !\n\n'+err))
+      } else {
+        _projects_buildLines(_projects_Data.list)
+      }
+      break;
 
-window.onhashchange = function() {
-  if (window.location.hash !== '#'+_activePage) {
-    _setPage(window.location.hash.split('#')[1])
   }
 }
