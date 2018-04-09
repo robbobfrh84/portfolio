@@ -20,7 +20,7 @@ _background = (id, sheet)=>{
 
   newValues = (id)=>{
     return { id: id,
-      y: (_rand(0,((window.innerHeight-5)/25))*25-16),
+      y: (_rand(0,((window.innerHeight-5)/50))*50-16),
       p: _rand(-1000,lineW*-1),
       r: _rand(3,10)
     }

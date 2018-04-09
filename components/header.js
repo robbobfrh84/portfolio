@@ -1,10 +1,21 @@
 _header = (id, sheet)=>{
 
+  const maxW = 700
+  const sqW = 30
+
   lettersAnnimation = ()=>{
     let title = document.getElementById('earthToBob')
     title.style.display = 'block'
+    title.style.fontSize = (sqW-3)+'px'
+    title.style.paddingLeft = (sqW-7)+'px'
+
     let ltr = title.children
     for (const l of ltr) {
+      l.style.width = (sqW-2)+'px'
+      l.style.height = (sqW-2)+'px'
+      l.style.lineHeight = (sqW-2)+'px'
+      l.style.top = sqW > 25 ? '0px' : '1px'
+
       const delay = _rand(1500,3500)
       let r = _rand(0,200)
       let b = _rand(175,255)
@@ -19,42 +30,42 @@ _header = (id, sheet)=>{
   }
 
   linkIconsAnnimation = ()=>{
-    const wW = window.innerWidth
-    const adj = parseInt(window.innerWidth/25)*25-25
-    const drop = wW < 625 ? 40 : 0
-    const headerDrop = document.getElementById('header-drop')
-    if (drop) {
-      headerDrop.style.display = 'block'
-    } else {
-      headerDrop.style.display = 'none'
-    }
+    // const wW = window.innerWidth
+    const wW = window.innerWidth < maxW ? maxW :  window.innerWidth
+    // const adj = parseInt(window.innerWidth/25)*25-25
+    const adj = parseInt(wW/sqW)*sqW-sqW
+    const drop = ((sqW/2)+9) //wW < 625 ? 40 : 0
     let icn = document.getElementsByClassName('linkIcon')
-    icn[0].style.left = (adj-241)+'px'; icn[0].p = [0,22+drop,(adj-238),25,1500]
-    icn[1].style.left = (adj-201)+'px'; icn[1].p = [0,22+drop,(adj-188),23,1900]
-    icn[2].style.left = (adj-151)+'px'; icn[2].p = [0,22+drop,(adj-138),23,1800]
-    icn[3].style.left = (adj-112)+'px'; icn[3].p = [0,22+drop,(adj-88),35,2100]
+    const stag = wW < 800 ? [sqW*7,sqW*6,sqW*5,sqW*4] : [sqW*10,sqW*8,sqW*6,sqW*4]
+    icn[0].style.left = (adj-241)+'px'; icn[0].p = [0,drop,(adj-stag[0]+(sqW/2)),25,1500]
+    icn[1].style.left = (adj-201)+'px'; icn[1].p = [0,drop,(adj-stag[1]+(sqW/2)),23,1900]
+    icn[2].style.left = (adj-151)+'px'; icn[2].p = [0,drop,(adj-stag[2]+(sqW/2)),23,1800]
+    icn[3].style.left = (adj-112)+'px'; icn[3].p = [0,drop,(adj-stag[3]+(sqW/2)),35,2100]
     for (const c of icn) {
       c.style.display = 'none'
       setTimeout(()=>{ iconGrow(c, c.p[0], c.p[1], c.p[2], c.p[3], wW) },c.p[4])
     }
     setTimeout(()=>{
       const balls = document.getElementById('dropdownIcon')
-      const w = window.innerWidth
+      const w = window.innerWidth < maxW ? maxW :  window.innerWidth
       balls.style.opacity = 1
-      balls.style.left = ((w-(w%25))-74)+'px'
-      balls.style.top = (11+drop)+'px'
+      balls.style.left = ((w-(w%sqW))-((sqW*3)-1.5))+'px'
+      balls.style.top = '11px'
+      balls.style.fontSize = sqW > 25 ? (sqW-0.5)+'px' : (sqW-1.5)+'px'
     },500)
   }
 
   iconGrow = (elm, width, top, left, max, windowWidth)=>{
-    if (window.innerWidth == windowWidth) {
+    const wW = window.innerWidth < maxW ? maxW :  window.innerWidth
+    // if (window.innerWidth == windowWidth) {
+    if (wW == windowWidth) {
         let gitAnime = setInterval(()=>{
           elm.style.display = 'block'
           width++
           top = top - 0.5
           left = left - 0.5
           elm.style.width = width+'px'
-          elm.style.top = top+'px'
+          elm.style.top = sqW > 25 ? top+'px' : (top+1)+'px'
           elm.style.left = left+'px'
           if (width >= max) clearInterval(gitAnime)
         },10)
@@ -62,7 +73,10 @@ _header = (id, sheet)=>{
   }
 
   lineAnnimation = ()=>{
-    ctx.canvas.width = window.innerWidth
+    const wW = window.innerWidth < maxW ? maxW :  window.innerWidth
+    // ctx.canvas.width = window.innerWidth
+    ctx.canvas.width = wW
+
     var lines = new HeaderLineDraw
     lines.addLine({
       hor: true, speed: 2, maxSpeed: 30, ramp: 1.05,
@@ -70,12 +84,15 @@ _header = (id, sheet)=>{
     })
     lines.addLine({
       hor: true, speed: 1.5, maxSpeed: 25, ramp: 1.05,
-      x1: 8, y1: 35, x2: 10, y2: 35, ex: -8, ey: 35
+      x1: 8, y1: sqW+10, x2: 10, y2: sqW+10, ex: -8, ey: sqW+10
     })
-    for (var i = 25; i <= window.innerWidth-15; i+=25) {
+    // for (var i = 25; i <= window.innerWidth-15; i+=25) {
+    // for (var i = 25; i <= wW-15; i+=25) {
+    for (var i = sqW; i <= wW-15; i+=sqW) {
+
       lines.addLine({
         hor: false, speed: 0.5, maxSpeed: 1, ramp: 1,
-        x1: i, y1: 3, x2: i, y2: 3, ex: i, ey: _rand(46,50)
+        x1: i, y1: 3, x2: i, y2: 3, ex: i, ey: (sqW+20)+_rand(1,5)
       })
     }
     lines.draw()
@@ -87,16 +104,17 @@ _header = (id, sheet)=>{
     }
 
     draw(stop = true) {
+      const wW = window.innerWidth < maxW ? maxW :  window.innerWidth
       ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height)
       for (const i in this.lines) {
         if (this.lines[i].hor) {
           this.lines[i].x2 += this.lines[i].speed
           if (this.lines[i].speed < this.lines[i].maxSpeed) this.lines[i].speed *= this.lines[i].ramp
-          if (this.lines[i].x2 < window.innerWidth + this.lines[i].ex) {
+          if (this.lines[i].x2 < wW + this.lines[i].ex) {
             this.line(this.lines[i].x1,this.lines[i].y1,this.lines[i].x2,this.lines[i].y2, 'blue', 0.4)
             stop = false
           } else {
-            this.line(this.lines[i].x1,this.lines[i].y1,window.innerWidth+this.lines[i].ex,this.lines[i].ey, 'blue', 0.4)
+            this.line(this.lines[i].x1,this.lines[i].y1,wW+this.lines[i].ex,this.lines[i].ey, 'blue', 0.4)
           }
         }
         else {
@@ -150,7 +168,6 @@ _header = (id, sheet)=>{
     onMouseleave="_checkDropdownState(event,'dropdown','dropdownIcon')">
     &bull;&bull;&bull;
   </div>
-  <div id='header-drop'></div>
 
   `
 
