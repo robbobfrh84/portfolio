@@ -19,7 +19,7 @@ _header = (id, sheet)=>{
       const delay = _rand(1500,3500)
       let r = _rand(0,200)
       let b = _rand(175,255)
-      setTimeout(()=>{ l.style.color = '#444' }, delay)
+      setTimeout(()=>{ l.style.color = '#555' }, delay)
       setTimeout(()=>{ l.style.backgroundColor = 'rgba('+r+',170,237,0.2)' },delay+1000)
       setTimeout(()=>{ l.style.backgroundColor = 'rgba(0,0,0,0)' },delay+1500)
       r = _rand(0,200)
@@ -163,7 +163,7 @@ _header = (id, sheet)=>{
   <a href="https://codepen.io/robbobfrh84"><img class='linkIcon h1' id='codepenIcon' src="gfx/codepen.png"></a>
   <a href="https://www.linkedin.com/in/bobmain49"><img class='linkIcon h1' id='linkedInIcon' src="gfx/linkedinIcon.svg"></a>
   <a href="https://twitter.com/BobMain49"><img class='linkIcon h1' id='twitterIcon' src="gfx/twitterIcon.png" ></a>
-  <div id='dropdownIcon' style='opacity: 0;'
+  <div id='dropdownIcon' style='opacity: 0; background: url("gfx/paper_fibers.png");'
     onClick="_toggleDropdown('dropdown','dropdownIcon')"
     onMouseleave="_checkDropdownState(event,'dropdown','dropdownIcon')">
     &bull;&bull;&bull;

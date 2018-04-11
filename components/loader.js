@@ -13,7 +13,7 @@ _loader = (id, sheet)=>{
       pointer-events: none;
       opacity: 0;
       transition: opacity .5s;
-      padding-top: 16px;
+      // padding-top: 16px;
       z-index: 2;
     }
 
@@ -35,6 +35,7 @@ _loader = (id, sheet)=>{
   const container = document.createElement('div')
   container.id = 'container'
   id.appendChild(container)
+  document.body.style.cursor = 'wait'
 
   for (var i = 0; i < 8; i++) {
     for (var j = 0; j < 8; j++) {
@@ -91,6 +92,7 @@ _loaderOff = (callback)=>{
   var loader = document.getElementById('loader')
   loader.style.opacity = 0
   setTimeout(()=>{
+    document.body.style.cursor = 'initial'
     while (loader.hasChildNodes()){
       loader.removeChild(loader.lastChild);
     }

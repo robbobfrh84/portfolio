@@ -10,10 +10,10 @@ _landing = (id, sheet)=>{
       canvases[i].id = 'landing-canvas'+i
       c2[i] = new canvas
       c2[i].new(canvases[i].id, w, h)
-      c2[i].lineGrow(0,5,w,5,'rgba(0,0,255,0.4)',2,2,1.03)
-      c2[i].lineGrow(w,h-4,0,h-4,'rgba(0,0,255,0.4)',2,2,1.03)
-      c2[i].lineGrow(4,0,4,h,'rgba(0,0,255,0.4)',2,0.25,1.03)
-      c2[i].lineGrow(w-4,h,w-4,0,'rgba(0,0,255,0.4)',2,0.25,1.03)
+      c2[i].lineGrow(0,5,w,5,'rgba(100,149,237,0.6)',2,2,1.03)
+      c2[i].lineGrow(w,h-4,0,h-4,'rgba(100,149,237,0.6)',2,2,1.03)
+      c2[i].lineGrow(4,0,4,h,'rgba(100,149,237,0.6)',2,0.25,1.03)
+      c2[i].lineGrow(w-4,h,w-4,0,'rgba(100,149,237,0.6)',2,0.25,1.03)
       const index = i
       setTimeout(()=>{
         c2[index].animate()
@@ -45,18 +45,12 @@ _landing = (id, sheet)=>{
 
   </div>
 
-  <!--
-  <br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr>
-  -->
-
   `
   /* ---------------------- { style } ------------------------ */
   sheet.innerHTML = `
 
   #landing {
     display: none;
-    //width: 100%;
-    //text-align: center;
     transition: opacity 2s;
   }
 
@@ -89,16 +83,14 @@ _landing = (id, sheet)=>{
     padding: 10px;
     letter-spacing: 2px;
     cursor: pointer;
-    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 10px rgba(255,255,255,1);
     background: #dfdfdf;
     transition: background .3s, box-shadow .3s;
   }
 
   .landing-button-title:hover {
-
     background: #eee;
-    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.1);
-
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.4);
     transition: background .3s, box-shadow .3s;
   }
 

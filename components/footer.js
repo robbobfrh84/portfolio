@@ -6,17 +6,17 @@ _footer = (id, sheet)=>{
 /* ----------------------- < HTML > ------------------------ */
   id.innerHTML = `
 
-  <div id="footerGrid">
-
-    <div class="footerLine left"></div>
-    <div>
-      <span class='footerBull'>&bull;</span>
-      &copy; ${year} Bob Main
-      <span class='footerBull'>&bull;</span>
-    </div>
-    <div class="footerLine"></div>
-
-  </div>
+    <table class='footer-table'>
+      <tr>
+        <th class="footerLine left"></th>
+        <th id='footer-copy'>
+          <span class='footerBull'>&bull;</span>
+          &copy; ${year} Bob Main
+          <span class='footerBull'>&bull;</span>
+        </th>
+        <th class="footerLine"></th>
+      </tr>
+    </table>
 
   `
 /* ---------------------- { style } ------------------------ */
@@ -27,28 +27,26 @@ _footer = (id, sheet)=>{
     left: 0px;
     bottom: 0px;
     width: 100%;
-    text-align: center;
     margin-top: 50px;
-    color: #444;
+    color: #555;
     transition: opacity 2s;
   }
-  #footerGrid {
-    display: grid;
+  .footer-table {
     width: 100%;
-    grid-template-columns: 0.5fr 155px 0.5fr;
+  }
+  #footer-copy {
+    width: 190px;
+    font-weight: 400;
+    font-family: avenir;
   }
   .footerLine {
     position: relative;
-    top: 5px;
-    height: 2px;
-    background-color: rgba(100,149,237,0.5);
-    text-align: center;
-    margin: 5px;
-    margin-right: 15px;
+    top: -11px;
+    right: 15px;
+    border-bottom: 2px solid rgba(100,149,237,0.5);
   }
   .left {
-    margin-left: 15px;
-    margin-right: 5px;
+    left: 15px;
   }
   .footerBull {
     color: cornflowerblue;
@@ -57,19 +55,23 @@ _footer = (id, sheet)=>{
   `
 /* --------------------------------------------------------- */
   document.body.appendChild(sheet)
-  window.requestAnimationFrame(_footerResize)
+  window.requestAnimationFrame(()=>{_footerResize(true)})
 }
 
-_footerResize = ()=>{
+_footerResize = (setTimer)=>{
   let footer = document.getElementById('footer')
   if (window.innerHeight >= document.body.clientHeight+30) {
     footer.style.position = 'absolute'
+    footer.style.bottom = '0px'
   } else {
     footer.style.position = 'relative'
+    footer.style.bottom = '-15px'
   }
-  window.requestAnimationFrame(()=>{ // this checks if the content has been edited dynamically to make sure footer sits on the bottom.
-    setTimeout(()=>{
-      _footerResize()
-    },500)
-  })
+  if (setTimer) {
+    window.requestAnimationFrame(()=>{ // this checks if the content has been edited dynamically to make sure footer sits on the bottom.
+      setTimeout(()=>{
+        _footerResize(setTimer)
+      },500)
+    })
+  }
 }
