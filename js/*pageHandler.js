@@ -37,6 +37,10 @@ _setPage = (newPage, initial)=>{
       _login( document.getElementById('login'), _style() )
       break;
 
+    case 'quicklinks':
+      _quicklinks( document.getElementById('quicklinks'), _style() )
+      break;
+
     case 'contact':
       _contact( document.getElementById('contact'), _style() )
       break;

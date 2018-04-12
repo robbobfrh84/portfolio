@@ -10,6 +10,9 @@ window.onload = ()=>{
   _footer( document.getElementById('footer'), _style() )
   _setPage(window.location.hash.split('#')[1], true)
   document.body.style.opacity = 1
+  setTimeout(()=>{
+    document.getElementById('index-background').style.opacity = 1
+  },250)
   _browsers = {
     isOpera: (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0,
     isFirefox: typeof InstallTrigger !== 'undefined',

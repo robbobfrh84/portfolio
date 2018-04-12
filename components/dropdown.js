@@ -5,6 +5,7 @@ _dropdown = (id, sheet)=>{
     { name: 'Contact', icon: '&#x260e;', id: 'contact' },
     { name: 'Home', icon: '&#x021D0;', id: 'landing' },
     { name: 'Log In', icon: '&#10167;', id: 'login' },
+    { name: 'Quick Links', icon: '&#x261a;', id: 'quicklinks' },
   ]
   const bH = 45
   const w = 250

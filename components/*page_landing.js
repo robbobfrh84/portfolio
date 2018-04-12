@@ -83,7 +83,7 @@ _landing = (id, sheet)=>{
     padding: 10px;
     letter-spacing: 2px;
     cursor: pointer;
-    box-shadow: inset 0px 0px 10px rgba(255,255,255,1);
+    box-shadow: inset 0px 0px 5px rgba(255,255,255,1);
     background: #dfdfdf;
     transition: background .3s, box-shadow .3s;
   }
