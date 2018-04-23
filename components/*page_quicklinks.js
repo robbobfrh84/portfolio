@@ -18,6 +18,7 @@ _quicklinks = (id, sheet)=>{
     <a href='file:///Users/robbobfrh84/Google%20Drive/Code_Hub/-_____Backgrounds_:Icons_:Images/Background/index.html'>
       Local: Backgrounds </a>
     &nbsp;     file:///Users/robbobfrh84/Google%20Drive/Code_Hub/-_____Backgrounds_:Icons_:Images/Background/index.html
+    <br>
 
     <a href='file:///Users/robbobfrh84/Github/jsHelper/classes/canvas/tester.html'>
       Local: Canvas Tester </a>
@@ -47,6 +48,11 @@ _quicklinks = (id, sheet)=>{
     <a href='file:///Users/robbobfrh84/Github/lab/TI-83-RPG/index.html'>
       Local: Riot.js TI-83-RPG </a>
     &nbsp; file:///Users/robbobfrh84/Github/lab/TI-83-RPG/index.html
+    <br>
+
+    <a href='http://robbobfrh84.github.io/lab/greg.html'>
+      Live (lab): Riot.js TI-83-RPG </a>
+    &nbsp; http://robbobfrh84.github.io/lab/greg.html
     <br>
 
 
