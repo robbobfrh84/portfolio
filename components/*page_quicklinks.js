@@ -10,6 +10,16 @@ _quicklinks = (id, sheet)=>{
     &nbsp; file:///Users/robbobfrh84/Github/tobob.earth/index.html
     <br>
 
+    <a href='file:///Users/robbobfrh84/Github/lab/pixel-D/index.html#home'>
+      Local: pixel-D </a>
+    &nbsp; file:///Users/robbobfrh84/Github/lab/pixel-D/index.html#home
+    <br>
+
+    <a href='http://robbobfrh84.github.io/lab/pixel-D'>
+      Live (github lab repo): pixel-D </a>
+    &nbsp; http://robbobfrh84.github.io/lab/pixel-D
+    <br>
+
     <a href='file:///Users/robbobfrh84/Google%20Drive/Code_Hub/emojies.html'>
       Local: Emojies </a>
     &nbsp; file:///Users/robbobfrh84/Google%20Drive/Code_Hub/emojies.html
@@ -51,7 +61,7 @@ _quicklinks = (id, sheet)=>{
     <br>
 
     <a href='http://robbobfrh84.github.io/lab/greg.html'>
-      Live (lab): Riot.js TI-83-RPG </a>
+      Live (github lab repo): Riot.js TI-83-RPG </a>
     &nbsp; http://robbobfrh84.github.io/lab/greg.html
     <br>
 
