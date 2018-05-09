@@ -12,10 +12,10 @@ _quicklinks = (id, sheet)=>{
 
     <a href='file:///Users/robbobfrh84/Github/lab/pixel-D/index.html#home'>
       Local: pixel-D </a>
-    &nbsp; file:///Users/robbobfrh84/Github/lab/pixel-D/index.html#home
+    &nbsp; file:///Users/robbobfrh84/Github/lab/pixel-D/public/index.html#home
     <br>
 
-    <a href='http://robbobfrh84.github.io/lab/pixel-D'>
+    <a href='http://robbobfrh84.github.io/lab/pixel-D/public'>
       Live (github lab repo): pixel-D </a>
     &nbsp; http://robbobfrh84.github.io/lab/pixel-D
     <br>
