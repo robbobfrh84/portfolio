@@ -20,7 +20,7 @@ _quicklinks = (id, sheet)=>{
     &nbsp; http://robbobfrh84.github.io/lab/pixel-D
     <br>
 
-    <a href='file:///Users/robbobfrh84/Github/lab/emojies.html'>
+    <a href='http://robbobfrh84.github.io/lab/emojies.html'>
       Live (github lab repo): Emojies </a>
     &nbsp; http://robbobfrh84.github.io/lab/emojies.html
     <br>
