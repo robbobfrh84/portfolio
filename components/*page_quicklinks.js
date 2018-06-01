@@ -20,9 +20,9 @@ _quicklinks = (id, sheet)=>{
     &nbsp; http://robbobfrh84.github.io/lab/pixel-D
     <br>
 
-    <a href='file:///Users/robbobfrh84/Google%20Drive/Code_Hub/emojies.html'>
-      Local: Emojies </a>
-    &nbsp; file:///Users/robbobfrh84/Google%20Drive/Code_Hub/emojies.html
+    <a href='file:///Users/robbobfrh84/Github/lab/emojies.html'>
+      Live (github lab repo): Emojies </a>
+    &nbsp; http://robbobfrh84.github.io/lab/emojies.html
     <br>
 
     <a href='file:///Users/robbobfrh84/Google%20Drive/Code_Hub/-_____Backgrounds_:Icons_:Images/Background/index.html'>
