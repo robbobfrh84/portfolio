@@ -38,18 +38,6 @@ _background = (id, sheet)=>{
     <canvas id='backgroundCanvas'></canvas>
 
   `
-/* ---------------------- { style } ------------------------ */
-  sheet.innerHTML = `
-
-    #background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1000000;
-      transition: opacity 1s; // make sure toggled display matches.
-    }
-
-  `
 /* --------------------------------------------------------- */
   buildCanvas()
   id.style.opacity = 1

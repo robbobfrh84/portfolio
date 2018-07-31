@@ -1,12 +1,14 @@
-_projects = (payload, id, sheet, data = payload.list)=>{
+_projects = (payload, id, sheet, data = payload.feed.entry)=>{
 
   let imagesLoaded = []
   data.map(x => { // prep api data for ui dispaly
-    if (x.info === ' ') x.info = '<em> ... No info available for this project.</em>'
-    if (x.link !== ' ') {
+    if (x.gsx$info.$t === '') x.gsx$info.$t = `
+      <em> ... No info available for this project.</em>
+    `
+    if (x.gsx$link.$t !== '') {
       x.linkName = `
         <th class='projects-link projects-bg'>
-          <a class='projects-link-a' href='${x.link}'>link &#x1f517</a>
+          <a class='projects-link-a' href='${x.gsx$link.$t}'>link &#x1f517</a>
         </th>
       `
       x.columnSpan = 3
@@ -15,13 +17,13 @@ _projects = (payload, id, sheet, data = payload.list)=>{
       x.columnSpan = 2
     }
 
-    if (x.image === ' ') x.image = 'gfx/noImage.png'
+    if (x.gsx$image.$t === '') x.gsx$image.$t = 'gfx/noImage.png'
 
     const imageObj = new Image()
-    imageObj.src = x.image
+    imageObj.src = x.gsx$image.$t
     imageObj.addEventListener('load', function(){
-      const elm = document.getElementById('projects-image-'+x.name)
-      elm.src = x.image
+      const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
+      elm.src = x.gsx$image.$t
       elm.style.opacity = 1
       elm.style.height = '70px'
       elm.style.width = '70px'
@@ -103,21 +105,21 @@ _projects = (payload, id, sheet, data = payload.list)=>{
       <canvas class='projects-canvas'></canvas>
       <table class='project-table'>
         <tr>
-          <th class='projects-name projects-bg'> ${d.name} </th>
+          <th class='projects-name projects-bg'> ${d.gsx$name.$t} </th>
           <th class='projects-role projects-bg'>
-            <div class='projects-role-title'> Role: </div> ${d.role}
+            <div class='projects-role-title'> Role: </div> ${d.gsx$role.$t}
           </th>
           ${d.linkName}
           <th class='projects-image-container projects-bg' rowspan='2'>
-          ${d.linkName ? '<a href='+d.link+'>' : ''}
-            <img class='projects-image' id='projects-image-${d.name}' imageLink='{d.image}'>
+          ${d.linkName ? '<a href='+d.gsx$link.$t+'>' : ''}
+            <img class='projects-image' id='projects-image-${d.gsx$name.$t}' imageLink='{d.image}'>
           ${d.linkName ? '</a>' : ''}
           </th>
         </tr>
         <tr>
           <td class='projects-info projects-bg' colspan="${d.columnSpan}">
-            <div class='projects-info-container' name='${d.name}'>
-              &bull; ${d.info}
+            <div class='projects-info-container' name='${d.gsx$name.$t}'>
+              &bull; ${d.gsx$info.$t}
             </div>
           </td>
         </tr>
@@ -292,7 +294,7 @@ _projects_buildLines = (data)=>{
   for (var i = 0; i < canvases.length; i++) {
     const w = canvases[i].parentElement.clientWidth
     const h = canvases[i].parentElement.clientHeight
-    canvases[i].id = 'projects-canvas-'+data[i].name
+    canvases[i].id = 'projects-canvas-'+data[i].gsx$name.$t
     c[i] = new canvas
     c[i].new(canvases[i].id, w, h)
     c[i].lineGrow(0,5,w,5,'rgba(0,0,255,0.3)',2,5,1.03)

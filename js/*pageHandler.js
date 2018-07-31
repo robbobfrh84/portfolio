@@ -51,9 +51,12 @@ _setPage = (newPage, initial)=>{
 
     case 'projects':
       if (!_projects_Data.fulfilled) {
-        _get('tobob-space-read-projects','tobob-earth','projects')
-          .then(payload => _projects(payload, document.getElementById('projects'),_style()))
-          .catch(err => alert('! Problem retrieving data !\n\n'+err))
+        _get(_sheetDB)
+          .then(payload => _projects(
+            JSON.parse(payload),
+            document.getElementById('projects'),_style()
+          ))
+          .catch(err => console.log('! Problem with data !\n\n'+err))
       } else {
         _projects_buildLines(_projects_Data.list)
       }
