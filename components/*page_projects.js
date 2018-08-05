@@ -21,13 +21,16 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
 
     const imageObj = new Image()
     imageObj.src = x.gsx$image.$t
-    imageObj.addEventListener('load', function(){
-      const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
-      elm.src = x.gsx$image.$t
-      elm.style.opacity = 1
-      elm.style.height = '70px'
-      elm.style.width = '70px'
-    })
+    setTimeout(()=>{
+      imageObj.addEventListener('load', function(){
+        const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
+        elm.src = x.gsx$image.$t
+        elm.style.opacity = 1
+        elm.style.height = '70px'
+        elm.style.width = '70px'
+      })
+    },10)
+
 
     // const imageObj = new Image()
     // imageObj.src = x.image

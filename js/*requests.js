@@ -7,6 +7,7 @@ _get = (url)=>{
     xhr.onreadystatechange = function () {
       if (this.readyState == 4) {
         if (this.status == 200) {
+          console.log(JSON.parse(xhr.responseText));
           res(xhr.responseText)
         } else {
           rej(xhr)

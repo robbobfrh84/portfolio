@@ -3,7 +3,7 @@ var _windowWidth = window.innerWidth
 var _activePage = 'landing'
 var _browsers = {};
 var _projects_Data = {}
-var _sheetDB = "https://spreadsheets.google.com/feeds/list/1lJHYKgkaQJrU9OVbODz-L9r7xT3w0FpzpQZVuv9pRK8/od6/public/values?alt=json"
+var _sheetDB = "https://spreadsheets.google.com/feeds/list/1lJHYKgkaQJrU9OVbODz-L9r7xT3w0FpzpQZVuv9pRK8/1/public/values?alt=json"
 
 window.onload = ()=>{
   _header(document.getElementById('header'), _style() )
