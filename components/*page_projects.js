@@ -21,24 +21,13 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
 
     const imageObj = new Image()
     imageObj.src = x.gsx$image.$t
-    setTimeout(()=>{
-      imageObj.addEventListener('load', function(){
-        const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
-        elm.src = x.gsx$image.$t
-        elm.style.opacity = 1
-        elm.style.height = '70px'
-        elm.style.width = '70px'
-      })
-    },10)
-
-
-    // const imageObj = new Image()
-    // imageObj.src = x.image
-    // imagesLoaded.push(new Promise((res, rej)=>{
-    //   imageObj.addEventListener('load', function(){
-    //     res({link: x.image, name: x.name})
-    //   })
-    // }))
+    imageObj.addEventListener('load', function(){
+      const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
+      elm.src = x.gsx$image.$t
+      elm.style.opacity = 1
+      elm.style.height = '70px'
+      elm.style.width = '70px'
+    })
 
   })
 
@@ -115,7 +104,7 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
           ${d.linkName}
           <th class='projects-image-container projects-bg' rowspan='2'>
           ${d.linkName ? '<a href='+d.gsx$link.$t+'>' : ''}
-            <img class='projects-image' id='projects-image-${d.gsx$name.$t}' imageLink='{d.image}'>
+            <img class='projects-image' id='projects-image-${d.gsx$name.$t}' src="${d.gsx$image.$t}">
           ${d.linkName ? '</a>' : ''}
           </th>
         </tr>
@@ -132,7 +121,6 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
     `
 
   }
-
   /* ---------------------- { style } ------------------------ */
   const infoHeight = '35px'
   sheet.innerHTML = `
