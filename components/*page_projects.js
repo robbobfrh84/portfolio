@@ -2,32 +2,36 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
 
   let imagesLoaded = []
   data.map(x => { // prep api data for ui dispaly
-    if (x.gsx$info.$t === '') x.gsx$info.$t = `
-      <em> ... No info available for this project.</em>
-    `
-    if (x.gsx$link.$t !== '') {
-      x.linkName = `
-        <th class='projects-link projects-bg'>
-          <a class='projects-link-a' href='${x.gsx$link.$t}'>link &#x1f517</a>
-        </th>
+    console.log(x.gsx$hide.$t);
+    if (!x.gsx$hide.$t) {
+      if (x.gsx$info.$t === '') x.gsx$info.$t = `
+        <em> ... No info available for this project.</em>
       `
-      x.columnSpan = 3
-    } else {
-      x.linkName = ''
-      x.columnSpan = 2
+      if (x.gsx$link.$t !== '') {
+        x.linkName = `
+          <th class='projects-link projects-bg'>
+            <a class='projects-link-a' href='${x.gsx$link.$t}'>link &#x1f517</a>
+          </th>
+        `
+        x.columnSpan = 3
+      } else {
+        x.linkName = ''
+        x.columnSpan = 2
+      }
+
+      if (x.gsx$image.$t === '') x.gsx$image.$t = 'gfx/noImage.png'
+
+      const imageObj = new Image()
+      imageObj.src = x.gsx$image.$t
+      imageObj.addEventListener('load', function(){
+        const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
+        elm.src = x.gsx$image.$t
+        elm.style.opacity = 1
+        elm.style.height = '70px'
+        elm.style.width = '70px'
+      })
     }
 
-    if (x.gsx$image.$t === '') x.gsx$image.$t = 'gfx/noImage.png'
-
-    const imageObj = new Image()
-    imageObj.src = x.gsx$image.$t
-    imageObj.addEventListener('load', function(){
-      const elm = document.getElementById('projects-image-'+x.gsx$name.$t)
-      elm.src = x.gsx$image.$t
-      elm.style.opacity = 1
-      elm.style.height = '70px'
-      elm.style.width = '70px'
-    })
 
   })
 
@@ -90,35 +94,35 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
 
   const projects = document.getElementById('projects-container')
   for (const d of data) {
+    if (!d.gsx$hide.$t) {
+      projects.innerHTML += `
 
-    projects.innerHTML += `
-
-    <div class='projects-box'>
-      <canvas class='projects-canvas'></canvas>
-      <table class='project-table'>
-        <tr>
-          <th class='projects-name projects-bg'> ${d.gsx$name.$t} </th>
-          <th class='projects-role projects-bg'>
-            <div class='projects-role-title'> Role: </div> ${d.gsx$role.$t}
-          </th>
-          ${d.linkName}
-          <th class='projects-image-container projects-bg' rowspan='2'>
-          ${d.linkName ? '<a href='+d.gsx$link.$t+'>' : ''}
-            <img class='projects-image' id='projects-image-${d.gsx$name.$t}'>
-          ${d.linkName ? '</a>' : ''}
-          </th>
-        </tr>
-        <tr>
-          <td class='projects-info projects-bg' colspan="${d.columnSpan}">
-            <div class='projects-info-container' name='${d.gsx$name.$t}'>
-              &bull; ${d.gsx$info.$t}
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    `
+      <div class='projects-box'>
+        <canvas class='projects-canvas'></canvas>
+        <table class='project-table'>
+          <tr>
+            <th class='projects-name projects-bg'> ${d.gsx$name.$t} </th>
+            <th class='projects-role projects-bg'>
+              <div class='projects-role-title'> Role: </div> ${d.gsx$role.$t}
+            </th>
+            ${d.linkName}
+            <th class='projects-image-container projects-bg' rowspan='2'>
+            ${d.linkName ? '<a href='+d.gsx$link.$t+'>' : ''}
+              <img class='projects-image' id='projects-image-${d.gsx$name.$t}'>
+            ${d.linkName ? '</a>' : ''}
+            </th>
+          </tr>
+          <tr>
+            <td class='projects-info projects-bg' colspan="${d.columnSpan}">
+              <div class='projects-info-container' name='${d.gsx$name.$t}'>
+                &bull; ${d.gsx$info.$t}
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      `
+    }
 
   }
   /* ---------------------- { style } ------------------------ */
