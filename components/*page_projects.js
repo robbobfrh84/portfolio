@@ -104,7 +104,7 @@ _projects = (payload, id, sheet, data = payload.feed.entry)=>{
           ${d.linkName}
           <th class='projects-image-container projects-bg' rowspan='2'>
           ${d.linkName ? '<a href='+d.gsx$link.$t+'>' : ''}
-            <img class='projects-image' id='projects-image-${d.gsx$name.$t}' src="${d.gsx$image.$t}">
+            <img class='projects-image' id='projects-image-${d.gsx$name.$t}'>
           ${d.linkName ? '</a>' : ''}
           </th>
         </tr>
