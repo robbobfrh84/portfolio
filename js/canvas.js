@@ -1,4 +1,4 @@
-class canvas {
+class Canvas {
 
   constructor () {
     this.sprites = []

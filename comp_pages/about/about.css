@@ -1,0 +1,73 @@
+#about {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+#aboutTitle {
+  text-align: center;
+  margin: 20px;
+  font-size: 28px;
+  font-family: Avenir;
+  color: rgba(0,0,0,0.5);
+}
+
+#about #aboutMainContent {
+  position: relative;
+  margin: auto;
+  width: 65%;
+  max-width: 800px;
+  /* padding-top: 70px; */
+  font-size: 28px;
+  font-family: Avenir;
+  color: rgba(0,0,0,0.5);
+  transition: opacity 1s;
+  background-color: rgba(0,0,0,0.05);
+}
+
+#about #aboutStartOver {
+  position: absolute;
+  opacity: 0;
+  color: rgba(0,0,0,1);
+  font-weight: bold;
+  font-family: courier;
+  right: 20px;
+  top: 70px;
+  cursor: pointer;
+  transition: opacity 0.3s, letter-spacing 0.3s;
+}
+
+#about #aboutStartOver:hover {
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  transition: opacity 0.3s, letter-spacing 0.3s;
+}
+
+#about #aboutCanvas {
+  position: absolute;
+  top: -10px; left: -10px;
+}
+
+#about #aboutContentBox {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+@media only screen and (max-width: 600px)  {
+    #about #aboutMainContent {
+      width: 100%;
+    }
+}
+
+/* #contact #title {
+  position: absolute;
+  top: 5px; left: 35px;
+} */
+
+
+#about .write-up {
+  font-size: 18px;
+  font-weight: 500;
+  margin: auto;
+  padding: 30px;
+}

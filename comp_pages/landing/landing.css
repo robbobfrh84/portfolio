@@ -1,0 +1,130 @@
+#landing {
+  display: none;
+  transition: opacity 1s;
+}
+
+#landing .landing-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+#landing #welcomeMessage {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 100;
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 60px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#landing .link-box {
+  padding-bottom: 55px;
+}
+
+#landing .social-link-box {
+  text-align: center;
+}
+
+#landing #eggIcon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  opacity: 0;
+  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+  z-index: 1;
+  transition: opacity 0.5s;
+}
+
+#landing .landing-button {
+  position: relative;
+  width: 290px;
+  margin: auto;
+  transition: box-shadow 0.20s;
+}
+
+#landing .landing-button-title {
+  position: relative;
+  left: 5px;
+  top: 5px;
+  width: 260px;
+  font-size: 24px;
+  font-family: Avenir;
+  font-weight: 100;
+  color: #666;
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 5px rgba(255,255,255,1);
+  background: #dfdfdf;
+  transition: background .3s, box-shadow .3s;
+}
+
+#landing #showecaseBtn {
+  opacity: 0;
+  background: rgba(223,223,230,0.6);
+  transition: opacity 1s;
+}
+
+#landing #contactBtn {
+  opacity: 0;
+  background: rgba(230,223,223,0.6);
+  transition: opacity 1s;
+}
+
+#landing #aboutBtn {
+  opacity: 0;
+  background: rgba(230,230,223,0.6);
+  transition: opacity 1s;
+}
+
+#landing .landing-button-title:hover {
+  background: #eee;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.4);
+  transition: background .3s, box-shadow .3s;
+}
+
+#landing .landing-canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}
+
+#landing .social-link-box {
+  text-align: center;
+  height: 40px;
+  min-height: 40px;
+}
+
+#landing .social-link-box a {
+  text-decoration: none;
+  margin: 35px;
+  display: inline-block;
+  width: 40px;
+  min-width: 50px;
+}
+
+#landing .social-link-box a img {
+  width: 1px;
+  opacity: 0.5;
+  transition: width 1s;
+}
+
+@media (max-height: 500px) {
+  #landing .landing-container {
+    position: relative;
+    top: 50px;
+    left: 0px;
+    margin-bottom: 100px;
+    transform: translate(0%, 0%);
+  }
+
+}
