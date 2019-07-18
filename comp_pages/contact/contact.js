@@ -65,17 +65,13 @@ function _contact(id, resize) {
           &nbsp; &nbsp;
             I'm currently living in Austin, Texas and
           anyone with questions or comments regarding my portfolio/projects/links
-          please feel free to contact me via email, which is the best way to get
+          please feel free to contact me via <a href="mailto:  bobmain49@gmail.com">email</a> or <a href="https://twitter.com/BobMain49">twitter</a>, which is the best way to get
           a hold of me.
 
           <br><br>
 
           &nbsp; &nbsp;
-            As of writing this, I am currently considering full-time
-          employment or contract work based on some of the skills displayed
-          within this site. If you have a project or job opportunity you'd like to
-          talk to me about, feel free to email me about that as well. You can also
-          visit my <a href="https://www.linkedin.com/in/bobmain49">linkedin</a>.
+          If you you're interested in working with me based on some of the skills displayed within this site, and have a project or job opportunity you'd like to talk to me about, feel free to email me about that as well. You can also visit my <a href="https://www.linkedin.com/in/bobmain49">linkedin</a>.
 
           <br><br>
 

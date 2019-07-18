@@ -61,28 +61,50 @@ function _about(id, resize) {
           <img id='morseUp' class='morse' src='gfx/morUp.svg'>
         </div> -->
 
-        <p class='write-up'>
+        <div class='write-up'>
 
-          &nbsp; &nbsp;
-          I'm a JavaScript centered front-end web developer that has extensive experience with JS frameworks, libraries and plugins. In addition, I have a strong passion for leveraging the built-in powers of HTML5 and CSS3 with plain ol' vanilla Javascript.
-          <br><br>
+          <h3> Well hello there... </h3>
+          ...and thank you for checking out my personal website!
+<br><br>
+          As you may have guessed, my name is Bob, Bob Main, or more formally Robert Bruce Main. But, only the DMV and the dentist call me by Robert. <span>&#128556;</span>
 
-          &nbsp; &nbsp;
-          API data visualization, animations and UX/UI interactivity best represents my areas of experience, expertise and passion. On a less extensive level, I’ve created a variety of native programs with Python and C++ for automated woodworking machinery and IoT micro-controller projects.
-          <br><br>
+<br><br><hr>
+          <h3> My Journey as a Software Engineer </h3>
+          <em> ... aka: coder, programmer, web developer, etc... </em>
+<br><br>
+          In a previous life, I had a career of building things out of wood and selling them at farmers markets & craft fairs. I realized so much of the work was repetitive, and I had this hare-brained idea to build a machine to automate the work. This led me to research and discover something called an <a href="https://en.wikipedia.org/wiki/Arduino_Uno">Arduino</a>, in which I could build my own CNC router and design drill paths to carve the wood for me!
+<br><br>
+          If you wanna see what-in-the-world it turned out to be. See my very old, ugly and outdated portfolio, where you'll see some examples of the  <a href="https://bobma.in/?CNC">CNC router in action!</a>
+<br><br>
+          Now, I had to to learn some code to make this work. C++ specifically. I had never touched any code before and this would end up being my gateway drug to become a full-fledged software engineer.
+<br><br>
+          I quickly realized I could not only code for motor motion, but for websites as well! As this new obsession started to take hold I realized I wanted to start a career as software engineer. After about a year teaching myself to code, selling my folk art and bartending part-time, I finally landed a gig with a cognitive services and machine learning startup! Yay!
+<br><br>
+          From that point, my career as a software engineer has grown and developed in many areas. Most recently I've been teaching Full-stack web development and developing curriculum for people who want to get into coding just as I did!
 
-          &nbsp; &nbsp;
-          What energizes me most about tech and web development is the constant evolution. In fact, as I’ve taken the time to write this, I’ve probably got behind on some new and exciting tech! So I’ve committed to a lifetime as a student, tinkerer, and teacher.
-          <br><br>
+<br><br><hr>
+          <h3> How I'd define myself in the industry now </h3>
+          I'm a front-end leaning full-stack web developer that has extensive experience with JavaScript frameworks, NodeJS and MongoDB. In addition, I have a strong passion for leveraging the built-in powers of HTML5 and CSS3 with plain ole' vanilla Javascript.
+<br><br>
 
-          &nbsp; &nbsp;
-          I’m thankful software development has adopted Agile principles, where I find myself most at home. In fact, it was actually my background in woodworking and teaching that opened the opportunity to tech. It has been my ignorance of something foreign that’s lead to creating something meaningful and unique out of an idea.
-          <br><br>
-
-          &nbsp; &nbsp;
-          Thanks for stopping by! Please check out more, see some of my projects at www.bobma.in, track my daily activity on github at github.com/robbobfrh84 and don't hesitate to reach out.
-
-        </p>
+          API data visualization, animations and UX/UI interactivity best represents my areas of experience, expertise and passion. On a less extensive level, I've created a variety of native programs with Python and C++ for automated machinery and IoT micro-controller projects.
+<br><br>
+          What energizes me most about tech and web development is the constant evolution. I've been committed to a lifetime as a student, tinkerer, and teacher.
+<br><br>
+          I'm thankful software development has adopted agile principles, where I find myself most at home. In fact, it was actually my background in woodworking and teaching that opened the opportunity to software engineering. It has been my ignorance of something foreign that has lead to creating something meaningful and unique out of an idea.
+<br><br>
+          Thanks for stopping by! Please check out my showcase, track my daily activity on at GitHub and don't hesitate to reach out!
+<br><br>
+          Let's see where it goes <span>&#128077;</span>
+<br><br>
+          - Bob
+<br><br>
+          P.S. Thanks for stopping by! Please check out my
+          <a href="#showcase">showcase<a>,
+          track my daily activity on  at
+          <a href="https://github.com/robbobfrh84">github<a>
+          and don't hesitate to <a href="#contact">contact<a> me!
+        </div>
 
       </div>
     </div>

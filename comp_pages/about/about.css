@@ -46,6 +46,7 @@
 #about #aboutCanvas {
   position: absolute;
   top: -10px; left: -10px;
+  z-index: -1;
 }
 
 #about #aboutContentBox {
@@ -70,4 +71,15 @@
   font-weight: 500;
   margin: auto;
   padding: 30px;
+}
+
+#about .write-up span {
+  font-family: sans-serif;
+  color: blue;
+}
+
+#about .write-up hr {
+  border: 1px solid black;
+  opacity: 0.25;
+  border-radius: 100%;
 }
