@@ -60,6 +60,7 @@ function _loaderOff(callback) {
   var loader = document.getElementById('loader')
   loader.style.opacity = 0
   setTimeout(()=>{
+    loader.style.opacity = 0
     document.body.style.cursor = 'initial'
     while (loader.hasChildNodes()){
       loader.removeChild(loader.lastChild);
