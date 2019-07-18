@@ -44,6 +44,7 @@
 #contact #contactCanvas {
   position: absolute;
   top: -10px; left: -10px;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 600px)  {

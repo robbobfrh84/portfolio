@@ -37,7 +37,10 @@ function _resize_screen() {
         _showcase_buildLines(_showcase_Data.list)
         break;
       case 'contact':
-        _contact( document.getElementById('contact'), _style(), true )
+        _contact( document.getElementById('contact'), true )
+        break;
+      case 'about':
+        _about( document.getElementById('about'), true )
         break;
     }
   }
