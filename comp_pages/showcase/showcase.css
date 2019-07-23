@@ -22,7 +22,7 @@
   transition: opacity 0.3s, letter-spacing 0.3s;
 }
 
-#showcase #showcase-title {
+#showcase .showcase-title {
   text-align: center;
   font-size: 28px;
   font-family: Avenir;

@@ -55,7 +55,7 @@ function _showcase(payload, id) {
   const infoHeight = "35px"
   id.innerHTML = `
 
-    <div id='showcase-title'> Showcase </div>
+    <div class='showcase-title'> Showcase </div>
 
     <div id="showcaseStartOver" onClick='_setPage("landing")'>
       &lt;
@@ -67,7 +67,7 @@ function _showcase(payload, id) {
   `
 
   data.map(x => { // prep api data for ui dispaly
-    if (!x.gsx$hide.$t) {
+    if (!x.gsx$hide.$t && x.gsx$name.$t !== '-') {
       x.columnSpan = 2
 
       if (x.gsx$github.$t !== '') { // GITHUB LINK
@@ -135,7 +135,15 @@ function _showcase(payload, id) {
   const showcase = document.getElementById('showcase-container')
 
   for (const d of data) {
-    if (!d.gsx$hide.$t) {
+    if (d.gsx$name.$t === '-') {
+      showcase.innerHTML += `
+        <br><br><br><br><br>
+        <div class='showcase-title'>
+          &bull; <em> ${d.gsx$info.$t} </em> &bull;
+        </div>
+        <br>
+      `
+    } else if (!d.gsx$hide.$t) {
       showcase.innerHTML += `
 
       <div class='showcase-box'>
@@ -192,10 +200,12 @@ function _showcase(payload, id) {
 
 }
 
-function _showcase_buildLines(data) {
+function _showcase_buildLines(alldata) {
   const canvases = document.getElementsByClassName('showcase-canvas')
   let c = []
+  const data = alldata.filter( d => d.gsx$name.$t !== "-" )
   for (var i = 0; i < canvases.length; i++) {
+    console.log(data[i].gsx$name)
     const w = canvases[i].parentElement.clientWidth
     const h = canvases[i].parentElement.clientHeight
     canvases[i].id = 'showcase-canvas-'+data[i].gsx$name.$t

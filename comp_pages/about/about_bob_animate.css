@@ -1,0 +1,13 @@
+.about-bob-animate-container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 375px;
+  height: 90px;
+  margin: 10px;
+}
+#aboutBobAnimate {
+  margin-left: 5px;
+  transition-timing-function: ease-in-out;
+  transition: margin-left 2s;
+}

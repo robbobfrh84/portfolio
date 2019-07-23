@@ -1,26 +1,11 @@
 function _about(id, resize) {
 
-  // function animateMorse() {
-  //   window.requestAnimationFrame(()=>{
-  //     const up = document.getElementById('morseUp')
-  //     const down = document.getElementById('morseDown')
-  //     const upVal = up.style.opacity
-  //     if (upVal === '1') {
-  //       up.style.opacity = 0;
-  //       down.style.opacity = 1;
-  //     } else {
-  //       up.style.opacity = 1;
-  //       down.style.opacity = 0;
-  //     }
-  //     const delay = _rand(1,4) === 1 ? 400 : 80
-  //     setTimeout(()=>{
-  //       window.requestAnimationFrame(()=>{
-  //         if (_activePage === 'contact') animateMorse()
-  //       })
-  //     },delay)
-  //     setTimeout(()=>{contactContentBox.style.opacity = 1},500)
-  //   })
-  // }
+  function animations() {
+    animateLines()
+    setTimeout(function(){
+      _about_bob_animate()
+    },1000)
+  }
 
   function animateLines() {
     const w = aboutMainContent.clientWidth+20
@@ -54,12 +39,9 @@ function _about(id, resize) {
 
       <div id="aboutContentBox">
 
-        <!-- <div id='morse-animation'>
-          <div id='title'> Contact Info </div>
-          <img id='morseBase' class='morse' src='gfx/morBase.svg'>
-          <img id='morseDown' class='morse' src='gfx/morDown.svg'>
-          <img id='morseUp' class='morse' src='gfx/morUp.svg'>
-        </div> -->
+        <div class="about-bob-animate-container">
+          <div id="aboutBobAnimate"></div>
+        </div>
 
         <div class='write-up'>
 
@@ -112,6 +94,5 @@ function _about(id, resize) {
   `
 
   /* --------------------------------------------------------- */
-  // if (!resize) animateMorse()
-  setTimeout(()=>{ animateLines() },350)
+  setTimeout(()=>{ animations() },350)
 }
