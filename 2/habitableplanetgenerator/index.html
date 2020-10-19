@@ -40,15 +40,14 @@
 </body>
 <script>
 
-
-// 🌱 CHARACTORISTICS 🌱
+// 🌱 CHARACTERISTICS 🌱
 const planet_radius = 125
 const atmosphere_thickness = 5
 const offset = -10
 
 const TAU = Zdog.TAU
-let isSpinning = false
-isSpinning = true
+let isSpinning = true
+let regenerate = false
 
 
 // 🐶 ZDOG ILLUSTRATION 🐶
@@ -114,7 +113,7 @@ function generate_world(space, randomMass){
 
   // // 🇪🇨 ⭕️ Equator ⭕️ 🇪🇨
   // set_latitude_marks(0, 400, 3, 0, "rgba(184,134,11,0.5)", "dot")
-  // // 🎅 PRIME MARIDIAN 🐧
+  // // 🎅 PRIME MERIDIAN 🐧
   // set_longitude_marks(0, 200, 3, 0,"rgba(0,110,0,0.3)", "dot")
 
 
@@ -323,9 +322,11 @@ function generate_world(space, randomMass){
   // 🔥🔥🔥🔥 Animate! 🔥🔥🔥🔥
   space.rotate.z = 0.3
   function animate() {
-    space.rotate.y += isSpinning ? 0.01 : 0
-    space.updateRenderGraph()
-    requestAnimationFrame( animate )
+    if (!regenerate) {
+      space.rotate.y += isSpinning ? 0.01 : 0
+      space.updateRenderGraph()
+      requestAnimationFrame( animate )
+    }
   }
   console.log("total clouds, land: ", cloudCount, landMassCount)
 
