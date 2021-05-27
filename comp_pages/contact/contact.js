@@ -65,7 +65,7 @@ function _contact(id, resize) {
           &nbsp; &nbsp;
             I'm currently living in Austin, Texas and
           anyone with questions or comments regarding my portfolio/projects/links
-          please feel free to contact me via <a href="mailto:  bobmain49@gmail.com">email</a> or <a href="https://twitter.com/BobMain49">twitter</a>, which is the best way to get
+          please feel free to contact me at bobmain49@gmail.com or <a href="https://twitter.com/BobMain49">twitter</a>, which is the best way to get
           a hold of me.
 
           <br><br>
