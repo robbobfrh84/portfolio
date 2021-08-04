@@ -52,6 +52,11 @@ function _setPage(newPage, initial) {
             JSON.parse(payload),
             document.getElementById('showcase')
           ))
+          .catch(error => {
+            console.log("request error :", error)
+            console.log('trying again')
+            _get(_sheetDB)
+          })
       } else {
         _showcase_buildLines(_showcase_Data.list)
       }
