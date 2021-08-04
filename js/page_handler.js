@@ -54,7 +54,7 @@ function _setPage(newPage, initial) {
           ))
           .catch(error => {
             console.log("request error (trying again):", error)
-            _get(_sheetDB)
+            _setPage(window.location.hash.split('#')[1])
           })
       } else {
         _showcase_buildLines(_showcase_Data.list)
