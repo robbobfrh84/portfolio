@@ -53,8 +53,7 @@ function _setPage(newPage, initial) {
             document.getElementById('showcase')
           ))
           .catch(error => {
-            console.log("request error :", error)
-            console.log('trying again')
+            console.log("request error (trying again):", error)
             _get(_sheetDB)
           })
       } else {
