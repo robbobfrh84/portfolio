@@ -1,6 +1,8 @@
 function _showcase(payload, id) {
 
-  const data = payload.feed.entry
+  // const data = payload.feed.entry
+  let data = payload.table.rows
+  data.shift()
   let imagesLoaded = []
 
   function buildOneLine(elm, delay) {
@@ -67,13 +69,14 @@ function _showcase(payload, id) {
   `
 
   data.map(x => { // prep api data for ui dispaly
-    if (!x.gsx$hide.$t && x.gsx$name.$t !== '-') {
+    // if (!x.gsx$hide.$t && x.gsx$name.$t !== '-') {
+    if (!x.c[1] && x.c[0] && x.c[0].v !== "-") {
       x.columnSpan = 2
 
-      if (x.gsx$github.$t !== '') { // GITHUB LINK
+      if (x.c[3]) { // GITHUB LINK
         x.githubName = `
           <th class='links bg'>
-            <a href='${x.gsx$github.$t}'>
+            <a href='${x.c[3].v}'>
               <span>github</span>
               <img class="icon" src="gfx/git.svg"/>
             </a>
@@ -82,10 +85,10 @@ function _showcase(payload, id) {
         x.columnSpan++
       } else { x.githubName = "" }
 
-      if (x.gsx$codepen.$t !== '') { // CODEPEN LINK
+      if (x.c[4]) { // CODEPEN LINK
         x.codepenName = `
           <th class='links bg'>
-          <a href='${x.gsx$codepen.$t}'>
+          <a href='${x.c[4].v}'>
             <span>codepen</span>
             <img class="icon" src="gfx/codepen.png"/>
           </a>
@@ -94,10 +97,10 @@ function _showcase(payload, id) {
         x.columnSpan++
       } else { x.codepenName = "" }
 
-      if (x.gsx$live.$t !== '') { // LIVE LINK
+      if (x.c[5]) { // LIVE LINK
         x.liveName = `
           <th class='links bg'>
-            <a href='${x.gsx$live.$t}'>
+            <a href='${x.c[5].v}'>
               <span>live</span>
               &#x1f517
             </a>
@@ -111,17 +114,15 @@ function _showcase(payload, id) {
          x.columnSpan++
       } else { x.filler = ""}
 
-      if (x.gsx$info.$t === '') x.gsx$info.$t = `
-        <em> ... No info available for this project.</em>
-      `
+      if (!x[2]) x[2] = "<em> ... No info available for this project.</em>"
 
-      if (x.gsx$image.$t === '') x.gsx$image.$t = 'gfx/noImage.png'
+      if (!x[6]) x[6] = 'gfx/noImage.png'
 
       const imageObj = new Image()
-      imageObj.src = x.gsx$image.$t
+      imageObj.src = x.c[6].v
       imageObj.addEventListener('load', function(){
-        const elm = document.getElementById('showcase-image-'+x.gsx$name.$t)
-        elm.src = x.gsx$image.$t
+        const elm = document.getElementById('showcase-image-'+x.c[0].v)
+        elm.src = x.c[6].v
         elm.style.opacity = 1
         setTimeout(function(){
           elm.style.height = '70px'
@@ -135,15 +136,15 @@ function _showcase(payload, id) {
   const showcase = document.getElementById('showcase-container')
 
   for (const d of data) {
-    if (d.gsx$name.$t === '-') {
+    if (d.c[0] && d.c[0].v === '-') {
       showcase.innerHTML += `
-        <br><br><br><br><br>
+        <br><br>
         <div class='showcase-title'>
-          &bull; <em> ${d.gsx$info.$t} </em> &bull;
+          &bull; <em> ${d.c[2].v} </em> &bull;
         </div>
         <br>
       `
-    } else if (!d.gsx$hide.$t) {
+    } else if (!d.c[1]) {
       showcase.innerHTML += `
 
       <div class='showcase-box'>
@@ -151,7 +152,7 @@ function _showcase(payload, id) {
         <table class='showcase-table'>
           <tr>
 
-            <th class='showcase-name bg'> ${d.gsx$name.$t} </th>
+            <th class='showcase-name bg'> ${d.c[0].v} </th>
 
             ${d.filler}
 
@@ -162,8 +163,8 @@ function _showcase(payload, id) {
             ${d.liveName}
 
             <th class='showcase-image-container bg' rowspan='2'>
-              ${d.liveName ? '<a href='+d.gsx$live.$t+'>' : ''}
-                <img class='showcase-image' id='showcase-image-${d.gsx$name.$t}'>
+              ${d.liveName ? '<a href='+d.c[5].v+'>' : ''}
+                <img class='showcase-image' id='showcase-image-${d.c[0].v}'>
               ${d.liveName ? '</a>' : ''}
             </th>
 
@@ -171,8 +172,8 @@ function _showcase(payload, id) {
 
           <tr>
             <td class='showcase-info bg' colspan="${d.columnSpan-1}">
-              <div class='showcase-info-container' name='${d.gsx$name.$t}'>
-                &bull; ${d.gsx$info.$t}
+              <div class='showcase-info-container' name='${d.c[0].v}'>
+                &bull; ${d.c[2].v}
               </div>
             </td>
           </tr>
@@ -203,21 +204,23 @@ function _showcase(payload, id) {
 function _showcase_buildLines(alldata) {
   const canvases = document.getElementsByClassName('showcase-canvas')
   let c = []
-  const data = alldata.filter( d => d.gsx$name.$t !== "-" )
+  let data = alldata.filter( d => d.c[0].v !== "-" )
   for (var i = 0; i < canvases.length; i++) {
-    console.log(data[i].gsx$name)
-    const w = canvases[i].parentElement.clientWidth
-    const h = canvases[i].parentElement.clientHeight
-    canvases[i].id = 'showcase-canvas-'+data[i].gsx$name.$t
-    c[i] = new Canvas
-    c[i].new(canvases[i].id, w, h)
-    c[i].lineGrow(0,5,w,5,'rgba(0,0,255,0.3)',2,5,1.03)
-    c[i].lineGrow(w,h-5,0,h-5,'rgba(0,0,255,0.3)',2,5,1.03)
-    c[i].lineGrow(5,0,5,h,'rgba(0,0,255,0.3)',2,0.25,1.03)
-    c[i].lineGrow(w-5,h,w-5,0,'rgba(0,0,255,0.3)',2,0.25,1.03)
-    const index = i
-    setTimeout(()=>{
-      c[index].animate()
-    },750+(100*i))
+    if (data[i] && data[i].c[0].v != "name") {
+      const w = canvases[i].parentElement.clientWidth
+      const h = canvases[i].parentElement.clientHeight
+      canvases[i].id = 'showcase-canvas-'+data[i].c[0].v
+      c[i] = new Canvas
+      c[i].new(canvases[i].id, w, h)
+      c[i].lineGrow(0,5,w,5,'rgba(0,0,255,0.3)',2,5,1.03)
+      c[i].lineGrow(w,h-5,0,h-5,'rgba(0,0,255,0.3)',2,5,1.03)
+      c[i].lineGrow(5,0,5,h,'rgba(0,0,255,0.3)',2,0.25,1.03)
+      c[i].lineGrow(w-5,h,w-5,0,'rgba(0,0,255,0.3)',2,0.25,1.03)
+      const index = i
+      setTimeout(()=>{
+        c[index].animate()
+      },750+(100*i))
+    }
+
   }
 }

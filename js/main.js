@@ -4,7 +4,7 @@ let _activePage = 'landing'
 let hasLanded = false
 let _browsers = {};
 let _showcase_Data = {}
-let _sheetDB = "https://spreadsheets.google.com/feeds/list/1lJHYKgkaQJrU9OVbODz-L9r7xT3w0FpzpQZVuv9pRK8/1/public/values?alt=json"
+let _sheetDB = "https://docs.google.com/spreadsheets/d/1lJHYKgkaQJrU9OVbODz-L9r7xT3w0FpzpQZVuv9pRK8/gviz/tq?tqx=out:json"
 
 window.onload = ()=>{
   _header(document.getElementById('header'))
