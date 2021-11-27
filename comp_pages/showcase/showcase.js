@@ -1,7 +1,9 @@
 function _showcase(payload, id) {
 
-  // const data = payload.feed.entry
+
   let data = payload.table.rows
+
+  console.log("data :", data)
   data.shift()
   let imagesLoaded = []
 
