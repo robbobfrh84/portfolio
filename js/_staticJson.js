@@ -1,4 +1,4 @@
-const staticJson = {
+const _staticJson = {
   "version": "0.6",
   "reqId": "0",
   "status": "ok",

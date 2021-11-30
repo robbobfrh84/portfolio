@@ -47,17 +47,14 @@ function _setPage(newPage, initial) {
 
     case 'showcase':
       if (!_showcase_Data.fulfilled) {
-        _showcase( staticJson, document.getElementById('showcase') )
-        // 🚨 Request removed! for staticJson.js
-        // _get(_sheetDB)
-        //   .then(payload => _showcase(
-        //     JSON.parse(payload),
-        //     document.getElementById('showcase')
-        //   ))
-        //   .catch(error => {
-        //     console.log("request error (trying again):", error)
-        //     // _setPage(window.location.hash.split('#')[1])
-        //   })
+
+        // 👀 IF ?data=gsheet
+        // _showcase( _staticJson, document.getElementById('showcase') )
+
+        // 👀 IF ?data=json
+        _get_showcase()
+          .then( payload => _showcase( payload.data.rows, window.showcase ))
+
       } else {
         _showcase_buildLines(_showcase_Data.list)
       }

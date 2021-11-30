@@ -4,7 +4,11 @@ let _activePage = 'landing'
 let hasLanded = false
 let _browsers = {};
 let _showcase_Data = {}
-let _sheetDB = "https://docs.google.com/spreadsheets/d/1lJHYKgkaQJrU9OVbODz-L9r7xT3w0FpzpQZVuv9pRK8/gviz/tq?tqx=out:json"
+
+// Gasup ⚡️ 🚀
+const deployId = "AKfycbx2I_khrgqjxp0mJWYhk46mm3q4HF_rKzlVap1EweR1A3V2ybvByhxxnbW1uROD2vdF"
+const id = "1h7AQcnPrSPL9kwPwcBwkRRHB_VIdJ-NszRY1eYJHf24"
+const gasup = new Gasup({ deployId, id })
 
 window.onload = ()=>{
   _header(document.getElementById('header'))

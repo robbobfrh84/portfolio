@@ -1,10 +1,6 @@
-function _showcase(payload, id) {
+function _showcase(data, id) {
+  data = data.filter( row => !row.hide )
 
-
-  let data = payload.table.rows
-
-  console.log("data :", data)
-  data.shift()
   let imagesLoaded = []
 
   function buildOneLine(elm, delay) {
@@ -70,61 +66,63 @@ function _showcase(payload, id) {
 
   `
 
-  data.map(x => { // prep api data for ui dispaly
-    // if (!x.gsx$hide.$t && x.gsx$name.$t !== '-') {
-    if (!x.c[1] && x.c[0] && x.c[0].v !== "-") {
-      x.columnSpan = 2
+  data.map( row => { // prep api data for ui dispaly
+    // if (!x.c[1] && x.c[0] && x.c[0].v !== "-") {
+    if (!row.hide) {
 
-      if (x.c[3]) { // GITHUB LINK
-        x.githubName = `
+      row.columnSpan = 2
+
+      if (row.github) { // GITHUB LINK
+        row.githubName = `
           <th class='links bg'>
-            <a href='${x.c[3].v}'>
+            <a href='${row.github}' target="_blank">
               <span>github</span>
               <img class="icon" src="gfx/git.svg"/>
             </a>
           </th>
         `
-        x.columnSpan++
-      } else { x.githubName = "" }
+        row.columnSpan++
+      } else { row.githubName = "" }
 
-      if (x.c[4]) { // CODEPEN LINK
-        x.codepenName = `
+      if (row.codepen) { // CODEPEN LINK
+        row.codepenName = `
           <th class='links bg'>
-          <a href='${x.c[4].v}'>
+          <a href='${row.codepen}' target="_blank">
             <span>codepen</span>
             <img class="icon" src="gfx/codepen.png"/>
           </a>
           </th>
         `
-        x.columnSpan++
-      } else { x.codepenName = "" }
+        row.columnSpan++
+      } else { row.codepenName = "" }
 
-      if (x.c[5]) { // LIVE LINK
-        x.liveName = `
+      if (row.live) { // LIVE LINK
+        row.liveName = `
           <th class='links bg'>
-            <a href='${x.c[5].v}'>
+            <a href='${row.live}' target="_blank">
               <span>live</span>
               &#x1f517
             </a>
           </th>
         `
-        x.columnSpan++
-      } else { x.liveName = "" }
+        row.columnSpan++
+      } else { row.liveName = "" }
 
-      if (x.columnSpan === 2) {
-         x.filler = `<th class='bg'></th>`
-         x.columnSpan++
-      } else { x.filler = ""}
+      if (row.columnSpan === 2) {
+         row.filler = `<th class='bg'></th>`
+         row.columnSpan++
+      } else { row.filler = ""}
 
-      if (!x[2]) x[2] = "<em> ... No info available for this project.</em>"
+      if (!row.info) ow.info = "<em> ... No info available for this project.</em>"
 
-      if (!x[6]) x[6] = 'gfx/noImage.png'
+      if (!row.image) row.image = 'gfx/noImage.png'
 
       const imageObj = new Image()
-      imageObj.src = x.c[6].v
+      row.image = row.image.split('"')[1]
+      imageObj.src = row.image
       imageObj.addEventListener('load', function(){
-        const elm = document.getElementById('showcase-image-'+x.c[0].v)
-        elm.src = x.c[6].v
+        const elm = document.getElementById('showcase-image-'+row.name)
+        elm.src = row.image
         elm.style.opacity = 1
         setTimeout(function(){
           elm.style.height = '70px'
@@ -137,16 +135,17 @@ function _showcase(payload, id) {
   _showcase_Data.list = data
   const showcase = document.getElementById('showcase-container')
 
-  for (const d of data) {
-    if (d.c[0] && d.c[0].v === '-') {
+  for (const row of data) {
+
+    if (row.name === '-') {
       showcase.innerHTML += `
         <br><br>
         <div class='showcase-title'>
-          &bull; <em> ${d.c[2].v} </em> &bull;
+          &bull; <em> ${row.info} </em> &bull;
         </div>
         <br>
       `
-    } else if (!d.c[1]) {
+    } else if (!row.hide) {
       showcase.innerHTML += `
 
       <div class='showcase-box'>
@@ -154,28 +153,28 @@ function _showcase(payload, id) {
         <table class='showcase-table'>
           <tr>
 
-            <th class='showcase-name bg'> ${d.c[0].v} </th>
+            <th class='showcase-name bg'> ${row.name} </th>
 
-            ${d.filler}
+            ${row.filler}
 
-            ${d.githubName}
+            ${row.githubName}
 
-            ${d.codepenName}
+            ${row.codepenName}
 
-            ${d.liveName}
+            ${row.liveName}
 
             <th class='showcase-image-container bg' rowspan='2'>
-              ${d.liveName ? '<a href='+d.c[5].v+'>' : ''}
-                <img class='showcase-image' id='showcase-image-${d.c[0].v}'>
-              ${d.liveName ? '</a>' : ''}
+              ${row.liveName ? '<a href='+row.live+' target = "_blank">' : ''}
+                <img class='showcase-image' id='showcase-image-${row.name}'>
+              ${row.liveName ? '</a>' : ''}
             </th>
 
           </tr>
 
           <tr>
-            <td class='showcase-info bg' colspan="${d.columnSpan-1}">
-              <div class='showcase-info-container' name='${d.c[0].v}'>
-                &bull; ${d.c[2].v}
+            <td class='showcase-info bg' colspan="${row.columnSpan-1}">
+              <div class='showcase-info-container' name='${row.name}'>
+                ${row.info}
               </div>
             </td>
           </tr>
@@ -206,12 +205,12 @@ function _showcase(payload, id) {
 function _showcase_buildLines(alldata) {
   const canvases = document.getElementsByClassName('showcase-canvas')
   let c = []
-  let data = alldata.filter( d => d.c[0].v !== "-" )
+  let data = alldata.filter( row => row.name !== "-" )
   for (var i = 0; i < canvases.length; i++) {
-    if (data[i] && data[i].c[0].v != "name") {
+    if (data[i] && data[i].name != "name") {
       const w = canvases[i].parentElement.clientWidth
       const h = canvases[i].parentElement.clientHeight
-      canvases[i].id = 'showcase-canvas-'+data[i].c[0].v
+      canvases[i].id = 'showcase-canvas-'+data[i].name
       c[i] = new Canvas
       c[i].new(canvases[i].id, w, h)
       c[i].lineGrow(0,5,w,5,'rgba(0,0,255,0.3)',2,5,1.03)
