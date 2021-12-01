@@ -4,16 +4,19 @@ let _activePage = 'landing'
 let hasLanded = false
 let _browsers = {};
 let _showcase_Data = {}
+var _searchObject = { defaultData: "json" }
 
-// Gasup ⚡️ 🚀
+/* Gasup ⚡️ 🚀 instantiation */
 const deployId = "AKfycbx2I_khrgqjxp0mJWYhk46mm3q4HF_rKzlVap1EweR1A3V2ybvByhxxnbW1uROD2vdF"
 const id = "1h7AQcnPrSPL9kwPwcBwkRRHB_VIdJ-NszRY1eYJHf24"
 const gasup = new Gasup({ deployId, id })
+
 
 window.onload = ()=>{
   _header(document.getElementById('header'))
   _background( document.getElementById('background'))
   _footer( document.getElementById('footer'))
+  _build_SearchObject()
   _setPage(window.location.hash.split('#')[1], true)
   document.body.style.opacity = 1
   setTimeout(()=>{
@@ -50,4 +53,17 @@ function _resize_screen() {
   }
   _footerResize()
   _windowWidth = window.innerWidth
+}
+
+function _build_SearchObject() {
+  if (window.location.search[0] === "?") {
+    const keyValue = window.location.search.split("?")[1].split("&")
+    keyValue.forEach( kv => {
+      [key, value] = kv.split("=")
+      _searchObject[key] = value
+    })
+  }
+  if (!_searchObject.data) {
+    _searchObject.data = _searchObject.defaultData
+  }
 }

@@ -1,7 +1,7 @@
-const _staticJson_new = {
+const staticJson = {
   "gsheets": [
     {
-      "sheetName": "*GAS Up Root",
+      "sheetName": "root_info",
       "sheetId": 780153928,
       "sheet_json": {
         "sheet_metaData": {
@@ -40,12 +40,32 @@ const _staticJson_new = {
           "rowId": "r_5KZhNaum_kwl43i0r",
           "name": "sheet_link",
           "value": "https://docs.google.com/spreadsheets/d/1h7AQcnPrSPL9kwPwcBwkRRHB_VIdJ-NszRY1eYJHf24/edit#gid=780153928"
+        },
+        {
+          "rowId": "r_Vpd6ml6Y_kwmgigkd",
+          "name": "contact_avatar",
+          "value": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/bob-2016.png\")"
+        },
+        {
+          "rowId": "r_eL1u7amt_kwmgiymg",
+          "name": "google_storage_bucket_link",
+          "value": "https://console.cloud.google.com/storage/browser/tobob_earth;tab=objects?forceOnBucketsSortingFiltering=false&project=cloud-storage-314216&prefix=&forceOnObjectsSortingFiltering=false"
+        },
+        {
+          "rowId": "r_5LUOwrC6_kwmq8uwu",
+          "name": "github_repository",
+          "value": "https://github.com/robbobfrh84/tobob.earth"
+        },
+        {
+          "rowId": "r_HdEGA6M5_kwmq90v1",
+          "name": "client_live_link",
+          "value": "https://tobob.earth"
         }
       ],
       "sheet_metaData": {
         "type": "table"
       },
-      "sheetName": "*GAS Up Root",
+      "sheetName": "root_info",
       "message": "Successfully read sheet"
     },
     {
@@ -66,8 +86,8 @@ const _staticJson_new = {
           "rowId": "r_M3jkyh9G_kwlee8px",
           "name": "GAS Up",
           "hide": "",
-          "info": "...WIP",
-          "github": "",
+          "info": "A Google Apps Script(GAS) <strong>Add-on</strong> I built to do dynamic client-side stuff with Google Sheets as a database\n<br><br> &bull; Built to, read, update and delete sheets with client-side API requests.\n<br> &bull; The connected google sheet is laid out like a database with tables and entries.\n<br> &bull; Developer can customize their cloud \"back-end\" with an open-source Google Apps Script(GAS) library!\n\n<br><br>\nMade for data to be accessible & updatable, for a quick and light full-stack to help\n<br><br> &bull;  Build microsites\n<br> &bull;  Prototype web apps\n<br> &bull;  Host static data\n<br> &bull;  Integrate Iot apps and logging,\n<br> &bull;  Or, whatever else some wacky person might dream up 🤔😃🤯!",
+          "github": "https://github.com/robbobfrh84/gas-up",
           "codepen": "",
           "live": "",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/gas-up.png\")"
@@ -76,7 +96,7 @@ const _staticJson_new = {
           "rowId": "r_lFyNswXu_kwl4fqkq",
           "name": "Kiss The Sky",
           "hide": "",
-          "info": "At its heart, Kiss The Sky is a programmatic replica of Mendelian genetics, which allows the gameplay to be based on real-time Darwinian selection. Kiss The Sky is a browser-based indie video game. Players can either compete to breed a flower that reaches the sky, or let ambient mode play out for hours or days or weeks.\n\n<br><br> &bull;\nA bata version will be relased soon. But, visit the our <a href=\"https://codepen.io/robbobfrh84/pen/KjJxja\">codepen</a> to play a demo of the game. \n\n<br><br> &bull;\nEvery year, flowers bloom and bear seeds that carry a combination of their own genes and the genes of the flowers that pollinated them. In spring, seedlings sprout and compete for the sunlight they need to grow. New plants with genes for the broadest leaves and the tallest, strongest stalks thrive. The rest whither or topple over to die in the shadows. When summer arrives, healthy plants bloom flowers whose colors are determined by the most dominant genes they carry for petal hue and brightness. But things are always changing. No year is quite like the last. With every new generation, a few genes mutate to produce new traits that have never existed before, and that may change the species forever.\n\n<br><br> &bull;\nYour goal is to breed a bright red flower that reaches all the way to the sky. Tap or swipe to eliminate any unwanted plants; leave only plants with genes that might produce the tallest stalks and the reddest flowers in the next generation. When there are no red flowers, keep plants with flowers whose colors are closest to a bright red color. Then watch for mutations of hue and brightness until you've yielded a beautiful red bloom. Keep plants with the strongest stalks, even if they're short. Keep plants with the tallest stalks, even if they're weak. Don't forget to keep some plants with the broadest leaves as well. When your population cross-pollinates to yield a new leafy plant with a tall, strong stalk, eliminate the rest and let the new species propagate until new mutations arise yet again.",
+          "info": "At its heart, Kiss The Sky is a programmatic replica of Mendelian genetics, which allows the gameplay to be based on real-time Darwinian selection. Kiss The Sky is a browser-based indie video game. Players can either compete to breed a flower that reaches the sky, or let ambient mode play out for hours or days or weeks.\n\n<br><br> &bull;\nEvery year, flowers bloom and bear seeds that carry a combination of their own genes and the genes of the flowers that pollinated them. In spring, seedlings sprout and compete for the sunlight they need to grow. New plants with genes for the broadest leaves and the tallest, strongest stalks thrive. The rest whither or topple over to die in the shadows. When summer arrives, healthy plants bloom flowers whose colors are determined by the most dominant genes they carry for petal hue and brightness. But things are always changing. No year is quite like the last. With every new generation, a few genes mutate to produce new traits that have never existed before, and that may change the species forever.\n\n<br><br> &bull;\nYour goal is to breed a bright red flower that reaches all the way to the sky. Tap or swipe to eliminate any unwanted plants; leave only plants with genes that might produce the tallest stalks and the reddest flowers in the next generation. When there are no red flowers, keep plants with flowers whose colors are closest to a bright red color. Then watch for mutations of hue and brightness until you've yielded a beautiful red bloom. Keep plants with the strongest stalks, even if they're short. Keep plants with the tallest stalks, even if they're weak. Don't forget to keep some plants with the broadest leaves as well. When your population cross-pollinates to yield a new leafy plant with a tall, strong stalk, eliminate the rest and let the new species propagate until new mutations arise yet again.",
           "github": "https://github.com/matthewmain/kiss_the_sky",
           "codepen": "https://codepen.io/robbobfrh84/pen/KjJxja",
           "live": "https://www.kissthesky.app/",
@@ -84,18 +104,18 @@ const _staticJson_new = {
         },
         {
           "rowId": "r_xenyKLoY_kwle3ai3",
-          "name": "City of Austin",
-          "hide": "",
-          "info": "...WIP\n<br><br> &bull;  Serve as a core contributor on multi-disciplinary project teams to improve city services\n<br><br> &bull;  Assist in scoping and prototyping activities for future design and development projects\n<br><br> &bull;  Be visible to staff and stakeholders and regularly undertake activities to engage and build trust with people involved in area of work\n<br><br> &bull;  Share knowledge of web standards and best practices related to accessibility (a11y), internationalization (i18n), usability, and writing for modern web standards\n<br><br> &bull;  Engage with the wider web development community, identifying best practices we can adopt and sharing our experiences\n<br><br> &bull; Contribute to Open Source Software projects using Github for collaboration and code review.",
-          "github": "",
+          "name": "Full-stack web developer at the City of Austin",
+          "hide": true,
+          "info": "Served as a core contributor on a multi-disciplinary team to improve city services\n<br> &bull; Assisted in scoping and prototyping activities for future design and development projects\n<br> &bull; A visible co-worker to staff and stakeholders, and regularly undertook activities to engage and build trust with people internally and externally\n<br> &bull; Shared knowledge of web standards and best practices related to accessibility (a11y), internationalization (i18n), usability, and writing for modern web standards\n<br> &bull; Engaged with the wider web development community, identifying best practices we can adopt and sharing our experiences\n<br> &bull; Contributed to Open Source Software projects using Github for collaboration and code review",
+          "github": "https://github.com/cityofaustin",
           "codepen": "",
-          "live": "",
+          "live": "https://alpha.austin.gov/",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/city-of-austin.png\")"
         },
         {
           "rowId": "r_jNcCsoft_kwl4hxbv",
-          "name": "GrayMeta",
-          "hide": "",
+          "name": "Full-stack web developer at GrayMeta",
+          "hide": true,
           "info": "Working with an amazing team of around-the-globe Software Engineers, I played the part of building and bringing our verbose API to life.\n\n<br><br> &bull;\nThe GrayMeta Platform combines technical and embedded metadata across all files, file systems, databases, data feeds, or the results from computer vision technologies such as speech to text, facial recognition, objects recognition and more.\n\n<br><br> &bull;\nAs part of the small front-end team, I was tasked with bringing meta-data to the user for our in-house UI/UX designed SPA with React and Vue.js.",
           "github": "https://github.com/graymeta/terraform-aws-platform",
           "codepen": "",
@@ -120,12 +140,12 @@ const _staticJson_new = {
           "github": "",
           "codepen": "",
           "live": "https://twitter.com/itcrowdscreens",
-          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/twitter-bot.png\")"
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/twitter-bot.jpg\")"
         },
         {
           "rowId": "r_kQyKCqVd_kwl4hz8u",
           "name": "Our Curiosity",
-          "hide": "",
+          "hide": true,
           "info": "In this web application, my intention is to make NASA's Curiosity Rover API more accessible, and to explore the ReactJS and MongoDB elements of the MERN stack.\n<br><br> &bull;\nI simply intended to create a fan site for the Curiosity Rover. I will continue to build on what has already been created to add more features and allow users to save, interact and comment on images.\n<br><br> &bull;\nCurrently hosted on Heroku, \"Our Curiosity\" will soon have a dedicated domain and be given a beta release for explorers, educators and open source enthusiasts.",
           "github": "https://github.com/robbobfrh84/our-curiosity",
           "codepen": "",
@@ -146,21 +166,21 @@ const _staticJson_new = {
           "rowId": "r_MTUjeA8k_kwl4icyn",
           "name": "Planet Generator",
           "hide": "",
-          "info": "Let's generate some habitable planets! I built this with <a href=\"https://zzz.dog/\">zDog</a> a lightweight frontend sudo-3D framework.\n<br><br> &bull;\n\nFeatured in Codepen.io <a href=\"https://codepen.io/spark/132\"> Sparks</a>, I'd really love to continue work on this someday when I retire, lol! I could got lost in planet generator code for the rest of my days😀🌏.\n",
+          "info": "Let's generate some habitable planets! I built this with <a href=\"https://zzz.dog/\">zDog</a>, a lightweight frontend sudo-3D framework.\n<br><br> &bull;\n\nFeatured in Codepen.io <a href=\"https://codepen.io/spark/132\"> Sparks</a>, I'd really love to continue work on this someday when I retire, lol! I could got lost in planet generator code for the rest of my days😀🌏.\n",
           "github": "https://github.com/robbobfrh84/tobob.earth/tree/master/2/habitableplanetgenerator",
           "codepen": "https://codepen.io/robbobfrh84/pen/pmXYzY",
           "live": "https://tobob.earth/2/habitableplanetgenerator",
-          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/top-5.png\")"
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/planet-generator.gif\")"
         },
         {
           "rowId": "r_dFWNQr1S_kwmduj7p",
           "name": "Top 5",
-          "hide": "",
+          "hide": true,
           "info": "...WIP",
           "github": "",
           "codepen": "",
           "live": "",
-          "image": ""
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/top-5.png\")"
         },
         {
           "rowId": "r_FUA3s4Ow_kwl4i0ls",
@@ -173,20 +193,10 @@ const _staticJson_new = {
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/captian-dashboard.gif\")"
         },
         {
-          "rowId": "r_ULNKhwUy_kwl4i7qn",
-          "name": "Purple Rain",
-          "hide": "",
-          "info": "A simple background pixel rain generator in tribute to Prince.\n<br>&bull;\nCheckout the hover effect!",
-          "github": "https://github.com/robbobfrh84/OldPortfolios/tree/gh-pages/purplerain",
-          "codepen": "https://codepen.io/robbobfrh84/pen/LRYLOA",
-          "live": "http://bobma.in/purplerain/",
-          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/purple-rain.png\")"
-        },
-        {
           "rowId": "r_iki5vnlm_kwl4i7pu",
           "name": "Self Portriat",
           "hide": "",
-          "info": "<em>\"I can't find my wallet\"</em>\n\n<br> - An 8-by-8 pixel-art self-portrait of... myself.",
+          "info": "<em>\"I can't find my wallet\"</em>\n\n<br>&bull; An 8-by-8 pixel-art self-portrait of... myself.",
           "github": "https://github.com/robbobfrh84/tobob.earth/tree/master/2/icantfindmywallet",
           "codepen": "https://codepen.io/robbobfrh84/pen/voOoaQ",
           "live": "https://tobob.earth/2/icantfindmywallet/",
@@ -203,6 +213,16 @@ const _staticJson_new = {
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/bobmain-website.png\")"
         },
         {
+          "rowId": "r_ULNKhwUy_kwl4i7qn",
+          "name": "Purple Rain",
+          "hide": "",
+          "info": "A simple background pixel rain generator in tribute to Prince.\n<br>&bull;\nCheckout the hover effect!",
+          "github": "https://github.com/robbobfrh84/OldPortfolios/tree/gh-pages/purplerain",
+          "codepen": "https://codepen.io/robbobfrh84/pen/LRYLOA",
+          "live": "http://bobma.in/purplerain/",
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/purple-rain.png\")"
+        },
+        {
           "rowId": "r_5lOCXp3N_kwl4i3ut",
           "name": "-",
           "hide": "",
@@ -216,7 +236,7 @@ const _staticJson_new = {
           "rowId": "r_H9pAuRhg_kwl4i4ft",
           "name": "CNC Router",
           "hide": "",
-          "info": "Building a CNC router unknowingly allowed me to become seduced into the world of programming. I started this project as a woodworker; I had no idea what programming was. But, it has already changed the trajectory of my life.\n    <ul>\n    <li>Tools\n    <ul>\n    <li>Arduino Uno</li>\n    <li>Adafruit Stepper Motor Driver</li>\n    <li>C++</li>\n    <li>Python</li>\n    <li>LCD display</li>\n    <li>Super Nintendo Console Controller</li>\n    <li>Various Power Tools: table-saw, drill press, power drill and more</li>\n    <li>Various woods plastics and metals</li>\n    </ul>\n    </li>\n    </ul>\n    <ul>\n    <li>Techniques\n    <ul>\n    <li>The model for the design was mostly an organic on the fly creation that was built out from three Nema-17 stepper motors.</li>\n    <li>Rather than use expensive parts, I tried to build as much as I could from stuff I could get at my local hardware store.</li>\n    <li>XYZ rails were developed with simple aluminum siding.</li>\n    <li>Rather than mount a rotary tool, I went with a snake extension that would be much lighter on the small stepper motors.</li>\n    </ul>\n    </li>\n    </ul>\n    <ul>\n    </ul>\n    <ul>\n    <li>When I first started researching the project I discovered that a small microcontroller could do a lot of the work controlling three stepper motors for the XYZ axis. After teaching myself a little code, I was able to build the machine around the six basic movements (forward/reverse from 3 motors).</li>\n    </ul>\n    <ul>\n    <li>The movements were converted into linear motion with the use of a threaded rod. A threaded bolt was used to connect a sliding mount that would each complete a three-axis system, which would in turn move the tip of an end-mill (carving drill-bit) around a 3-dimensional space.</li>\n    </ul>\n    <ul>\n    <li>This sequence of movements, or paths, is created by a variety of software and programs that is used to design an object that is created by removing the surrounded material (mostly wood so far) to carve the desired shape.</li>\n    </ul>\n    <ul>\n    <li>This project is ongoing and has been revealed to be a passion project that will continue to improve and evolve throughout my life. At some point I plan on starting over and building a larger, better and faster model.</li>\n    </ul>\n    <ul>\n    </ul>",
+          "info": "Building a CNC router allowed me to become seduced into the world of programming. When I started this project as a woodworker, I had no idea what programming was. But, it has already changed the trajectory of my life.\n    <ul>\n    <li>Tools\n    <ul>\n    <li>Arduino Uno</li>\n    <li>Adafruit Stepper Motor Driver</li>\n    <li>C++</li>\n    <li>Python</li>\n    <li>LCD display</li>\n    <li>Super Nintendo Console Controller</li>\n    <li>Various Power Tools: table-saw, drill press, power drill and more</li>\n    <li>Various woods plastics and metals</li>\n    </ul>\n    </li>\n    </ul>\n    <ul>\n    <li>Techniques\n    <ul>\n    <li>The model for the design was mostly an organic on the fly creation that was built out from three Nema-17 stepper motors.</li>\n    <li>Rather than use expensive parts, I tried to build as much as I could from stuff I could get at my local hardware store.</li>\n    <li>XYZ rails were developed with simple aluminum siding.</li>\n    <li>Rather than mount a rotary tool, I went with a snake extension that would be much lighter on the small stepper motors.</li>\n    </ul>\n    </li>\n    </ul>\n    <ul>\n    </ul>\n    <ul>\n    <li>When I first started researching the project I discovered that a small microcontroller could do a lot of the work controlling three stepper motors for the XYZ axis. After teaching myself a little code, I was able to build the machine around the six basic movements (forward/reverse from 3 motors).</li>\n    </ul>\n    <ul>\n    <li>The movements were converted into linear motion with the use of a threaded rod. A threaded bolt was used to connect a sliding mount that would each complete a three-axis system, which would in turn move the tip of an end-mill (carving drill-bit) around a 3-dimensional space.</li>\n    </ul>\n    <ul>\n    <li>This sequence of movements, or paths, is created by a variety of software and programs that is used to design an object that is created by removing the surrounded material (mostly wood so far) to carve the desired shape.</li>\n    </ul>\n    <ul>\n    <li>This project is ongoing and has been revealed to be a passion project that will continue to improve and evolve throughout my life. At some point I plan on starting over and building a larger, better and faster model.</li>\n    </ul>\n    <ul>\n    </ul>",
           "github": "",
           "codepen": "",
           "live": "https://bobma.in/?CNC",
@@ -227,7 +247,7 @@ const _staticJson_new = {
           "name": "8x8 Pixe-Art Display",
           "hide": "",
           "info": "The old testable <a href=\"http://www.bobma.in/ayte\">prototype</a> is still up and running (I think... kind of). If it wasn&rsquo;t obvious with a few other projects I&rsquo;ve created and worked on - I like grids and pixels. I&rsquo;m a horrible free-hand artist so when it&rsquo;s simplified and as mathematic as possible, it makes it hard for other artists to know I&rsquo;m a sham!\n      <p>&nbsp; &nbsp; So here, on this site we have an 8-by-8 grid constrained to 16 colors, one being transparent. This project currently stands alone for a user to create pixel art and save it to the public gallery.</p>\n      <p>&nbsp; &nbsp; Also, as an experiment with PubNub&rsquo;s global data-stream network, I decided to stretch their service&rsquo;s legs and create a global pixel-chat function that allows anyone around to world to simultaneously create pixel-art on the same grid. Hypothetically there could be more artists than pixels!</p>\n      <p>&nbsp; &nbsp; The video on the slideshow above demonstrates how two star-crossed lovers could work on a pixel heart together - at the same time &ndash; from opposite sides of the planet &ndash; in a pre-framed portrait.</p>\n      <p>&nbsp; &nbsp; I plan to add several functions to the site, but as of now, the sites is still a 100% front-end application with all shared data stored and retrieved as JSON files from PubNub. A Node.js backend is on its way and will bring with it additional capabilities such as user log in, editing, deleting and sharing of pixel art. Also, a SUPER Ayte-by8 - also called and Ayte-by8-by8-by8, or 64-by-64 editor is on its way!</p>\n      <p>&nbsp; &nbsp; In addition, I have built an 8-by-8 pixel display frame with the CNC router (see: CNC microcontrollers for project info) as well as implementation the new MKR1000, Arduino&rsquo;s new IoT WiFi capable microcontroller.</p>\n      <p>&nbsp; &nbsp; WARNING: your art will be framed and displayed in my living room upon sharing to the public gallery or editing the live pixel-chat. The framed pixel display is programmed in C++ and continuously check for new updates to the website. If a new Ayte-by8 is shared the image will display on the frame! So, what are you waiting for! Let me see your art.</p>\n      <p>&nbsp; &nbsp; If you don&rsquo;t believe me or want to see what you art looked like in my living room, send me an email and I&rsquo;ll put it back up and take a picture and send it to you!</p>",
-          "github": "https://github.com/robbobfrh84/OldPortfolios",
+          "github": "https://github.com/robbobfrh84/OldPortfolios/tree/gh-pages/ayte",
           "codepen": "",
           "live": "https://bobma.in/ayte/",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/8x8.png\")"

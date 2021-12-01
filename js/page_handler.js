@@ -48,12 +48,22 @@ function _setPage(newPage, initial) {
     case 'showcase':
       if (!_showcase_Data.fulfilled) {
 
-        // 👀 IF ?data=gsheet
-        // _showcase( _staticJson, document.getElementById('showcase') )
+        const populateData = {
+          json: () => {
+            const showcase = staticJson.sheets.filter( s => s.sheetId == 1906007068 )[0]
+            _showcase( showcase.rows, document.getElementById('showcase') )
+          },
+          gsheet: () => {
+            _get_showcase()
+              .then( payload => _showcase( payload.data.rows, window.showcase ))
+          }
+        }
 
-        // 👀 IF ?data=json
-        _get_showcase()
-          .then( payload => _showcase( payload.data.rows, window.showcase ))
+        if (populateData[_searchObject.data]) { // this catches data values that we dont handle. empty data values get set to default in page_handler.js in the _build_SearchObject() function...
+          populateData[_searchObject.data]()
+        } else {
+          populateData[_searchObject.defaultData]()
+        }
 
       } else {
         _showcase_buildLines(_showcase_Data.list)
