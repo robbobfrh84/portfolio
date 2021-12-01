@@ -1,3 +1,8 @@
+/*
+   GAS Up ⛽️ 🚀 VERSION 1.02
+*/
+
+
 class Gasup {
 
   constructor(params) {
