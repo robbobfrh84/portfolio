@@ -6,7 +6,7 @@ let _browsers = {};
 let _showcase_Data = {}
 var _searchObject = { defaultData: "json" }
 
-/* Gasup ⚡️ 🚀 instantiation */
+/* Gasup ⛽️ 🚀 instantiation */
 const deployId = "AKfycbx2I_khrgqjxp0mJWYhk46mm3q4HF_rKzlVap1EweR1A3V2ybvByhxxnbW1uROD2vdF"
 const id = "1h7AQcnPrSPL9kwPwcBwkRRHB_VIdJ-NszRY1eYJHf24"
 const gasup = new Gasup({ deployId, id })

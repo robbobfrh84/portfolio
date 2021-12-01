@@ -1,6 +1,9 @@
 # tobob.earth
 Welcome to the source code repository for [tobob.earth](http://tobob.earth)!
 
+This project uses GAS UP ⛽️ 🚀
+- Open source repository link: https://github.com/robbobfrh84/gas-up
+
 ### Where is this site getting data from?
 This portfolio, by default, uses the data from the hardcoded `js/gsheet.js` file. HOWEVER, you can set this webpage to directly call from the connected Google Sheet(link below) by adding a search query to the url. In the following examples, the hash `#showcase` has been added as the condition won't be called until that page is. Also, they search query must come before the hash, or It'll break the page trigger.
 
