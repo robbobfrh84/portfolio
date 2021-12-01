@@ -119,7 +119,7 @@ function _showcase(data, id) {
 
       const imageObj = new Image()
       row.image = row.image.split('"')[1]
-      imageObj.src = row.image
+      imageObj.src = row.image || ""
       imageObj.addEventListener('load', function(){
         const elm = document.getElementById('showcase-image-'+row.name)
         elm.src = row.image

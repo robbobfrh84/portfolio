@@ -50,8 +50,12 @@ function _setPage(newPage, initial) {
 
         const populateData = {
           json: () => {
-            const showcase = staticJson.sheets.filter( s => s.sheetId == 1906007068 )[0]
-            _showcase( showcase.rows, document.getElementById('showcase') )
+            _loaderOn()
+            setTimeout(function() {
+              const showcase = staticJson.sheets.filter( s => s.sheetId == 1906007068 )[0]
+              _showcase( showcase.rows, document.getElementById('showcase') )
+              _loaderOff()
+            },1000)
           },
           gsheet: () => {
             _get_showcase()

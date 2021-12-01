@@ -106,20 +106,20 @@ function _landing(id) {
 
     <div class="social-link-box">
 
-      <a href="https://github.com/robbobfrh84">
+      <a href="https://github.com/robbobfrh84" target="_blank">
         <img id='gitIcon' src="gfx/git.svg">
       </a>
 
-      <a href="https://codepen.io/robbobfrh84">
+      <a href="https://codepen.io/robbobfrh84" target="_blank">
         <img id='codepenIcon' src="gfx/codepen.png">
       </a>
 
-      <a href="https://www.linkedin.com/in/bobmain49">
+      <a href="https://www.linkedin.com/in/bobmain49" target="_blank">
         <img src="gfx/linkedinIcon.svg" id='linkedInIcon'>
       </a>
 
-      <a href="https://twitter.com/BobMain49">
-        <img id='twitterIcon' src="gfx/twitterIcon.png" >
+      <a href="https://twitter.com/BobMain49" target="_blank">
+        <img id='twitterIcon' src="gfx/twitterIcon.png">
       </a>
 
     </div>
