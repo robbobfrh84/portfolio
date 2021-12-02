@@ -15,7 +15,7 @@ Get data from **Google Sheet** directly
 
 Get data from hardcoded **json** (`gsheet.js`)
 - https://tobob.earth?data=json#showcase
-- Note that this may also jus be the default url.
+- Note: This may also just be the default url.
 
 ### What to update the json data
 You'll need to do some hardcoded steps here.
