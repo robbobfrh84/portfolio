@@ -14,7 +14,9 @@ function _page_count() {
   gasup.update.row({
     sheetId: 780153928,
     rowId: "r_3nhsHI5k_kwp7ccf3",
-    incriment: "value" // don't like it this way....
+    type: {
+      increment: "value"
+    }
   })
     .then( response => console.log("Page Count response: ", response) )
     .catch( error => console.log("Page Count Error: ", error) )
