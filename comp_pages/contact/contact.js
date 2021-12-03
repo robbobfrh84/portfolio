@@ -63,7 +63,7 @@ function _contact(id, resize) {
         <p class='write-up'>
 
           &nbsp; &nbsp;
-            I'm currently living in Austin, Texas and
+            I'm currently living in Oakland, CA and
           anyone with questions or comments regarding my portfolio/projects/links
           please feel free to contact me at bobmain49@gmail.com or <a href="https://twitter.com/BobMain49">twitter</a>, which is the best way to get
           a hold of me.
