@@ -20,6 +20,7 @@ window.onload = ()=>{
   _setPage(window.location.hash.split('#')[1], true)
   document.body.style.opacity = 1
   setTimeout(()=>{
+    _page_count() // let's let this load before counting page.
     document.getElementById('index-background').style.opacity = 1
   },250)
   _browsers = {

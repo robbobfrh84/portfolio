@@ -80,7 +80,7 @@ function _contact(id, resize) {
           <br><br><br>
 
           <div class='contact-profile-pic'>
-            <img class='profile-pic' src='gfx/bob.png'>
+            <img class='profile-pic' src='gfx/khaki_hat.png'>
           </div>
 
         </p>
