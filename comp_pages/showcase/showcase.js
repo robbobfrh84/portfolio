@@ -1,5 +1,5 @@
 function _showcase(data, id) {
-  data = data.filter( row => !row.hide )
+  data = data.filter( row => row.show )
 
   let imagesLoaded = []
 
@@ -68,7 +68,7 @@ function _showcase(data, id) {
 
   data.map( row => { // prep api data for ui dispaly
     // if (!x.c[1] && x.c[0] && x.c[0].v !== "-") {
-    if (!row.hide) {
+    if (row.show) {
 
       row.columnSpan = 2
 
@@ -145,7 +145,7 @@ function _showcase(data, id) {
         </div>
         <br>
       `
-    } else if (!row.hide) {
+    } else if (row.show) {
       showcase.innerHTML += `
 
       <div class='showcase-box'>

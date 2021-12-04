@@ -18,6 +18,6 @@ function _page_count() {
       increment: "value"
     }
   })
-    .then( response => console.log("Page Count response: ", response) )
-    .catch( error => console.log("Page Count Error: ", error) )
+    // .then( response => console.log("Page Count response: ", response) )
+    // .catch( error => console.log("Page Count Error: ", error) )
 }

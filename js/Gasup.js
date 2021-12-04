@@ -1,5 +1,5 @@
 /*
-   GAS Up ⛽️ 🚀 VERSION 1.02
+   GAS Up ⛽️ 🚀 VERSION 1.04
 */
 
 class Gasup {
