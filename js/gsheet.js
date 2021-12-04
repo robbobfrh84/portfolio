@@ -83,7 +83,7 @@ const staticJson = {
         {
           "rowId": "r_3nhsHI5k_kwp7ccf3",
           "name": "web_count",
-          "value": 33,
+          "value": 64,
           "notes": ""
         },
         {
@@ -141,7 +141,7 @@ const staticJson = {
           "rowId": "r_M3jkyh9G_kwlee8px",
           "name": "GAS Up",
           "show": true,
-          "info": "A Google Apps Script(GAS) <strong>Add-on</strong> I built to do dynamic client-side stuff with Google Sheets as a database\n<br><br> &bull; Built to, read, update and delete sheets with client-side API requests.\n<br> &bull; The connected google sheet is laid out like a database with tables and entries.\n<br> &bull; Developer can customize their cloud \"back-end\" with an open-source Google Apps Script(GAS) library!\n\n<br><br>\nMade for data to be accessible & updatable, for a quick and light full-stack to help\n<br><br> &bull;  Build microsites\n<br> &bull;  Prototype web apps\n<br> &bull;  Host static data\n<br> &bull;  Integrate Iot apps and logging,\n<br> &bull;  Or, whatever else some wacky person might dream up 🤔😃🤯!",
+          "info": "A Google Apps Script(GAS) <strong>Add-on</strong> I built to do dynamic client-side stuff with Google Sheets as a database\n<br><br> &bull; Built to, read, update and delete sheets with client-side API requests.\n<br> &bull; The connected google sheet is laid out like a database with tables and entries.\n<br> &bull; Developer can customize their cloud \"back-end\" with an open-source Google Apps Script(GAS) library!\n\n<br><br>\nMade for data to be accessible & updatable, for a quick and light full-stack to help\n<br><br> &bull;  Build microsites\n<br> &bull;  Prototype web apps\n<br> &bull;  Host static data\n<br> &bull;  Integrate Iot apps and logging,\n<br> &bull;  Or, whatever else some wacky person might dream up 🤔😃🤯!\n\n<br><br>\nHey, here's an example! This very website, tobob.earth, is data-driven by a Google Sheet using GAS Up!\n<br><br> &bull; Check out the very <a href=\"https://docs.google.com/spreadsheets/d/1h7AQcnPrSPL9kwPwcBwkRRHB_VIdJ-NszRY1eYJHf24/edit#gid=1906007068\" target=\"_blank\"> Google Sheet </a> serving data to this site!",
           "github": "https://github.com/robbobfrh84/gas-up",
           "codepen": "",
           "live": "",

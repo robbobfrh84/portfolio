@@ -8,9 +8,9 @@ var _searchObject = { defaultData: "json" }
 
 /* Gasup ⛽️ 🚀 instantiation */
 // Dev 🟡 👇
-const deployId = "AKfycbx2I_khrgqjxp0mJWYhk46mm3q4HF_rKzlVap1EweR1A3V2ybvByhxxnbW1uROD2vdF"
+// const deployId = "AKfycbx2I_khrgqjxp0mJWYhk46mm3q4HF_rKzlVap1EweR1A3V2ybvByhxxnbW1uROD2vdF"
 // Prod 🟢 👇
-// const deployId = "AKfycbwtsMtfeQXzBX5qQaXU-lxw_S8iAu35XUnDKr1xJgdqr4ZnGvQxFdX6GED6XqGLhrNHFw"
+const deployId = "AKfycbwtsMtfeQXzBX5qQaXU-lxw_S8iAu35XUnDKr1xJgdqr4ZnGvQxFdX6GED6XqGLhrNHFw"
 const id = "1h7AQcnPrSPL9kwPwcBwkRRHB_VIdJ-NszRY1eYJHf24"
 const gasup = new Gasup({ deployId, id })
 
