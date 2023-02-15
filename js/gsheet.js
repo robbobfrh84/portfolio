@@ -83,37 +83,7 @@ const staticJson = {
         {
           "rowId": "r_3nhsHI5k_kwp7ccf3",
           "name": "web_count",
-          "value": 64,
-          "notes": ""
-        },
-        {
-          "rowId": "",
-          "name": "",
-          "value": "",
-          "notes": ""
-        },
-        {
-          "rowId": "",
-          "name": "",
-          "value": "",
-          "notes": ""
-        },
-        {
-          "rowId": "",
-          "name": "",
-          "value": "",
-          "notes": ""
-        },
-        {
-          "rowId": "",
-          "name": "",
-          "value": "",
-          "notes": ""
-        },
-        {
-          "rowId": "r_YmX6qnDm_kwr2anve",
-          "name": "",
-          "value": "",
+          "value": 809,
           "notes": ""
         }
       ],
@@ -184,7 +154,7 @@ const staticJson = {
           "info": "I build this little tool because I often like to use colors that have names associated with them. There's a lot of color selectors out there, but none I could find that included what I was after! \n\n<br><br> &bull;\nThe website has slowly been getting a bit of traffic, so maybe someday I'll update and add additional features! \n\n<br><br> &bull;\nIt's open source, so if you'd like to help out, add a features, fix a bug, hit me up!",
           "github": "https://github.com/robbobfrh84/allcolors.io",
           "codepen": "",
-          "live": "http://allcolors.io",
+          "live": "https://robbobfrh84.github.io/allcolors",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/allcolors.png\")"
         },
         {
