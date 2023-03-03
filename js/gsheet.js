@@ -83,7 +83,7 @@ const staticJson = {
         {
           "rowId": "r_3nhsHI5k_kwp7ccf3",
           "name": "web_count",
-          "value": 809,
+          "value": 841,
           "notes": ""
         }
       ],
@@ -186,6 +186,16 @@ const staticJson = {
           "codepen": "",
           "live": "",
           "image": ""
+        },
+        {
+          "rowId": "r_9Yfkiutr_let4bx8p",
+          "name": "bob.farm",
+          "show": true,
+          "info": "This is my bizarre coding lab. You'll find a bunch of messy experimental, unorganized, chaotic project bits. But, most ideas start here :-)",
+          "github": "https://github.com/robbobfrh84/lab",
+          "codepen": "",
+          "live": "",
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/lab_screenshot\")"
         },
         {
           "rowId": "r_MTUjeA8k_kwl4icyn",
