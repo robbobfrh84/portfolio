@@ -194,7 +194,7 @@ const staticJson = {
           "info": "This is my bizarre coding lab. You'll find a bunch of messy experimental, unorganized, chaotic project bits. But, most ideas start here :-)",
           "github": "https://github.com/robbobfrh84/lab",
           "codepen": "",
-          "live": "",
+          "live": "https://bob.farm",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/lab_screenshot\")"
         },
         {
