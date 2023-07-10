@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang='en'></html>
+<html>
+<head>
+  <title>Sock Matching Odds Calculator</title>
+  <meta name='viewport' content='width=device-width, initial-scale=0.7'>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <h1>Sock Matching Odds Calculator</h1>
+  
+    <table style="margin-bottom: 0px;">
+      <tr> 
+        <td style="width: 48%">Number of Sock Pairs</td>
+        <td style="width: 4%"></td>
+        <td style="width: 48%">Percentage of Inside Out Socks</td>
+      </tr>
+      <tr>
+        <td style="width: 48%"> <input type="number" id="pairsInput" min="1" required> </td>
+        <td style="width: 4%"></td>
+        <td style="width: 48%"> <input type="number" id="insideOutInput" min="0" max="100" required> </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr> 
+        <td style="width: 30%"><button onclick="calculateOdds()">Calculate odds</button></td>
+        <td style="width: 70%"> <div id="result"></div> </td>
+      </tr>
+    </table>
+
+    <div class="divider"></div>
+
+    <button id="tryOnSocks" onclick="putOnSocks()">Try on socks</button>
+    <div id="socksImage" class="sock-image-container"></div>
+
+  </div>
+
+</body>
+
+<script>
+
+  let matching = 6
+  let mismatched = 6
+  let hasSocks = false
+
+  window.onload = ()=>{
+    pairsInput.value = 1
+    insideOutInput.value = 50;
+  }
+
+  const random = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function getlowestfraction(x0) {
+    console.log('x0:',x0)
+
+    var eps = 1.0E-15;
+    var h, h1, h2, k, k1, k2, a, x;
+    x = x0;
+    a = Math.floor(x);
+    h1 = 1;
+    k1 = 0;
+    h = a;
+    k = 1;
+    while (x-a > eps*k*k) {
+      x = 1/(x-a);
+      a = Math.floor(x);
+      h2 = h1; h1 = h;
+      k2 = k1; k1 = k;
+      h = h2 + a*h1;
+      k = k2 + a*k1;
+    }
+
+    return h + "/" + k;
+  }
+
+  function calculateOdds() {
+    var pairs = parseInt(document.getElementById("pairsInput").value);
+    var insideOutPercentage = parseInt(document.getElementById("insideOutInput").value);
+
+    var notInsideOutProbability = 1 - (insideOutPercentage / 100);
+    var matchingProbability = 1 / pairs;
+
+    var odds = (notInsideOutProbability * matchingProbability);
+    var oddsPercent = odds * 100
+
+    document.getElementById("result").innerHTML = `
+      Matching socks odds: <strong>${Number(oddsPercent.toFixed(2))}%</strong>
+      </br>
+      fraction: <strong>${getlowestfraction(odds)}</strong>
+    `
+  }
+
+  function putOnSocks() {
+    socksImage.classList.remove("fade-in");
+    setTimeout(function() {
+      var pairs = parseInt(document.getElementById("pairsInput").value);
+      var insideOutPercentage = parseInt(document.getElementById("insideOutInput").value);
+
+      var notInsideOutProbability = 1 - (insideOutPercentage / 100);
+      var matchingProbability = 1 / pairs;
+
+      var odds = (notInsideOutProbability * matchingProbability);
+      var randomNumber = Math.random();
+
+      console.log('randomNumber, odds:',randomNumber, odds)
+
+      var isMatch = randomNumber <= odds
+
+      var socksImage = document.getElementById("socksImage");
+      socksImage.innerHTML = "";
+
+      var img = document.createElement("img");
+      img.src = randomNumber <= matchingProbability ? "m"+random(1,matching)+".png" : "x"+random(1,mismatched)+".png";
+      img.alt = randomNumber <= matchingProbability ? "Matching Socks" : "Mismatched Socks";
+      img.classList.add("socks-image");
+      socksImage.appendChild(img);
+
+      var symbol_right = document.createElement("div");
+      symbol_right.classList.add("symbol");
+      symbol_right.classList.add("right");
+      symbol_right.innerHTML = '<img src="' + (isMatch ? "check.png" : "icon_x.png") + '" alt="' + (randomNumber <= matchingProbability ? "Checkmark" : "X") + '">';
+      socksImage.appendChild(symbol_right);
+
+      var symbol_left = document.createElement("div");
+      symbol_left.classList.add("symbol");
+      symbol_left.classList.add("left");
+      symbol_left.innerHTML = '<img src="' + (isMatch ? "check.png" : "icon_x.png") + '" alt="' + (randomNumber <= matchingProbability ? "Checkmark" : "X") + '">';
+      socksImage.appendChild(symbol_left);
+
+      setTimeout(function() {
+        socksImage.classList.add("fade-in");
+      }, 1);
+      hasSocks = true;
+    }, (hasSocks ? 500 : 1));
+  }
+
+</script>
+</html>
