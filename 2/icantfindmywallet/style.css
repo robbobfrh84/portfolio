@@ -16,3 +16,17 @@ body {
   transition-timing-function: ease-in-out;
   transition: margin-left 2s;
 }
+#titleContainer {
+  font-family: avenir; 
+  position: absolute; 
+  right: 20px; 
+  bottom: 20px;
+  text-align: right;
+}
+#titleFull {
+  font-size: 40px;
+}
+#titleCredit {
+  font-size: 20px;
+  padding-right: 30px;
+}
