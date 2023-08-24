@@ -83,7 +83,7 @@ const staticJson = {
         {
           "rowId": "r_3nhsHI5k_kwp7ccf3",
           "name": "web_count",
-          "value": 841,
+          "value": 1219,
           "notes": ""
         }
       ],
@@ -204,7 +204,7 @@ const staticJson = {
           "info": "Let's generate some habitable planets! I built this with <a href=\"https://zzz.dog/\">zDog</a>, a lightweight frontend sudo-3D framework.\n<br><br> &bull;\n\nFeatured in Codepen.io <a href=\"https://codepen.io/spark/132\"> Sparks</a>, I'd really love to continue work on this someday when I retire, lol! I could got lost in planet generator code for the rest of my days😀🌏.\n",
           "github": "https://github.com/robbobfrh84/tobob.earth/tree/master/2/habitableplanetgenerator",
           "codepen": "https://codepen.io/robbobfrh84/pen/pmXYzY",
-          "live": "https://tobob.earth/2/habitableplanetgenerator",
+          "live": "https://bob.farm#habitable_planet_generator",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/planet-generator.gif\")"
         },
         {
@@ -224,7 +224,7 @@ const staticJson = {
           "info": "Featured in Codepen.io <a href=\"https://codepen.io/spark/134\"> Sparks</a>, you can become the captain of the web and explore the galaxy with \"Warp Drive\" at your command! Swap between night and day mode. Control your speed! Hit the breaks! View the \"light racers\" ... and so much more!\n\n<br><br> &bull;\n...Actually that's pretty much it. I built this pen out to be a background to a portfolio site. Nothin' that makes too much sense ... just like driving a spaceship in warp drive!\n\n<br><br> &bull;\nOne really unexpected and neat thing was adding the gradients to lines, then setting it with a \"round\"-ed end. Once I made the lines essentially a square, the rounded end and gradient gave it a cool \"crescent\"-like effect. Perfect for planetary bodies.\n\n<br><br> &bull;\nThanks for checking it out. let me know if you have any questions, wanna add something! ✨Feel free to do with this code as you choose!",
           "github": "https://github.com/robbobfrh84/tobob.earth/tree/master/2/captaindashboard",
           "codepen": "https://codepen.io/robbobfrh84/pen/NZbORR",
-          "live": "https://tobob.earth/2/captaindashboard",
+          "live": "https://bob.farm#captain_dashboard",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/captian-dashboard.gif\")"
         },
         {
@@ -234,7 +234,7 @@ const staticJson = {
           "info": "<em>\"I can't find my wallet\"</em>\n\n<br>&bull; An 8-by-8 pixel-art self-portrait of... myself.",
           "github": "https://github.com/robbobfrh84/tobob.earth/tree/master/2/icantfindmywallet",
           "codepen": "https://codepen.io/robbobfrh84/pen/voOoaQ",
-          "live": "https://tobob.earth/2/icantfindmywallet/",
+          "live": "https://bob.farm#i_cant_find_my_wallet",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/self-portrait.png\")"
         },
         {
@@ -254,7 +254,7 @@ const staticJson = {
           "info": "A simple background pixel rain generator in tribute to Prince.\n<br>&bull;\nCheckout the hover effect!",
           "github": "https://github.com/robbobfrh84/OldPortfolios/tree/gh-pages/purplerain",
           "codepen": "https://codepen.io/robbobfrh84/pen/LRYLOA",
-          "live": "http://bobma.in/purplerain/",
+          "live": "https://bob.farm#purple_rain",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/purple-rain.png\")"
         },
         {
