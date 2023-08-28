@@ -83,7 +83,7 @@ const staticJson = {
         {
           "rowId": "r_3nhsHI5k_kwp7ccf3",
           "name": "web_count",
-          "value": 1236,
+          "value": 1249,
           "notes": ""
         }
       ],
@@ -172,9 +172,9 @@ const staticJson = {
           "name": "Our Curiosity",
           "show": false,
           "info": "In this web application, my intention is to make NASA's Curiosity Rover API more accessible, and to explore the ReactJS and MongoDB elements of the MERN stack.\n<br><br> &bull;\nI simply intended to create a fan site for the Curiosity Rover. I will continue to build on what has already been created to add more features and allow users to save, interact and comment on images.\n<br><br> &bull;\nCurrently hosted on Heroku, \"Our Curiosity\" will soon have a dedicated domain and be given a beta release for explorers, educators and open source enthusiasts.",
-          "github": "https://github.com/robbobfrh84/our-curiosity",
+          "github": "https://github.com/robbobfrh84/react-stacks/tree/main/our-curiosity-example-web-app",
           "codepen": "",
-          "live": "https://our-curiosity.herokuapp.com/",
+          "live": "",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/our-curiosity.png\")"
         },
         {
@@ -242,9 +242,9 @@ const staticJson = {
           "name": "bobma.in (original portfolio site)",
           "show": false,
           "info": "My old portfolio Website built ~2014. Has some woodworking/ CNC project info excluded from this site.\nI kinda laught when I look at this now, but It's fun to see a different time and place and what I once was working on. \nI think it'll be a great time-capsul to reflect on in the future. ",
-          "github": "https://github.com/robbobfrh84/OldPortfolios",
+          "github": "https://github.com/robbobfrh84/lab/tree/main/website/pages/original_portfolio",
           "codepen": "",
-          "live": "https://bobma.in/?CNC",
+          "live": "http://localhost:5500/website/pages/original_portfolio/?CNC",
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/bobmain-website.png\")"
         },
         {
