@@ -37,6 +37,8 @@ function _landing(id) {
       setTimeout(()=>{codepenIcon.style.width = "40px"}, 0)
       setTimeout(()=>{linkedInIcon.style.width = "40px"}, 250  / delay)
       setTimeout(()=>{twitterIcon.style.width = "40px"}, 750  / delay)
+      setTimeout(()=>{mediumIcon.style.width = "40px"}, 1000  / delay)
+
     },1500  / delay)
 
     // delay easterEgg
@@ -47,7 +49,7 @@ function _landing(id) {
   }
 
   /* ----------------------- < HTML > ------------------------ */
-  id.innerHTML = `
+  id.innerHTML = /*html*/`
 
   <div class="landing-container">
 
@@ -120,6 +122,10 @@ function _landing(id) {
 
       <a href="https://twitter.com/BobMain49" target="_blank">
         <img id='twitterIcon' src="gfx/twitterIcon.png">
+      </a>
+
+      <a href="https://medium.com/@bobmain49" target="_blank">
+        <img id='mediumIcon' src="gfx/mediumIcon.png">
       </a>
 
     </div>

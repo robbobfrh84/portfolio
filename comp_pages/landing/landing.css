@@ -25,10 +25,6 @@
   padding-bottom: 55px;
 }
 
-#landing .social-link-box {
-  text-align: center;
-}
-
 #landing #eggIcon {
   position: fixed;
   right: 20px;
@@ -100,22 +96,31 @@
 
 #landing .social-link-box {
   text-align: center;
-  height: 40px;
-  min-height: 40px;
+  height: 30px;
+  min-height: 30px;
+  padding-right: 10px;
 }
 
 #landing .social-link-box a {
   text-decoration: none;
-  margin: 35px;
+  margin: 25px;
   display: inline-block;
-  width: 40px;
-  min-width: 50px;
+  width: 30px;
+  min-width: 30px;
 }
 
 #landing .social-link-box a img {
   width: 1px;
   opacity: 0.5;
-  transition: width 1s;
+  transition: width 1s, opacity 0.3s;
+}
+
+#landing .social-link-box a img:hover {
+  opacity: 0.85;
+  transition: width 1s, opacity 0.3s;
+}
+#mediumIcon {
+  padding-bottom: 9px;
 }
 
 @media (max-height: 500px) {
