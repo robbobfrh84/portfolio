@@ -66,20 +66,23 @@ function _about(id, resize) {
 
 <br><br><hr>
           <h3> How I'd define myself in the industry now </h3>
-          I'm a front-end leaning full-stack web developer that has extensive experience with JavaScript frameworks, NodeJS and MongoDB. In addition, I have a strong passion for leveraging the built-in powers of HTML5 and CSS3 with plain ole' vanilla Javascript.
+          At my core, I am a Creative Front-end Developer with a deep-rooted understanding of user experience. My hands-on experience ranges from working with Vanilla JavaScript and DOM manipulation to harnessing the power of frameworks such as React and Angular, all while ensuring accessibility. My work with RESTful API integrations ensures seamless user interactions. In aesthetics and functionality, my expertise lies in CSS, wherein I craft animations, utilize SASS, and apply conditional styling to guarantee a delightful visual experience. In UX design, I prioritize the creation of experiences that are both intuitive and immersive. My work on the "Color A.I." project stands as a testament to this. You can explore it here: https://colorai.farm.
+          <br><br>
+          Taking my skills a step further, I have deeply immersed myself in the role of a Full Stack Software Engineer. With a solid foundation in backend technologies like Node, Python, and MongoDB, I have played a pivotal role in unlocking the full potential of software solutions. The "Kiss The Sky" project serves as a testament to this, where I collaborated, designed, and architected its full-stack ecosystem from the ground up. This ensured seamless integration, scalability, and peak performance. You can delve into the details of this project at: https://github.com/matthewmain/kiss_the_sky.
 <br><br>
-
-          API data visualization, animations and UX/UI interactivity best represents my areas of experience, expertise and passion. On a less extensive level, I've created a variety of native programs with Python and C++ for automated machinery and IoT micro-controller projects.
+          As a Data Management Innovator, I have harnessed the power of Google Apps Script, Google Cloud Platform, and Amazon Web Services. My project, GAS Up, showcases my innovative approach to data management. This Google Apps Script application allows a Google Sheet to act as a database for a front-end application. See the project's repository and usage guide here: https://github.com/robbobfrh84/gas-up.
 <br><br>
-          What energizes me most about tech and web development is the constant evolution. I've been committed to a lifetime as a student, tinkerer, and teacher.
+          Building on my technical foundation, I recently encountered a surprising catalyst that has ignited my passion, vision, and confidence in the contemporary tech industry landscape—my involvement with an improv team. This dynamic collaboration has unveiled capabilities beyond my attributes as a developer, revealing my potential as a colleague and leader. Having to listen intently and think on my feet has fostered a heightened sense of focus and drive, not just with computers, but more importantly, with people. This experience has broadened my perspective on what I can achieve in the realm of technology. I've come to realize the “performant” aspect of this field through storytelling, which can genuinely drive a team and execute an idea.
 <br><br>
-          I'm thankful software development has adopted agile principles, where I find myself most at home. In fact, it was actually my background in woodworking and teaching that opened the opportunity to software engineering. It has been my ignorance of something foreign that has lead to creating something meaningful and unique out of an idea.
+          Currently, my curiosity is guiding me through the realm of Large Language Models. I am delving deeply into the APIs of ChatGPT and PaLM(Bard), with a particular focus on UI design. My objective is to discover ways to enhance UI interactivity, unlock hidden values, and tap into the unique abilities that these language models possess.
 <br><br>
-          Thanks for stopping by! Please check out my showcase, track my daily activity on at GitHub and don't hesitate to reach out!
+          In addition to my career in technology, I have amassed a diverse array of experiences. My roles have ranged from bartending to educating in Vietnam, and I have channeled my creativity into woodworking, selling my handcrafted pieces at farmers’ markets.
 <br><br>
-          Let's see where it goes <span>&#128077;</span>
+          In essence, my journey has been eclectic, transitioning from sawdust to pixels. Each experience has enriched my perspective, shaping me into a multifaceted professional equipped to address a variety of challenges.
 <br><br>
-          - Bob
+          Let’s see where this leads,
+<br><br>
+          💛 Bob
 <br><br>
           P.S. Thanks for stopping by! Please check out my
           <a href="#showcase">showcase<a>,

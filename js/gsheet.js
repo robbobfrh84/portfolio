@@ -83,7 +83,7 @@ const staticJson = {
         {
           "rowId": "r_3nhsHI5k_kwp7ccf3",
           "name": "web_count",
-          "value": 1385,
+          "value": 1463,
           "notes": ""
         }
       ],
@@ -158,26 +158,6 @@ const staticJson = {
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/grayMeta.png\")"
         },
         {
-          "rowId": "r_R3HxjNJf_kwl4i1ri",
-          "name": "Color Selector & Converter",
-          "show": true,
-          "info": "I build this little tool because I often like to use colors that have names associated with them. There's a lot of color selectors out there, but none I could find that included what I was after! \n\n<br><br> &bull;\nThe website has slowly been getting a bit of traffic, so maybe someday I'll update and add additional features! \n\n<br><br> &bull;\nIt's open source, so if you'd like to help out, add a features, fix a bug, hit me up!",
-          "github": "https://github.com/robbobfrh84/allcolors.io",
-          "codepen": "",
-          "live": "https://robbobfrh84.github.io/allcolors",
-          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/allcolors.png\")"
-        },
-        {
-          "rowId": "r_Jvbgl4fM_kwl4i2gq",
-          "name": "It Crowd Twitter Bot",
-          "show": true,
-          "info": "A Google Apps Script application that posts a random \"IT Crowd\" screenshot at the top of every 3rd hour on Twitter! The bot uses Google Cloud storage to host the images and Google Sheets for control / modification.",
-          "github": "",
-          "codepen": "",
-          "live": "https://twitter.com/itcrowdscreens",
-          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/twitter-bot.jpg\")"
-        },
-        {
           "rowId": "r_kQyKCqVd_kwl4hz8u",
           "name": "Our Curiosity",
           "show": false,
@@ -228,6 +208,16 @@ const staticJson = {
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/top-5.png\")"
         },
         {
+          "rowId": "r_R3HxjNJf_kwl4i1ri",
+          "name": "Color Selector & Converter",
+          "show": true,
+          "info": "I built this little tool because I often like to use colors that have names associated with them. There's a lot of color selectors out there, but none I could find that included what I was after! \n\n<br><br> &bull;\nThe website has slowly been getting a bit of traffic, so maybe someday I'll update and add additional features! \n\n<br><br> &bull;\nIt's open source, so if you'd like to help out, add a features, fix a bug, hit me up!",
+          "github": "https://github.com/robbobfrh84/allcolors.io",
+          "codepen": "",
+          "live": "https://robbobfrh84.github.io/allcolors",
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/allcolors.png\")"
+        },
+        {
           "rowId": "r_FUA3s4Ow_kwl4i0ls",
           "name": "Captain Dashboard",
           "show": true,
@@ -258,9 +248,19 @@ const staticJson = {
           "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/bobmain-website.png\")"
         },
         {
+          "rowId": "r_Jvbgl4fM_kwl4i2gq",
+          "name": "It Crowd Twitter Bot",
+          "show": true,
+          "info": "A Google Apps Script application that posts a random \"IT Crowd\" screenshot at the top of every 3rd hour on Twitter! The bot uses Google Cloud storage to host the images and Google Sheets for control / modification.",
+          "github": "",
+          "codepen": "",
+          "live": "https://twitter.com/itcrowdscreens",
+          "image": "=IMAGE(\"https://storage.googleapis.com/tobob_earth/twitter-bot.jpg\")"
+        },
+        {
           "rowId": "r_ULNKhwUy_kwl4i7qn",
           "name": "Purple Rain",
-          "show": true,
+          "show": false,
           "info": "A simple background pixel rain generator in tribute to Prince.\n<br>&bull;\nCheckout the hover effect!",
           "github": "https://github.com/robbobfrh84/lab/tree/main/website/pages/purple_rain",
           "codepen": "https://codepen.io/robbobfrh84/pen/LRYLOA",
@@ -291,7 +291,7 @@ const staticJson = {
           "rowId": "r_lTRLRmw1_kwl4i4mx",
           "name": "8x8 Pixe-Art Display",
           "show": true,
-          "info": "The old testable <a href=\"https://bobma.in/ayte/\">prototype</a> is still up and running (I think... kind of). If it wasn&rsquo;t obvious with a few other projects I&rsquo;ve created and worked on - I like grids and pixels. I&rsquo;m a horrible free-hand artist so when it&rsquo;s simplified and as mathematic as possible, it makes it hard for other artists to know I&rsquo;m a sham!\n      <p>&nbsp; &nbsp; So here, on this site we have an 8-by-8 grid constrained to 16 colors, one being transparent. This project currently stands alone for a user to create pixel art and save it to the public gallery.</p>\n      <p>&nbsp; &nbsp; Also, as an experiment with PubNub&rsquo;s global data-stream network, I decided to stretch their service&rsquo;s legs and create a global pixel-chat function that allows anyone around to world to simultaneously create pixel-art on the same grid. Hypothetically there could be more artists than pixels!</p>\n      <p>&nbsp; &nbsp; The video on the slideshow above demonstrates how two star-crossed lovers could work on a pixel heart together - at the same time &ndash; from opposite sides of the planet &ndash; in a pre-framed portrait.</p>\n      <p>&nbsp; &nbsp; I plan to add several functions to the site, but as of now, the sites is still a 100% front-end application with all shared data stored and retrieved as JSON files from PubNub. A Node.js backend is on its way and will bring with it additional capabilities such as user log in, editing, deleting and sharing of pixel art. Also, a SUPER Ayte-by8 - also called and Ayte-by8-by8-by8, or 64-by-64 editor is on its way!</p>\n      <p>&nbsp; &nbsp; In addition, I have built an 8-by-8 pixel display frame with the CNC router (see: CNC microcontrollers for project info) as well as implementation the new MKR1000, Arduino&rsquo;s new IoT WiFi capable microcontroller.</p>\n      <p>&nbsp; &nbsp; WARNING: your art will be framed and displayed in my living room upon sharing to the public gallery or editing the live pixel-chat. The framed pixel display is programmed in C++ and continuously check for new updates to the website. If a new Ayte-by8 is shared the image will display on the frame! So, what are you waiting for! Let me see your art.</p>\n      <p>&nbsp; &nbsp; If you don&rsquo;t believe me or want to see what you art looked like in my living room, send me an email and I&rsquo;ll put it back up and take a picture and send it to you!</p>",
+          "info": "The old testable <a href=\"https://bob.farm/website/pages/original_portfolio/ayte/\">prototype</a> is still up and running (I think... kind of). If it wasn&rsquo;t obvious with a few other projects I&rsquo;ve created and worked on - I like grids and pixels. I&rsquo;m a horrible free-hand artist so when it&rsquo;s simplified and as mathematic as possible, it makes it hard for other artists to know I&rsquo;m a sham!\n      <p>&nbsp; &nbsp; So here, on this site we have an 8-by-8 grid constrained to 16 colors, one being transparent. This project currently stands alone for a user to create pixel art and save it to the public gallery.</p>\n      <p>&nbsp; &nbsp; Also, as an experiment with PubNub&rsquo;s global data-stream network, I decided to stretch their service&rsquo;s legs and create a global pixel-chat function that allows anyone around to world to simultaneously create pixel-art on the same grid. Hypothetically there could be more artists than pixels!</p>\n      <p>&nbsp; &nbsp; The video on the slideshow above demonstrates how two star-crossed lovers could work on a pixel heart together - at the same time &ndash; from opposite sides of the planet &ndash; in a pre-framed portrait.</p>\n      <p>&nbsp; &nbsp; I plan to add several functions to the site, but as of now, the sites is still a 100% front-end application with all shared data stored and retrieved as JSON files from PubNub. A Node.js backend is on its way and will bring with it additional capabilities such as user log in, editing, deleting and sharing of pixel art. Also, a SUPER Ayte-by8 - also called and Ayte-by8-by8-by8, or 64-by-64 editor is on its way!</p>\n      <p>&nbsp; &nbsp; In addition, I have built an 8-by-8 pixel display frame with the CNC router (see: CNC microcontrollers for project info) as well as implementation the new MKR1000, Arduino&rsquo;s new IoT WiFi capable microcontroller.</p>\n      <p>&nbsp; &nbsp; WARNING: your art will be framed and displayed in my living room upon sharing to the public gallery or editing the live pixel-chat. The framed pixel display is programmed in C++ and continuously check for new updates to the website. If a new Ayte-by8 is shared the image will display on the frame! So, what are you waiting for! Let me see your art.</p>\n      <p>&nbsp; &nbsp; If you don&rsquo;t believe me or want to see what you art looked like in my living room, send me an email and I&rsquo;ll put it back up and take a picture and send it to you!</p>",
           "github": "https://github.com/robbobfrh84/lab/tree/main/website/pages/original_portfolio/ayte",
           "codepen": "",
           "live": "https://bob.farm/website/pages/original_portfolio/ayte/",
