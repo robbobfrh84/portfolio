@@ -33,12 +33,12 @@ function _landing(id) {
 
     // delay link icons
     setTimeout(()=>{
-      setTimeout(()=>{gitIcon.style.width = "40px"}, 500  / delay)
+      setTimeout(()=>{gitIcon.style.width = "40px"}, 400  / delay)
       setTimeout(()=>{codepenIcon.style.width = "40px"}, 0)
-      setTimeout(()=>{linkedInIcon.style.width = "40px"}, 250  / delay)
-      setTimeout(()=>{twitterIcon.style.width = "40px"}, 750  / delay)
-      setTimeout(()=>{mediumIcon.style.width = "40px"}, 1000  / delay)
-
+      setTimeout(()=>{linkedInIcon.style.width = "40px"}, 200  / delay)
+      setTimeout(()=>{twitterIcon.style.width = "40px"}, 800  / delay)
+      setTimeout(()=>{mediumIcon.style.width = "40px"}, 1200  / delay)
+      setTimeout(()=>{threadsIcon.style.width = "40px"}, 600  / delay)
     },1500  / delay)
 
     // delay easterEgg
@@ -127,6 +127,10 @@ function _landing(id) {
       <a href="https://medium.com/@bobmain49" target="_blank">
         <img id='mediumIcon' src="gfx/mediumIcon.png">
       </a>
+
+      <a href="https://www.threads.net/@earth_to_bob_" target="_blank">
+      <img id='threadsIcon' src="gfx/threadsIcon.png">
+    </a>
 
     </div>
 
