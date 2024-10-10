@@ -38,7 +38,7 @@ function _landing(id) {
       setTimeout(()=>{linkedInIcon.style.width = "40px"}, 200  / delay)
       setTimeout(()=>{twitterIcon.style.width = "40px"}, 800  / delay)
       setTimeout(()=>{mediumIcon.style.width = "40px"}, 1200  / delay)
-      setTimeout(()=>{threadsIcon.style.width = "40px"}, 600  / delay)
+      setTimeout(()=>{substackIcon.style.width = "40px"}, 600  / delay)
     },1500  / delay)
 
     // delay easterEgg
@@ -128,8 +128,8 @@ function _landing(id) {
         <img id='mediumIcon' src="gfx/mediumIcon.png">
       </a>
 
-      <a href="https://www.threads.net/@earth_to_bob_" target="_blank">
-      <img id='threadsIcon' src="gfx/threadsIcon.png">
+      <a href="https://substack.com/@earthtobob" target="_blank">
+      <img id='substackIcon' src="gfx/substackIcon.png">
     </a>
 
     </div>
