@@ -137,7 +137,7 @@ function _landing(id) {
   </div>
 
 
-  <a href="./2/captaindashboard/index.html">
+  <a href="https://bob.farm/website/pages/captain_dashboard/">
     <img id='eggIcon' src="gfx/easterEgg.svg">
   </a>
 
