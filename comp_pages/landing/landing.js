@@ -36,7 +36,7 @@ function _landing(id) {
       setTimeout(()=>{gitIcon.style.width = "40px"}, 400  / delay)
       setTimeout(()=>{codepenIcon.style.width = "40px"}, 0)
       setTimeout(()=>{linkedInIcon.style.width = "40px"}, 200  / delay)
-      setTimeout(()=>{twitterIcon.style.width = "40px"}, 800  / delay)
+      setTimeout(()=>{blueskyIcon.style.width = "40px"}, 800  / delay)
       setTimeout(()=>{mediumIcon.style.width = "40px"}, 1200  / delay)
       setTimeout(()=>{substackIcon.style.width = "40px"}, 600  / delay)
     },1500  / delay)
@@ -120,8 +120,8 @@ function _landing(id) {
         <img src="gfx/linkedinIcon.svg" id='linkedInIcon'>
       </a>
 
-      <a href="https://twitter.com/BobMain49" target="_blank">
-        <img id='twitterIcon' src="gfx/twitterIcon.png">
+      <a href="https://bsky.app/profile/tobob.earth" target="_blank">
+        <img id='blueskyIcon' src="gfx/bluesky.png">
       </a>
 
       <a href="https://medium.com/@bobmain49" target="_blank">
