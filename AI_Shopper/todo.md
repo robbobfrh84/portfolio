@@ -1,0 +1,3 @@
+- create a config
+- add showTip
+- disable translation for charactors.

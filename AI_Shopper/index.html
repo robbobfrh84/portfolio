@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-config="title">A.I. Christmas Shopping Guide</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="background">
+    <div class="geometric-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="title" data-config="title">A.I. Christmas Shopping Guide</h1>
+
+    <div class="form-container" id="formContainer">
+      <div class="input-group">
+        <label class="input-label" data-config="form.budgetLabel">How much are you willing to spend?</label>
+        <input type="text" class="futuristic-input" id="amountInput" data-config-placeholder="form.budgetPlaceholder" placeholder="e.g., $50, $100, $200...">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label" data-config="form.personLabel">Who are you shopping for?</label>
+        <input type="text" class="futuristic-input" id="personInput"
+          data-config-placeholder="form.personPlaceholder" placeholder='try: "grandma", "brother", "Jim", etc...'>
+      </div>
+
+      <button class="futuristic-button" id="submitButton" data-config="form.submitButton">Generate Gift Suggestion</button>
+    </div>
+
+    <div class="result-container" id="resultContainer">
+      <p class="result-text" id="resultText"></p>
+    </div>
+
+    <div class="additional-card" id="additionalCard">
+      <div class="card-inner">
+        <div class="card-front"></div>
+        <div class="card-back">
+          <p class="additional-text" id="additionalText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="coffee-button" id="coffeeButton" data-config="coffee.buttonSymbol">☕</button>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 class="modal-title" data-config="coffee.modal.title">Enjoy this? ☕</h2>
+      <p class="modal-text" data-config="coffee.modal.text">Consider giving me (a laid off developer, struggling to find work) a tip? </br> Every coffee
+        helps keep my spirits up as I navigate this unemployment h$ll hole! 💖</p>
+      <div class="modal-buttons">
+        <a data-config-href="coffee.modal.coffeeUrl" href="https://buymeacoffee.com/invx3rejk" target="_blank" class="modal-coffee-link" data-config="coffee.modal.coffeeLink">Buy Me a Coffee ☕</a>
+        <button class="modal-close" id="modalClose" data-config="coffee.modal.closeButton">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
