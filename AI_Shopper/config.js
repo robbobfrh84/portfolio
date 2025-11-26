@@ -24,7 +24,7 @@ const config = {
   },
   
   // * Coffee button and modal
-  showBMC: false,
+  showBMC: true,
   coffee: {
     buttonSymbol: "☕",
     modal: {
