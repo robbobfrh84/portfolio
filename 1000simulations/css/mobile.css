@@ -1,0 +1,12 @@
+@media (max-width: 600px) {
+	.emoji-grid {
+		gap: 3px;
+	}
+	h1 {
+		white-space: nowrap;
+		font-size: clamp(24px, 8.5vw, 40px);
+		width: 100%;
+		box-sizing: border-box;
+		line-height: 1.1;
+	}
+}

@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'English 111 Adagio';
+  src: url('../English 111 Adagio Regular/English 111 Adagio Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: Avenir, sans-serif;
+}
+
+body, h1,h3 {
+  margin: 0px;
+  text-align: center;
+}
+
+header {
+  /* background-color: rgba(0,0,0,0.75); */
+  background-color: rgba(0,0,0,0.05);
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.5);
+}
+
+h1 {
+  font-size: 50px;
+  padding-bottom: 5px;
+  margin-top: -5px;
+}
+
+h3 {
+  padding-top: 5px;
+  color: #816f07;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.fancy {
+  font-family: 'English 111 Adagio', Avenir, sans-serif;
+  background: linear-gradient(to bottom, #888888 0%, #bfa100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.quote {
+  font-family: cursive;
+  background: linear-gradient(to bottom, #888888 0%, #bfa100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#mainContainer {
+	max-width: 768px;
+	margin: 0 auto;
+	display: block;
+  position: relative;
+}
+
+
