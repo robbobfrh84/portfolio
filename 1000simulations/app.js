@@ -15,9 +15,17 @@ const simulationNum1 = {
 
 window.onload = () => {
   buildEmojiGrid()
+  // On mobile, force scroll to top
+  if (window.innerWidth <= 600) {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }
 }
 
 simulateLoader.addEventListener('click', ()=>{
+  // On mobile, force scroll to top
+  if (window.innerWidth <= 600) {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }
   // Mark that simulateLoader was last pressed
   window.simulateLoaderLastPressed = true
   // Clear all item pills and selectedFoods
