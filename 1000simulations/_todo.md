@@ -1,15 +1,6 @@
 ### TO DO ✅ 🟡
 
 ### MVP
-CSS cleanup
-- ✅ Make Loader Bigger & tinker with simulation position and size
-- ✅ Review Simulate and remove dead code
-- ✅ need to make sure the simulatorResult's hight matches
-- ✅ fix resimulate UI, BUNCH of dead code and need to fix
-
-Start Simulation state
-- Item's just start display none
-
 reSimulate 2,3,4, etc...
 - Need to incorperate a "check price" and rerun.
 - Check a total of 30 times, if not, create a modal that says "Simulation could not find anything affordable" 
@@ -18,7 +9,10 @@ reSimulate 2,3,4, etc...
 Manual Click
 - after first simulation, allow the food to be clicked. 
 
-Mobile
+Desktop CSS
+- 
+
+Mobile CSS
 - Title is still really tight. 
 - food-name needs to be smaller
 - The emojies can be bigger(gap) & less padding around entire grid.
