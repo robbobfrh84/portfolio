@@ -4,7 +4,7 @@ const foodObj = [
     name: "Banana",
     url: "./food/banana_1f34c.png",
     units: 1,
-    price: 0.25
+    price: 0.39
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const foodObj = [
     url: "./food/empty-nest_1fab9.png",
     unit: 1,
     price: "Free",
-    note: "Must scavenge. Potentially no nutritional value.",
+    note: "Must gather",
   },
   {
     id: 6,
@@ -90,7 +90,7 @@ const foodObj = [
     url: "./food/nest-with-eggs_1faba.png",
     units: 2,
     price: "Free",
-    note: "Must scavenge.",
+    note: "Must scavenge",
   },
   {
     id: 14,
@@ -392,7 +392,7 @@ const foodObj = [
     url: "./food/dodo_1f9a4.png",
     unit: 1,
     price: "?",
-    note: "Out of stock.",
+    note: "Out of stock",
     unAvailable: true,
   },
   {
@@ -828,7 +828,7 @@ const foodObj = [
     url: "./food/worm_1fab1.png",
     units: 1,
     price: "Free",
-    note: "Must scavenge.",
+    note: "Must scavenge",
   },
   {
     id: 120,

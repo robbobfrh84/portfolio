@@ -1,25 +1,64 @@
 let simCounter = 1
+let lastSelectedItems = []
 
-const simulate = function(simulation) {
+const simulate = function(simulation, attemptCount = 0) {
   let simCount = 0
+  
+  // For first simulation, run all iterations; for subsequent, run just 1
+  const iterations = simCounter <= 1 ? runSimulations : 1
+  
   const runSim = () => {
-    startSimulation()
+    const selectedItems = startSimulation()
+    lastSelectedItems = selectedItems
     simCount++
-    if (simCount < runSimulations) {
+    
+    if (simCount < iterations) {
       setTimeout(runSim, simulationDelay)
     } else {
       setTimeout(() => {
-        forceSimulation(simulation)
+        // Only forceSimulation if simCounter is 1 (first simulation)
+        if (simCounter <= 1) {
+          forceSimulation(simulation)
+          const svg = simulateLoader.querySelector('svg')
+          svg.style.animation = 'none'
+          simCounter++
+        } else {
+          // Calculate total for subsequent simulations
+          const total = lastSelectedItems.reduce((sum, food) => {
+            const unit = Number(food?.units || food?.unit || 1) || 1
+            const base = parsePriceToNumber(food?.price)
+            const itemTotal = base * unit
+            return sum + itemTotal
+          }, 0)
+                    
+          const statusText = total > 3.00 ? 'Unaffordable' : 'Affordable Meal'
+          
+          // Check if we need to retry
+          if (total > 3.00 && attemptCount < keepChecking) {
+            // Try again without stopping the spinner
+            simulate(simulation, attemptCount + 1)
+          } else {
+            // Display final result
+            renderSimulationResults({
+              number: simCounter,
+              statusText,
+              total
+            })
+            const svg = simulateLoader.querySelector('svg')
+            svg.style.animation = 'none'
+            simCounter++
+          }
+        }
       }, simulationDelay)
     }
   }
-  // setTimeout(() => {
-  simulateNum.innerHTML = "Simulation #"+simCounter
-  simCounter++
-  const svg = simulateLoader.querySelector('svg')
-  svg.style.animation = 'spin 1.2s linear infinite'
+  
+  if (attemptCount === 0) {
+    simulateNum.innerHTML = "Simulation #"+simCounter
+    const svg = simulateLoader.querySelector('svg')
+    svg.style.animation = 'spin 1.2s linear infinite'
+  }
   runSim()
-  // }, initialSimulationDelay)
 }
 
 const startSimulation = function() {
@@ -36,7 +75,15 @@ const startSimulation = function() {
     }, 30)
   }
 
-  const availableFood = foodObj.filter(food => !food.unAvailable)
+  let availableFood = foodObj.filter(food => !food.unAvailable)
+  
+  // For first X simulations, exclude items in doNotCheck
+  if (simCounter <= allowNegativePricesAfter) {
+    availableFood = availableFood.filter(food => {
+      return !doNotCheck[food.id]
+    })
+  }
+  
   const shuffled = [...availableFood].sort(() => Math.random() - 0.5)
   const selectedItems = shuffled.slice(0, 4)
 
@@ -66,6 +113,9 @@ const startSimulation = function() {
   })
 
   displaySelectedItems(selectedItems)
+  
+  // Store selected items for later use
+  return selectedItems
 }
 
 const displaySelectedItems = function(items) {
@@ -89,10 +139,13 @@ const displaySelectedItems = function(items) {
       priceDisplay = 'N/A'
     }
 
+    const noteHTML = food.note ? `<span class="food-note">${food.note}</span>` : ''
+    
     pill.innerHTML = `
       <img src="${food.url}" alt="${food.name}" style="width: 24px; height: 24px;">
       <span class="food-name">${food.name}</span>
       <span class="food-price">${priceDisplay}</span>
+      ${noteHTML}
     `
   }
 }
@@ -110,9 +163,11 @@ const forceSimulation = function(simulation) {
     return sum + base * unit
   }, 0)
 
+  const statusText = total > 3.00 ? 'Unaffordable' : 'Affordable Meal'
+
   renderSimulationResults({
     number: simulation.simulationNum,
-    statusText: 'Affordable Meal',
+    statusText,
     total
   })
 }
@@ -152,14 +207,20 @@ const renderSimulationResults = function({ number, statusText, total }) {
     // statusEl.className = 'result-status'
     const textSpan = statusEl.querySelector('.result-status-text')
     if (textSpan) textSpan.textContent = statusText || 'Affordable Meal'
-    // Toggle icons: hide Xs, show checks
+    // Toggle icons based on affordability
     const xs = statusEl.querySelectorAll('.icon-x')
     const checks = statusEl.querySelectorAll('.icon-check')
-    xs.forEach(el => { el.style.display = 'none' })
-    checks.forEach(el => { el.style.display = 'inline-block' })
+    if (statusText === 'Unaffordable') {
+      xs.forEach(el => { el.style.display = 'inline-block' })
+      checks.forEach(el => { el.style.display = 'none' })
+    } else {
+      xs.forEach(el => { el.style.display = 'none' })
+      checks.forEach(el => { el.style.display = 'inline-block' })
+    }
   }
 
   if (priceEl) {
+    console.log('priceEl:',priceEl)
     priceEl.textContent = formatUSD(total)
   }
 
@@ -173,6 +234,7 @@ const renderSimulationResults = function({ number, statusText, total }) {
 const parsePriceToNumber = function(price) {
   if (typeof price === 'number' && !isNaN(price)) return price
   if (typeof price === 'string') {
+    if (price.toLowerCase() === 'free') return 0
     const n = parseFloat(price.replace(/[^0-9.\-]/g, ''))
     return isNaN(n) ? 0 : n
   }

@@ -1,8 +1,8 @@
-const reSimulate = function() {
+const reSimulate = function(clear) {
   items.style.display = "block"
   startNote.style.display = "none"
   simulateNum.style.opacity = 1
-   simulateNum.style.margin = "37px auto 20px auto"
+  simulateNum.style.margin = "37px auto 20px auto"
   
   // Reset all emoji items
   const container = document.getElementById('allEmojis')
@@ -27,20 +27,19 @@ const reSimulate = function() {
   }
   
   // Reset simulation results
-  const statusEl = document.getElementById('simulationStatus')
-  const priceEl = document.getElementById('simulationPrice')
-  
-  if (priceEl) priceEl.textContent = ''
-  if (statusEl) {
-    statusEl.style.visibility = 'hidden'
-    statusEl.style.opacity = '0'
-    // Reset icons back to X
-    const xs = statusEl.querySelectorAll('.icon-x')
-    const checks = statusEl.querySelectorAll('.icon-check')
-    xs.forEach(el => { el.style.display = 'inline-block' })
-    checks.forEach(el => { el.style.display = 'none' })
-  }
+  simulationStatusText.innerHTML = "Unaffordable"
+  simulationStatus.style.visibility = 'hidden'
+  simulationStatus.style.opacity = '0'
+  simulationPrice.textContent = '$$$'
+  // Reset icons back to X
+  const xs = simulationStatus.querySelectorAll('.icon-x')
+  const checks = simulationStatus.querySelectorAll('.icon-check')
+  xs.forEach(el => { el.style.display = 'inline-block' })
+  checks.forEach(el => { el.style.display = 'none' })
+
   
   // Restart simulation
-  simulate(simulationNum1)
+  if (!clear) {
+    simulate(simulationNum1)
+  }
 }
