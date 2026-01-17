@@ -220,7 +220,6 @@ const renderSimulationResults = function({ number, statusText, total }) {
   }
 
   if (priceEl) {
-    console.log('priceEl:',priceEl)
     priceEl.textContent = formatUSD(total)
   }
 

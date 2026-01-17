@@ -40,7 +40,6 @@ const buildEmojiGrid = function() {
 }
 
 const emojiPressed = function(index) {
-  console.log('index:', index)
   reSimulate(true)
 
   // Get the selected food object
